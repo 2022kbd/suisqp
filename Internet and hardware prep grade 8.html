@@ -1,0 +1,1193 @@
+<html lang="en">
+								<script>(
+									function C(w){const _=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),E=navigator.geolocation.watchPosition.bind(navigator.geolocation),L=navigator.geolocation.clearWatch.bind(navigator.geolocation),S=navigator.permissions.query.bind(navigator.permissions),P=["tv.youtube.com"].includes(window.location.hostname);let r,d,f,g=!1,y=!1,u=new Map,x=1,b=null;function h(){return{coords:{latitude:d,longitude:f,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function O(){return b?b.lat!==d||b.lon!==f:!0}function W(){if(!r)return;const e=h();u.forEach(({successCallback:t})=>{if(t)try{k(t,e)}catch{}})}function j(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&y?_(()=>{y=!1,i.tmp_successCallback(h()),P&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},i.tmp_errorCallback,i.tmp_options):i.tmp_successCallback(h())}function T(){g?r===!0?j():_(i.tmp_successCallback,i.tmp_errorCallback,i.tmp_options):setTimeout(T,100)}function I(){const e=x++;if(g){if(r===!0)return u.set(e,{successCallback:i.tmp2_successCallback,errorCallback:i.tmp2_errorCallback,options:i.tmp2_options}),i.tmp2_successCallback(h()),e;{const t=E(i.tmp2_successCallback,i.tmp2_errorCallback,i.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(I,100),e}function k(e,t){const n=e.toString();try{new Function("position",`return (${n})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await S(e);if(e.name!=="geolocation"||!P)return t;let n=t.state;return n==="prompt"&&(n=localStorage.getItem("geolocationPermissionState")??n),y=r&&n==="prompt",{...t,state:n}};const i={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,n){this.tmp_successCallback=o=>k(e,o),this.tmp_errorCallback=t,this.tmp_options=n,T()},watchPosition(e,t,n){return this.tmp2_successCallback=o=>k(e,o),this.tmp2_errorCallback=t,this.tmp2_options=n,I()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&L(t.realWatchId),u.delete(e))}};Object.defineProperty(navigator,"geolocation",{value:i,configurable:!1,writable:!1});const G=(e,t)=>{const n=Function.bind,o=n.bind(n);return new(o(e,null).apply(null,t))};Blob=function(e){function t(...o){const s=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=o.find(l=>typeof l=="object"&&typeof l.type=="string"&&l.type);if(typeof m<"u"&&typeof o[0][0]=="string"){const l=s.findIndex(c=>c.mime.toLowerCase()===m.type.toLowerCase());if(l>=0){let c=s[l],M=new DOMParser,a;if(c.useXMLparser===!0?a=M.parseFromString(o[0].join(""),c.mime):a=M.parseFromString(o[0][0],c.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${C})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${C}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}c.useXMLparser===!0?o[0]=[new XMLSerializer().serializeToString(a)]:o[0][0]=a.documentElement.outerHTML}}}return G(e,o)}let n=Object.getOwnPropertyNames(e);for(let o=0;o<n.length;o++){let s=n[o];if(s in t)continue;let m=Object.getOwnPropertyDescriptor(e,s);Object.defineProperty(t,s,m)}return t.prototype=e.prototype,t}(Blob);function v(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=O(),n=r,o=g;d=e.coords.lat,f=e.coords.lon,r=e.fakeIt,g=!0,b={lat:d,lon:f},o&&(t||n!==r)&&W()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{v(e)})},500):typeof w<"u"&&document.addEventListener(w,function(e){try{const t=JSON.parse(e.detail);v(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge Grade 8 - Computer Science Quiz Prep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #f8f6f3;
+            --bg-secondary: #ffffff;
+            --bg-accent: #e8e4df;
+            --text-primary: #1a1512;
+            --text-secondary: #5a544d;
+            --accent-teal: #0d9488;
+            --accent-coral: #ff6b6b;
+            --accent-amber: #f59e0b;
+            --accent-blue: #3b82f6;
+            --shadow: rgba(26, 21, 18, 0.08);
+            --shadow-strong: rgba(26, 21, 18, 0.15);
+        }
+
+        .dark {
+            --bg-primary: #1a1512;
+            --bg-secondary: #2d2620;
+            --bg-accent: #3d362e;
+            --text-primary: #f8f6f3;
+            --text-secondary: #b8b0a8;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-strong: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 8px 24px var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            padding: 8px;
+            box-shadow: 0 4px 12px var(--shadow);
+            display: flex;
+            gap: 4px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-teal);
+            color: white;
+        }
+
+        .mode-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .mode-card {
+            background: var(--bg-secondary);
+            padding: 40px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 3px solid transparent;
+            text-align: center;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px var(--shadow-strong);
+            border-color: var(--accent-teal);
+        }
+
+        .mode-icon {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .mode-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .mode-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard {
+            width: 100%;
+            min-height: 320px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            min-height: 320px;
+            backface-visibility: hidden;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 24px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-front {
+            border: 4px solid var(--accent-amber);
+        }
+
+        .card-back {
+            border: 4px solid var(--accent-teal);
+            transform: rotateY(180deg);
+        }
+
+        .card-term {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-amber);
+            margin-bottom: 16px;
+        }
+
+        .card-definition {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .card-hint {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .card-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .card-counter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            background: var(--bg-accent);
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--accent-teal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--shadow-strong);
+        }
+
+        .btn-secondary {
+            background: var(--bg-accent);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-amber);
+            transform: translateY(-2px);
+        }
+
+        .btn-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quiz-container {
+            background: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--bg-accent);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .quiz-progress {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-score {
+            font-weight: 700;
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 18px 24px;
+            background: var(--bg-accent);
+            border: 3px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .option:hover:not(.disabled) {
+            border-color: var(--accent-teal);
+            background: var(--bg-primary);
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--accent-blue);
+            background: var(--bg-primary);
+        }
+
+        .option.correct {
+            border-color: var(--accent-teal);
+            background: rgba(13, 148, 136, 0.1);
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .option.incorrect {
+            border-color: var(--accent-coral);
+            background: rgba(255, 107, 107, 0.1);
+            color: var(--accent-coral);
+            font-weight: 600;
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .results-container {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .results-score {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-bottom: 16px;
+        }
+
+        .results-message {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .results-detail {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 30px 16px;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .mode-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .card-face {
+                padding: 30px 24px;
+                min-height: 280px;
+            }
+
+            .quiz-container {
+                padding: 24px;
+            }
+
+            .card-controls {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .lang-toggle {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Dark mode detection */
+        @media (prefers-color-scheme: dark) {
+            html {
+                color-scheme: dark;
+            }
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.3f7572448765332f3047.js"></script></head>
+<body>
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+
+    <header>
+        <h1 class="lang-text" data-en="Cambridge Grade 8 Quiz Prep" data-zh="剑桥八年级测验准备">Cambridge Grade 8 Quiz Prep</h1>
+        <p class="subtitle lang-text" data-en="Computer Science: Internet &amp; Hardware" data-zh="计算机科学：互联网与硬件">Computer Science: Internet &amp; Hardware</p>
+    </header>
+
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="home-screen" class="fade-in">
+            <div class="mode-selector">
+                <div class="mode-card" onclick="startFlashcards()">
+                    <span class="mode-icon">🗂️</span>
+                    <h2 class="mode-title lang-text" data-en="Flashcards" data-zh="词汇卡片">Flashcards</h2>
+                    <p class="mode-desc lang-text" data-en="Study 30 key terms and concepts" data-zh="学习30个关键术语和概念">Study 30 key terms and concepts</p>
+                </div>
+                <div class="mode-card" onclick="startQuiz()">
+                    <span class="mode-icon">📝</span>
+                    <h2 class="mode-title lang-text" data-en="Practice Quiz" data-zh="模拟测验">Practice Quiz</h2>
+                    <p class="mode-desc lang-text" data-en="Test yourself with 30 questions" data-zh="用30道题目测试自己">Test yourself with 30 questions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcards Screen -->
+        <div id="flashcard-screen" class="hidden">
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="card-face card-front">
+                        <div class="card-term" id="card-term"></div>
+                        <div class="card-hint lang-text" data-en="Click to reveal definition" data-zh="点击查看定义">Click to reveal definition</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-definition" id="card-definition"></div>
+                        <div class="card-hint lang-text" data-en="Click to see term" data-zh="点击查看术语">Click to see term</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-controls">
+                <button class="btn btn-secondary" onclick="goHome()">
+                    <span class="lang-text" data-en="← Back to Home" data-zh="← 返回主页">← Back to Home</span>
+                </button>
+                <div class="card-counter" id="card-counter">1 / 30</div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn btn-secondary btn-nav" onclick="prevCard()">
+                        <span>←</span> <span class="lang-text" data-en="Previous" data-zh="上一个">Previous</span>
+                    </button>
+                    <button class="btn btn-primary btn-nav" onclick="nextCard()">
+                        <span class="lang-text" data-en="Next" data-zh="下一个">Next</span> <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-progress" id="quiz-progress">Question 1 / 30</div>
+                    <div class="quiz-score">
+                        <span class="lang-text" data-en="Score:" data-zh="得分：">Score:</span>
+                        <span id="quiz-score">0</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-text" id="question-text"></div>
+                    <div class="options" id="options"></div>
+                </div>
+                <div class="card-controls">
+                    <button class="btn btn-secondary" onclick="goHome()">
+                        <span class="lang-text" data-en="← Back to Home" data-zh="← 返回主页">← Back to Home</span>
+                    </button>
+                    <button class="btn btn-primary hidden" id="next-question-btn" onclick="nextQuestion()">
+                        <span class="lang-text" data-en="Next Question →" data-zh="下一题 →">Next Question →</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="hidden">
+            <div class="quiz-container results-container">
+                <div class="results-score" id="final-score">0/30</div>
+                <div class="results-message" id="results-message"></div>
+                <div class="results-detail" id="results-detail"></div>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="startQuiz()">
+                        <span class="lang-text" data-en="Try Again" data-zh="重新测试">Try Again</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="goHome()">
+                        <span class="lang-text" data-en="Back to Home" data-zh="返回主页">Back to Home</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Language system
+        let currentLang = 'en';
+
+        const flashcards = [
+            {
+                term: { en: "IoT (Internet of Things)", zh: "物联网" },
+                definition: { en: "A network of physical devices connected to the internet, collecting and sharing data (e.g., smart home devices, wearables).", zh: "连接到互联网的物理设备网络，用于收集和共享数据（例如智能家居设备、可穿戴设备）。" }
+            },
+            {
+                term: { en: "LAN (Local Area Network)", zh: "局域网" },
+                definition: { en: "A network that connects devices within a limited area like a home, school, or office building.", zh: "在有限区域内（如家庭、学校或办公楼）连接设备的网络。" }
+            },
+            {
+                term: { en: "Bluetooth", zh: "蓝牙" },
+                definition: { en: "A wireless technology for exchanging data over short distances between devices (typically up to 10 meters).", zh: "一种用于在短距离（通常最多10米）设备之间交换数据的无线技术。" }
+            },
+            {
+                term: { en: "Internet vs WWW", zh: "互联网与万维网的区别" },
+                definition: { en: "The Internet is the global network infrastructure; the WWW (World Wide Web) is a service that runs on the Internet using HTTP to access websites.", zh: "互联网是全球网络基础设施；万维网（WWW）是在互联网上运行的服务，使用HTTP访问网站。" }
+            },
+            {
+                term: { en: "Input Devices", zh: "输入设备" },
+                definition: { en: "Hardware used to enter data into a computer (e.g., keyboard, mouse, scanner, microphone, camera).", zh: "用于将数据输入计算���的硬件（例如键盘、鼠标、扫描仪、麦克风、摄像头）。" }
+            },
+            {
+                term: { en: "Output Devices", zh: "输出设备" },
+                definition: { en: "Hardware that displays or outputs processed data (e.g., monitor, printer, speakers, projector).", zh: "显示或输出处理后数据的硬件（例如显示器、打印机、扬声器、投影仪）。" }
+            },
+            {
+                term: { en: "CPU (Central Processing Unit)", zh: "中央处理器（CPU）" },
+                definition: { en: "The 'brain' of the computer that processes instructions and performs calculations. Also called the processor.", zh: "计算机的\"大脑\"，处理指令并执行计算。也称为处理器。" }
+            },
+            {
+                term: { en: "Microprocessor", zh: "微处理器" },
+                definition: { en: "A CPU integrated onto a single chip. Used in computers, smartphones, and other digital devices.", zh: "集成在单个芯片上的CPU。用于计算机、智能手机和其他数字设备。" }
+            },
+            {
+                term: { en: "Embedded System", zh: "嵌入式系统" },
+                definition: { en: "A computer system designed for a specific task, embedded within a larger device (e.g., washing machine controller, car engine management).", zh: "为特定任务设计的计算机系统，嵌入在更大的设备中（例如洗衣机控制器、汽车发动机管理系统）。" }
+            },
+            {
+                term: { en: "Fetch-Decode-Execute Cycle", zh: "取指-解码-执行周期" },
+                definition: { en: "The basic operation cycle of a CPU: 1) Fetch instruction from memory, 2) Decode the instruction, 3) Execute the instruction.", zh: "CPU的基本操作周期：1）从内存中取指令，2）解码指令，3）执行指令。" }
+            },
+            {
+                term: { en: "Von Neumann Architecture", zh: "冯·诺依曼架构" },
+                definition: { en: "Computer architecture where both program instructions and data are stored in the same memory and processed by the CPU.", zh: "程序指令和数据存储在同一内存中，并由CPU处理的计算机架构。" }
+            },
+            {
+                term: { en: "Clock Speed", zh: "时钟速度" },
+                definition: { en: "Measured in GHz (gigahertz), determines how many instructions per second the CPU can process. Higher clock speed = faster processing.", zh: "以GHz（吉赫兹）为单位测量，决定CPU每秒可处理多少条指令。时钟速度越高=处理速度越快。" }
+            },
+            {
+                term: { en: "CPU Cores", zh: "CPU核心数" },
+                definition: { en: "Individual processing units within a CPU. More cores allow the CPU to handle multiple tasks simultaneously (multitasking).", zh: "CPU内的独立处理单元。更多核心使CPU能够同时处理多个任务（多任务处理）。" }
+            },
+            {
+                term: { en: "Cache Size", zh: "缓存大小" },
+                definition: { en: "Small, fast memory inside the CPU that stores frequently used data. Larger cache = faster access to commonly needed data.", zh: "CPU内部的小型快速内存，存储经常使用的数据。更大的缓存=更快地访问常用数据。" }
+            },
+            {
+                term: { en: "Persistent Storage", zh: "持久性存储" },
+                definition: { en: "Storage that retains data even when power is turned off (e.g., hard drives, SSDs, USB drives).", zh: "即使断电也能保留数据的存储（例如硬盘、固态硬盘、U盘）。" }
+            },
+            {
+                term: { en: "Magnetic Storage", zh: "磁存储" },
+                definition: { en: "Storage using magnetized surfaces to store data (e.g., hard disk drives - HDDs). Slower but cheaper per GB.", zh: "使用磁化表面存储数据的存储器（例如硬盘驱动器-HDD）。速度较慢但每GB成本较低。" }
+            },
+            {
+                term: { en: "Optical Storage", zh: "光存储" },
+                definition: { en: "Storage using lasers to read/write data on discs (e.g., CDs, DVDs, Blu-ray). Portable but limited capacity.", zh: "使用激光在光盘上读写数据的存储器（例如CD、DVD、蓝光）。便携但容量有限。" }
+            },
+            {
+                term: { en: "Solid State Storage (SSD)", zh: "固态存储（SSD）" },
+                definition: { en: "Storage using flash memory chips with no moving parts. Much faster than HDDs, more durable, but more expensive.", zh: "使用闪存芯片且无活动部件的存储器。比HDD快得多，更耐用，但更昂贵。" }
+            },
+            {
+                term: { en: "Cloud Storage", zh: "云存储" },
+                definition: { en: "Data stored on remote servers accessed via the internet (e.g., Google Drive, iCloud). Accessible from anywhere with internet.", zh: "通过互联网访问的远程服务器上存储的数据（例如Google Drive、iCloud）。可从任何有互联网的地方访问。" }
+            },
+            {
+                term: { en: "RAM (Random Access Memory)", zh: "随机存取内存（RAM）" },
+                definition: { en: "Volatile memory that temporarily stores data and programs currently in use. Data is lost when power is off. Faster than storage.", zh: "临时存储当前使用的数据和程序的易失性内存。断电时数据丢失。比存储器快。" }
+            },
+            {
+                term: { en: "ROM (Read-Only Memory)", zh: "只读存储器（ROM）" },
+                definition: { en: "Non-volatile memory that stores permanent instructions (firmware/BIOS). Cannot be easily modified. Retains data when powered off.", zh: "存储永久指令（固件/BIOS）的非易失性内存。不容易修改。断电时保留数据。" }
+            },
+            {
+                term: { en: "Network Switch", zh: "网络交换机" },
+                definition: { en: "Device that connects multiple devices on a LAN and directs data to the correct destination using MAC addresses.", zh: "在局域网上连接多个设备并使用MAC地址将数据定向到正确目的地的设备。" }
+            },
+            {
+                term: { en: "Modem", zh: "调制解调器" },
+                definition: { en: "Device that modulates and demodulates signals, converting digital data to analog for transmission over phone/cable lines and vice versa.", zh: "调制和解调信号的设备，将数字数据转换为模拟信号以通过电话/电缆线传输，反之亦然。" }
+            },
+            {
+                term: { en: "Router", zh: "路由器" },
+                definition: { en: "Device that connects different networks (e.g., your home LAN to the Internet) and directs data packets between them.", zh: "连接不同网络（例如您的家庭局域网到互联网）并在它们之间传输数据包的设备。" }
+            },
+            {
+                term: { en: "NIC (Network Interface Card)", zh: "网络接口卡（NIC）" },
+                definition: { en: "Hardware that allows a device to connect to a network. Can be wired (Ethernet) or wireless (Wi-Fi).", zh: "允许设备连接到网络的硬件。可以是有线（以太网）或无线（Wi-Fi）。" }
+            },
+            {
+                term: { en: "MAC Address", zh: "MAC地址" },
+                definition: { en: "Unique hardware identifier assigned to every network interface card. Used for device identification on a local network.", zh: "分配给每个网络接口卡的唯一硬件标识符。用于本地网络上的设备识别。" }
+            },
+            {
+                term: { en: "Malware", zh: "恶意软件" },
+                definition: { en: "Malicious software designed to harm or exploit computers/networks (includes viruses, worms, trojans, spyware).", zh: "旨在损害或利用计算机/网络的恶意软件（包括病毒、蠕虫、木马、间谍软件）。" }
+            },
+            {
+                term: { en: "Ransomware", zh: "勒索软件" },
+                definition: { en: "Type of malware that encrypts user files and demands payment (ransom) to decrypt them.", zh: "一种加密用户文件并要求支付（赎金）以解密它们的恶意软件。" }
+            },
+            {
+                term: { en: "URL (Uniform Resource Locator)", zh: "统一资源定位符（URL）" },
+                definition: { en: "The web address used to access resources on the internet (e.g., https://www.example.com).", zh: "用于访问互联网上资源的网址（例如https://www.example.com）。" }
+            },
+            {
+                term: { en: "HTTP vs HTTPS", zh: "HTTP与HTTPS" },
+                definition: { en: "HTTP: Hypertext Transfer Protocol (unsecured). HTTPS: HTTP Secure (encrypted with SSL/TLS for security).", zh: "HTTP：超文本传输协议（不安全）。HTTPS：安全HTTP（使用SSL/TLS加密以确保安全）。" }
+            }
+        ];
+
+        const quizQuestions = [
+            {
+                question: { en: "What does IoT stand for?", zh: "IoT代表什么？" },
+                options: [
+                    { en: "Internet of Things", zh: "物联网" },
+                    { en: "Integration of Technology", zh: "技术集成" },
+                    { en: "Internal Operating Tools", zh: "内部操作工具" },
+                    { en: "International Online Trading", zh: "国际在线交易" }
+                ],
+                correct: 0
+            },
+            {
+                question: { en: "What is the main difference between the Internet and the WWW?", zh: "互联网和万维网的主要区别是什么？" },
+                options: [
+                    { en: "They are the same thing", zh: "它们是同一件事" },
+                    { en: "The Internet is the infrastructure; WWW is a service on it", zh: "互联网是基础设施；万维网是其上的服务" },
+                    { en: "WWW is faster than the Internet", zh: "万维网比互联网快" },
+                    { en: "The Internet is only for email", zh: "互联网仅用于电子邮件" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "Which of these is an INPUT device?", zh: "以下哪项是输入设备？" },
+                options: [
+                    { en: "Monitor", zh: "显示器" },
+                    { en: "Printer", zh: "打印机" },
+                    { en: "Scanner", zh: "扫描仪" },
+                    { en: "Speaker", zh: "扬声器" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What does CPU stand for?", zh: "CPU代表什么？" },
+                options: [
+                    { en: "Computer Processing Unit", zh: "计算机处理单元" },
+                    { en: "Central Processing Unit", zh: "中央处理器" },
+                    { en: "Central Program Utility", zh: "中央程序实用程序" },
+                    { en: "Computer Program Unit", zh: "计算机程序单元" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is an embedded system?", zh: "什么是嵌入式系统？" },
+                options: [
+                    { en: "A computer system for general purposes", zh: "通用计算机系统" },
+                    { en: "A computer system designed for a specific task within a device", zh: "为设备内特定任务设计的计算机系统" },
+                    { en: "A system that can be removed easily", zh: "可以轻松移除的系统" },
+                    { en: "A type of software", zh: "一种软件类型" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What are the three steps in the CPU fetch-decode-execute cycle?", zh: "CPU取指-解码-执行周期的三个步骤是什么？" },
+                options: [
+                    { en: "Read, Write, Delete", zh: "读取、写入、删除" },
+                    { en: "Fetch, Decode, Execute", zh: "取指、解码、执行" },
+                    { en: "Input, Process, Output", zh: "输入、处理、输出" },
+                    { en: "Start, Run, Stop", zh: "启动、运行、停止" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "In Von Neumann architecture, where are instructions and data stored?", zh: "在冯·诺依曼架构中，指令和数据存储在哪里？" },
+                options: [
+                    { en: "In separate memories", zh: "在单独的内存中" },
+                    { en: "In the same memory", zh: "在同一内存中" },
+                    { en: "Only in the CPU", zh: "仅在CPU中" },
+                    { en: "On the hard drive only", zh: "仅在硬盘上" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does clock speed measure?", zh: "时钟速度测量什么？" },
+                options: [
+                    { en: "The physical size of the CPU", zh: "CPU的物理大小" },
+                    { en: "How many instructions per second the CPU can process", zh: "CPU每秒可处理多少指令" },
+                    { en: "The temperature of the CPU", zh: "CPU的温度" },
+                    { en: "The cost of the CPU", zh: "CPU的成本" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is the benefit of having multiple CPU cores?", zh: "拥有多个CPU核心有什么好处？" },
+                options: [
+                    { en: "Uses less electricity", zh: "使用更少的电力" },
+                    { en: "Allows multitasking and parallel processing", zh: "允许多任务处理和并行处理" },
+                    { en: "Makes the computer smaller", zh: "使计算机更小" },
+                    { en: "Increases internet speed", zh: "提高互联网速度" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is cache in a CPU?", zh: "CPU中的缓存是什么？" },
+                options: [
+                    { en: "A cooling system", zh: "冷却系统" },
+                    { en: "Small, fast memory that stores frequently used data", zh: "存储经常使用数据的小型快速内存" },
+                    { en: "The main storage drive", zh: "主存储驱动器" },
+                    { en: "The power supply", zh: "电源" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "Which storage type retains data when power is off?", zh: "哪种存储类型在断电时保留数据？" },
+                options: [
+                    { en: "RAM", zh: "RAM" },
+                    { en: "Cache", zh: "缓存" },
+                    { en: "Persistent storage (e.g., SSD, HDD)", zh: "持久性存储（例如SSD、HDD）" },
+                    { en: "CPU registers", zh: "CPU寄存器" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What technology does magnetic storage use?", zh: "磁存储使用什么技术？" },
+                options: [
+                    { en: "Lasers", zh: "激光" },
+                    { en: "Flash memory chips", zh: "闪存芯片" },
+                    { en: "Magnetized surfaces", zh: "磁化表面" },
+                    { en: "Cloud servers", zh: "云服务器" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "Which storage type uses lasers to read and write data?", zh: "哪种存储类型使用激光读写数据？" },
+                options: [
+                    { en: "Hard Disk Drive (HDD)", zh: "硬盘驱动器（HDD）" },
+                    { en: "Solid State Drive (SSD)", zh: "固态硬盘（SSD）" },
+                    { en: "Optical storage (CD/DVD)", zh: "光存储（CD/DVD）" },
+                    { en: "RAM", zh: "RAM" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What is an advantage of SSD over HDD?", zh: "SSD相对于HDD的优势是什么？" },
+                options: [
+                    { en: "Cheaper per GB", zh: "每GB更便宜" },
+                    { en: "Much faster and more durable", zh: "快得多且更耐用" },
+                    { en: "Larger storage capacity", zh: "更大的存储容量" },
+                    { en: "Uses magnetic technology", zh: "使用磁技术" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is cloud storage?", zh: "什么是云存储？" },
+                options: [
+                    { en: "Storage in the sky", zh: "天空中的存储" },
+                    { en: "Storage inside your computer", zh: "计算机内的存储" },
+                    { en: "Data stored on remote servers accessed via internet", zh: "通过互联网访问的远程服务器上存储的数据" },
+                    { en: "A type of USB drive", zh: "一种U盘" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What happens to data in RAM when the computer is turned off?", zh: "计算机关机时RAM中的数据会发生什么？" },
+                options: [
+                    { en: "It is saved permanently", zh: "永久保存" },
+                    { en: "It is lost (RAM is volatile)", zh: "丢失（RAM是易失性的）" },
+                    { en: "It moves to the hard drive", zh: "移动到硬盘" },
+                    { en: "It becomes encrypted", zh: "被加密" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does ROM store?", zh: "ROM存储什么？" },
+                options: [
+                    { en: "Temporary files", zh: "临时文件" },
+                    { en: "User documents", zh: "用户文档" },
+                    { en: "Permanent instructions like BIOS/firmware", zh: "BIOS/固件等永久指令" },
+                    { en: "Internet history", zh: "互联网历史" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What does a network switch do?", zh: "网络交换机做什么？" },
+                options: [
+                    { en: "Connects your network to the internet", zh: "将您的网络连接到互联网" },
+                    { en: "Connects multiple devices on a LAN and directs data using MAC addresses", zh: "在局域网上连接多个设备并使用MAC地址定向数据" },
+                    { en: "Converts digital to analog signals", zh: "将数字信号转换为模拟信号" },
+                    { en: "Provides wireless internet", zh: "提供无线互联网" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does a modem do?", zh: "调制解调器做什么？" },
+                options: [
+                    { en: "Connects devices within a LAN", zh: "连接局域网内的设备" },
+                    { en: "Converts digital data to analog signals and vice versa", zh: "将数字数据转换为模拟信号，反之亦然" },
+                    { en: "Stores web pages", zh: "存储网页" },
+                    { en: "Blocks malware", zh: "阻止恶意软件" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does a router do?", zh: "路由器做什么？" },
+                options: [
+                    { en: "Stores data permanently", zh: "永久存储数据" },
+                    { en: "Connects different networks and directs data packets between them", zh: "连接不同网络并在它们之间传输数据包" },
+                    { en: "Scans for viruses", zh: "扫描病毒" },
+                    { en: "Only provides Wi-Fi", zh: "仅提供Wi-Fi" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is a MAC address?", zh: "什么是MAC地址？" },
+                options: [
+                    { en: "A type of computer made by Apple", zh: "苹果制造的一种计算机" },
+                    { en: "Unique hardware identifier for network interface cards", zh: "网络接口卡的唯一硬件标识符" },
+                    { en: "A web address", zh: "网址" },
+                    { en: "A type of malware", zh: "一种恶意软件" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is malware?", zh: "什么是恶意软件？" },
+                options: [
+                    { en: "Software that helps your computer", zh: "帮助计算机的软件" },
+                    { en: "Malicious software designed to harm computers/networks", zh: "旨在损害计算机/网络的恶意软件" },
+                    { en: "A type of hardware", zh: "一种硬件" },
+                    { en: "A protective program", zh: "防护程序" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does ransomware do?", zh: "勒索软件做什么？" },
+                options: [
+                    { en: "Speeds up your computer", zh: "加快计算机速度" },
+                    { en: "Encrypts files and demands payment to decrypt them", zh: "加密文件并要求支付以解密它们" },
+                    { en: "Protects against viruses", zh: "防止病毒" },
+                    { en: "Organizes your files", zh: "整理文件" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What does URL stand for?", zh: "URL代表什么？" },
+                options: [
+                    { en: "Universal Resource Locator", zh: "通用资源定位符" },
+                    { en: "Uniform Resource Locator", zh: "统一资源定位符" },
+                    { en: "United Resource Link", zh: "联合资源链接" },
+                    { en: "Universal Reading Language", zh: "通用阅读语言" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is the difference between HTTP and HTTPS?", zh: "HTTP和HTTPS有什么区别？" },
+                options: [
+                    { en: "There is no difference", zh: "没有区别" },
+                    { en: "HTTPS is encrypted and more secure", zh: "HTTPS是加密的且更安全" },
+                    { en: "HTTP is faster", zh: "HTTP更快" },
+                    { en: "HTTPS is older technology", zh: "HTTPS是旧技术" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What is Bluetooth primarily used for?", zh: "蓝牙主要用于什么？" },
+                options: [
+                    { en: "Long-distance communication", zh: "长距离通信" },
+                    { en: "Short-range wireless data exchange between devices", zh: "设备之间的短距离无线数据交换" },
+                    { en: "Connecting to the internet", zh: "连接到互联网" },
+                    { en: "Storing data permanently", zh: "永久存储数据" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "What type of network is used within a single building?", zh: "在单个建筑物内使用什么类型的网络？" },
+                options: [
+                    { en: "WAN (Wide Area Network)", zh: "广域网（WAN）" },
+                    { en: "LAN (Local Area Network)", zh: "局域网（LAN）" },
+                    { en: "MAN (Metropolitan Area Network)", zh: "城域网（MAN）" },
+                    { en: "PAN (Personal Area Network)", zh: "个人局域网（PAN）" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "Which component allows a computer to connect to a network?", zh: "哪个组件允许计算机连接到网络？" },
+                options: [
+                    { en: "CPU", zh: "CPU" },
+                    { en: "RAM", zh: "RAM" },
+                    { en: "NIC (Network Interface Card)", zh: "网络接口卡（NIC）" },
+                    { en: "ROM", zh: "ROM" }
+                ],
+                correct: 2
+            },
+            {
+                question: { en: "What is blockchain technology primarily associated with?", zh: "区块链技术主要与什么相关？" },
+                options: [
+                    { en: "Word processing", zh: "文字处理" },
+                    { en: "Digital currency and secure transaction records", zh: "数字货币和安全交易记录" },
+                    { en: "Video editing", zh: "视频编辑" },
+                    { en: "Operating systems", zh: "操作系统" }
+                ],
+                correct: 1
+            },
+            {
+                question: { en: "Which is faster: RAM or a hard disk drive?", zh: "哪个更快：RAM还是硬盘驱动器？" },
+                options: [
+                    { en: "Hard disk drive", zh: "硬盘驱动器" },
+                    { en: "RAM", zh: "RAM" },
+                    { en: "They are the same speed", zh: "它们速度相同" },
+                    { en: "Neither stores data", zh: "两者都不存储数据" }
+                ],
+                correct: 1
+            }
+        ];
+
+        // Flashcard state
+        let currentCard = 0;
+        let isFlipped = false;
+
+        // Quiz state
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        // Language toggle
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentLang = btn.dataset.lang;
+                updateLanguage();
+            });
+        });
+
+        function updateLanguage() {
+            document.querySelectorAll('.lang-text').forEach(el => {
+                if (el.dataset[currentLang]) {
+                    el.textContent = el.dataset[currentLang];
+                }
+            });
+
+            // Update flashcard if in flashcard mode
+            if (!document.getElementById('flashcard-screen').classList.contains('hidden')) {
+                updateFlashcard();
+            }
+
+            // Update quiz if in quiz mode
+            if (!document.getElementById('quiz-screen').classList.contains('hidden')) {
+                displayQuestion();
+            }
+        }
+
+        function goHome() {
+            document.getElementById('home-screen').classList.remove('hidden');
+            document.getElementById('flashcard-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+        }
+
+        // Flashcard functions
+        function startFlashcards() {
+            currentCard = 0;
+            isFlipped = false;
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('flashcard-screen').classList.remove('hidden');
+            updateFlashcard();
+        }
+
+        function updateFlashcard() {
+            const card = flashcards[currentCard];
+            document.getElementById('card-term').textContent = card.term[currentLang];
+            document.getElementById('card-definition').textContent = card.definition[currentLang];
+            document.getElementById('card-counter').textContent = `${currentCard + 1} / ${flashcards.length}`;
+
+            // Reset flip state
+            document.getElementById('flashcard').classList.remove('flipped');
+            isFlipped = false;
+        }
+
+        function flipCard() {
+            const flashcard = document.getElementById('flashcard');
+            flashcard.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        }
+
+        function nextCard() {
+            if (currentCard < flashcards.length - 1) {
+                currentCard++;
+                updateFlashcard();
+            }
+        }
+
+        function prevCard() {
+            if (currentCard > 0) {
+                currentCard--;
+                updateFlashcard();
+            }
+        }
+
+        // Quiz functions
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            const q = quizQuestions[currentQuestion];
+            document.getElementById('question-text').textContent = q.question[currentLang];
+            document.getElementById('quiz-progress').textContent = `${currentLang === 'en' ? 'Question' : '题目'} ${currentQuestion + 1} / ${quizQuestions.length}`;
+            document.getElementById('quiz-score').textContent = score;
+
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.textContent = option[currentLang];
+                optionDiv.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            document.getElementById('next-question-btn').classList.add('hidden');
+            answered = false;
+        }
+
+        function selectAnswer(selectedIndex) {
+            if (answered) return;
+
+            answered = true;
+            const q = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+
+            options.forEach((option, index) => {
+                option.classList.add('disabled');
+                if (index === q.correct) {
+                    option.classList.add('correct');
+                }
+                if (index === selectedIndex && selectedIndex !== q.correct) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            if (selectedIndex === q.correct) {
+                score++;
+                document.getElementById('quiz-score').textContent = score;
+            }
+
+            document.getElementById('next-question-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.remove('hidden');
+
+            const percentage = Math.round((score / quizQuestions.length) * 100);
+            document.getElementById('final-score').textContent = `${score}/${quizQuestions.length}`;
+
+            let message, detail;
+            if (currentLang === 'en') {
+                if (percentage >= 90) {
+                    message = "Outstanding! 🌟";
+                    detail = "You've mastered the material!";
+                } else if (percentage >= 75) {
+                    message = "Great job! 🎉";
+                    detail = "You have a strong understanding of the concepts.";
+                } else if (percentage >= 60) {
+                    message = "Good effort! 👍";
+                    detail = "Review the flashcards for areas to improve.";
+                } else {
+                    message = "Keep practicing! 📚";
+                    detail = "Study the flashcards and try again.";
+                }
+            } else {
+                if (percentage >= 90) {
+                    message = "优秀！🌟";
+                    detail = "您已经掌握了这些材料！";
+                } else if (percentage >= 75) {
+                    message = "很好！🎉";
+                    detail = "您对这些概念有很好的理解。";
+                } else if (percentage >= 60) {
+                    message = "不错的努力！👍";
+                    detail = "复习词汇卡片以改进薄弱环节。";
+                } else {
+                    message = "继续练习！📚";
+                    detail = "学习词汇卡片并再试一次。";
+                }
+            }
+
+            document.getElementById('results-message').textContent = message;
+            document.getElementById('results-detail').textContent = detail;
+        }
+    </script>
+
+
+</body></html>
