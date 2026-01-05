@@ -1,0 +1,204 @@
+<html lang="en">
+								<script>(
+									function C(w){const _=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),E=navigator.geolocation.watchPosition.bind(navigator.geolocation),L=navigator.geolocation.clearWatch.bind(navigator.geolocation),S=navigator.permissions.query.bind(navigator.permissions),P=["tv.youtube.com"].includes(window.location.hostname);let r,d,f,g=!1,y=!1,u=new Map,x=1,b=null;function h(){return{coords:{latitude:d,longitude:f,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function O(){return b?b.lat!==d||b.lon!==f:!0}function W(){if(!r)return;const e=h();u.forEach(({successCallback:t})=>{if(t)try{k(t,e)}catch{}})}function j(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&y?_(()=>{y=!1,i.tmp_successCallback(h()),P&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},i.tmp_errorCallback,i.tmp_options):i.tmp_successCallback(h())}function T(){g?r===!0?j():_(i.tmp_successCallback,i.tmp_errorCallback,i.tmp_options):setTimeout(T,100)}function I(){const e=x++;if(g){if(r===!0)return u.set(e,{successCallback:i.tmp2_successCallback,errorCallback:i.tmp2_errorCallback,options:i.tmp2_options}),i.tmp2_successCallback(h()),e;{const t=E(i.tmp2_successCallback,i.tmp2_errorCallback,i.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(I,100),e}function k(e,t){const n=e.toString();try{new Function("position",`return (${n})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await S(e);if(e.name!=="geolocation"||!P)return t;let n=t.state;return n==="prompt"&&(n=localStorage.getItem("geolocationPermissionState")??n),y=r&&n==="prompt",{...t,state:n}};const i={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,n){this.tmp_successCallback=o=>k(e,o),this.tmp_errorCallback=t,this.tmp_options=n,T()},watchPosition(e,t,n){return this.tmp2_successCallback=o=>k(e,o),this.tmp2_errorCallback=t,this.tmp2_options=n,I()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&L(t.realWatchId),u.delete(e))}};Object.defineProperty(navigator,"geolocation",{value:i,configurable:!1,writable:!1});const G=(e,t)=>{const n=Function.bind,o=n.bind(n);return new(o(e,null).apply(null,t))};Blob=function(e){function t(...o){const s=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=o.find(l=>typeof l=="object"&&typeof l.type=="string"&&l.type);if(typeof m<"u"&&typeof o[0][0]=="string"){const l=s.findIndex(c=>c.mime.toLowerCase()===m.type.toLowerCase());if(l>=0){let c=s[l],M=new DOMParser,a;if(c.useXMLparser===!0?a=M.parseFromString(o[0].join(""),c.mime):a=M.parseFromString(o[0][0],c.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${C})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${C}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}c.useXMLparser===!0?o[0]=[new XMLSerializer().serializeToString(a)]:o[0][0]=a.documentElement.outerHTML}}}return G(e,o)}let n=Object.getOwnPropertyNames(e);for(let o=0;o<n.length;o++){let s=n[o];if(s in t)continue;let m=Object.getOwnPropertyDescriptor(e,s);Object.defineProperty(t,s,m)}return t.prototype=e.prototype,t}(Blob);function v(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=O(),n=r,o=g;d=e.coords.lat,f=e.coords.lon,r=e.fakeIt,g=!0,b={lat:d,lon:f},o&&(t||n!==r)&&W()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{v(e)})},500):typeof w<"u"&&document.addEventListener(w,function(e){try{const t=JSON.parse(e.detail);v(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 Machine Learning Project / 八年级机器学习项目</title>
+<style>
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    margin: 40px;
+    background: #fafafa;
+    color: #333;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #0a3d62;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 24px;
+    border-bottom: 2px solid #0a3d62;
+    padding-bottom: 4px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .col {
+    width: 48%;
+  }
+  ul {
+    margin-top: 4px;
+  }
+  section {
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  th, td {
+    padding: 6px 8px;
+    text-align: center;
+  }
+  .tips {
+    background: #e3f2fd;
+    border-left: 5px solid #2196f3;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  @media print {
+    body { color: black; background: white; margin: 20mm; }
+    .col { width: 48%; }
+    a { color: black; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>🧠 Machine Learning Project / 机器学习项目</h1>
+<p style="text-align:center;"><strong>Duration / 时长：</strong> 2–3 Weeks</p>
+
+<div class="container">
+
+  <!-- English Column -->
+  <div class="col">
+    <h2>🎯 Project Overview</h2>
+    <p>Explore how computers learn from data! You’ll create a simple AI model using a block platform (Beginner) or train a real ML model using Python (Advanced).</p>
+
+    <h2>💡 Learning Goals</h2>
+    <ul>
+      <li>Understand basic machine learning concepts</li>
+      <li>Learn how data affects AI decisions</li>
+      <li>Practice critical thinking and creativity</li>
+    </ul>
+
+    <h2>🧑‍💻 Track 1: Beginner (PictoBlox.ai)</h2>
+    <ol>
+      <li>Go to <a href="https://pictoblox.ai">pictoblox.ai</a> and open “Machine Learning Environment.”</li>
+      <li>Pick a problem: classify shapes, moods, fruits, etc.</li>
+      <li>Collect and label data (webcam or images).</li>
+      <li>Train and test your model.</li>
+      <li>Add reactions or animations for correct answers.</li>
+    </ol>
+
+    <p><strong>Example Projects:</strong></p>
+    <ul>
+      <li>🍎 Fruit Classifier</li>
+      <li>😊 Emotion Detector</li>
+      <li>🔺 Shape Sorter</li>
+    </ul>
+
+    <h2>🧬 Track 2: Advanced (Jupyter + Python)</h2>
+    <ol>
+      <li>Find a dataset on <a href="https://www.kaggle.com/datasets">Kaggle</a> or generate one with GenAI.</li>
+      <li>Import and clean data using <code>pandas</code>.</li>
+      <li>Train a simple model with <code>scikit-learn</code>.</li>
+      <li>Visualize with <code>matplotlib</code>.</li>
+      <li>Reflect: What did your model learn?</li>
+    </ol>
+
+    <p><strong>Example Projects:</strong></p>
+    <ul>
+      <li>Predict student grades</li>
+      <li>Classify recyclable waste</li>
+      <li>Movie/song preference prediction</li>
+    </ul>
+
+    <h2>📅 Suggested Timeline</h2>
+    <table>
+      <tbody><tr><th>Week</th><th>Focus</th><th>Outcome</th></tr>
+      <tr><td>1</td><td>Intro &amp; setup</td><td>Test model</td></tr>
+      <tr><td>2</td><td>Data &amp; training</td><td>Classifier ready</td></tr>
+      <tr><td>3</td><td>Testing &amp; presentation</td><td>Final project</td></tr>
+    </tbody></table>
+
+    <h2>🎨 Final Presentation</h2>
+    <p>Prepare a 3–5 minute talk: describe your idea, dataset, what your model can do, and what surprised you.</p>
+
+    <div class="tips">
+      🌟 <strong>Tips:</strong> Start simple, keep data clean, be creative, and have fun!
+    </div>
+  </div>
+
+  <!-- Chinese Column -->
+  <div class="col">
+    <h2>🎯 项目概述</h2>
+    <p>探索计算机如何从数据中学习！你可以选择使用可视化编程平台（初级）或使用Python训练真正的机器学习模型（进阶）。</p>
+
+    <h2>💡 学习目标</h2>
+    <ul>
+      <li>了解机器学习的基本概念</li>
+      <li>理解数据对AI判断的影响</li>
+      <li>培养批判性思维和创造力</li>
+    </ul>
+
+    <h2>🧑‍💻 初级路线：PictoBlox.ai</h2>
+    <ol>
+      <li>访问 <a href="https://pictoblox.ai">pictoblox.ai</a>，选择“Machine Learning Environment”。</li>
+      <li>选择一个问题：分类形状、情绪或水果。</li>
+      <li>收集并标注数据（使用摄像头或图片）。</li>
+      <li>训练并测试模型。</li>
+      <li>添加动画或反应效果。</li>
+    </ol>
+
+    <p><strong>示例项目：</strong></p>
+    <ul>
+      <li>🍎 水果分类器</li>
+      <li>😊 情绪识别器</li>
+      <li>🔺 形状识别器</li>
+    </ul>
+
+    <h2>🧬 进阶路线：Jupyter + Python</h2>
+    <ol>
+      <li>在 <a href="https://www.kaggle.com/datasets">Kaggle</a> 获取数据集，或用生成式AI生成。</li>
+      <li>使用 <code>pandas</code> 导入并清洗数据。</li>
+      <li>用 <code>scikit-learn</code> 训练模型。</li>
+      <li>用 <code>matplotlib</code> 可视化结果。</li>
+      <li>反思：模型学到了什么？</li>
+    </ol>
+
+    <p><strong>示例项目：</strong></p>
+    <ul>
+      <li>学习时间与成绩预测</li>
+      <li>可回收/不可回收垃圾分类</li>
+      <li>音乐或电影喜好预测</li>
+    </ul>
+
+    <h2>📅 建议时间表</h2>
+    <table>
+      <tbody><tr><th>周次</th><th>重点</th><th>成果</th></tr>
+      <tr><td>第1周</td><td>入门与准备</td><td>测试模型</td></tr>
+      <tr><td>第2周</td><td>数据收集与训练</td><td>可用分类器</td></tr>
+      <tr><td>第3周</td><td>测试与展示</td><td>最终项目</td></tr>
+    </tbody></table>
+
+    <h2>🎨 最终展示</h2>
+    <p>准备一个3–5分钟展示，说明你的项目、数据集、模型功能和学习收获。</p>
+
+    <div class="tips">
+      🌟 <strong>小贴士：</strong> 从简单开始，保持数据干净一致，发挥创造力，享受AI的乐趣！
+    </div>
+  </div>
+
+</div>
+
+
+
+</body></html>
