@@ -1,0 +1,728 @@
+<html lang="en">
+								<script>(
+									function C(w){const _=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),E=navigator.geolocation.watchPosition.bind(navigator.geolocation),L=navigator.geolocation.clearWatch.bind(navigator.geolocation),S=navigator.permissions.query.bind(navigator.permissions),P=["tv.youtube.com"].includes(window.location.hostname);let r,d,f,g=!1,y=!1,u=new Map,x=1,b=null;function h(){return{coords:{latitude:d,longitude:f,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function O(){return b?b.lat!==d||b.lon!==f:!0}function W(){if(!r)return;const e=h();u.forEach(({successCallback:t})=>{if(t)try{k(t,e)}catch{}})}function j(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&y?_(()=>{y=!1,i.tmp_successCallback(h()),P&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},i.tmp_errorCallback,i.tmp_options):i.tmp_successCallback(h())}function T(){g?r===!0?j():_(i.tmp_successCallback,i.tmp_errorCallback,i.tmp_options):setTimeout(T,100)}function I(){const e=x++;if(g){if(r===!0)return u.set(e,{successCallback:i.tmp2_successCallback,errorCallback:i.tmp2_errorCallback,options:i.tmp2_options}),i.tmp2_successCallback(h()),e;{const t=E(i.tmp2_successCallback,i.tmp2_errorCallback,i.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(I,100),e}function k(e,t){const n=e.toString();try{new Function("position",`return (${n})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await S(e);if(e.name!=="geolocation"||!P)return t;let n=t.state;return n==="prompt"&&(n=localStorage.getItem("geolocationPermissionState")??n),y=r&&n==="prompt",{...t,state:n}};const i={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,n){this.tmp_successCallback=o=>k(e,o),this.tmp_errorCallback=t,this.tmp_options=n,T()},watchPosition(e,t,n){return this.tmp2_successCallback=o=>k(e,o),this.tmp2_errorCallback=t,this.tmp2_options=n,I()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&L(t.realWatchId),u.delete(e))}};Object.defineProperty(navigator,"geolocation",{value:i,configurable:!1,writable:!1});const G=(e,t)=>{const n=Function.bind,o=n.bind(n);return new(o(e,null).apply(null,t))};Blob=function(e){function t(...o){const s=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=o.find(l=>typeof l=="object"&&typeof l.type=="string"&&l.type);if(typeof m<"u"&&typeof o[0][0]=="string"){const l=s.findIndex(c=>c.mime.toLowerCase()===m.type.toLowerCase());if(l>=0){let c=s[l],M=new DOMParser,a;if(c.useXMLparser===!0?a=M.parseFromString(o[0].join(""),c.mime):a=M.parseFromString(o[0][0],c.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${C})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${C}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}c.useXMLparser===!0?o[0]=[new XMLSerializer().serializeToString(a)]:o[0][0]=a.documentElement.outerHTML}}}return G(e,o)}let n=Object.getOwnPropertyNames(e);for(let o=0;o<n.length;o++){let s=n[o];if(s in t)continue;let m=Object.getOwnPropertyDescriptor(e,s);Object.defineProperty(t,s,m)}return t.prototype=e.prototype,t}(Blob);function v(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=O(),n=r,o=g;d=e.coords.lat,f=e.coords.lon,r=e.fakeIt,g=!0,b={lat:d,lon:f},o&&(t||n!==r)&&W()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{v(e)})},500):typeof w<"u"&&document.addEventListener(w,function(e){try{const t=JSON.parse(e.detail);v(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection Cards | 反思卡片</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&amp;family=Noto+Serif+SC:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FDF6EC;
+            --bg-secondary: #F5EBD9;
+            --text-primary: #2C1810;
+            --text-secondary: #6B4D3A;
+            --accent: #C45C26;
+            --accent-light: #E8A87C;
+            --card-bg: #FFFDF9;
+            --shadow: rgba(44, 24, 16, 0.12);
+            --category-academic: #3D5A80;
+            --category-learning: #2A9D8F;
+            --category-personal: #9B59B6;
+            --category-looking: #E76F51;
+        }
+
+        .dark {
+            --bg-primary: #1A1512;
+            --bg-secondary: #2C231D;
+            --text-primary: #F5EBD9;
+            --text-secondary: #B8A698;
+            --accent: #E8A87C;
+            --accent-light: #C45C26;
+            --card-bg: #251E19;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', 'Noto Serif SC', serif;
+            background: var(--bg-primary);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, var(--accent-light) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, var(--accent) 0%, transparent 40%);
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .category-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid transparent;
+            border-radius: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            color: white;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .category-btn[data-category="all"].active {
+            background: var(--accent);
+        }
+
+        .category-btn[data-category="academic"].active {
+            background: var(--category-academic);
+        }
+
+        .category-btn[data-category="learning"].active {
+            background: var(--category-learning);
+        }
+
+        .category-btn[data-category="personal"].active {
+            background: var(--category-personal);
+        }
+
+        .category-btn[data-category="looking"].active {
+            background: var(--category-looking);
+        }
+
+        .card-container {
+            flex: 1;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-perspective: 1500px;
+            perspective: 1500px;
+            margin-bottom: 2rem;
+            min-height: 320px;
+        }
+
+        .card-wrapper {
+            width: 100%;
+            max-width: 500px;
+            height: 320px;
+            position: relative;
+            animation: cardEntrance 0.6s ease-out 0.4s both;
+            -webkit-animation: cardEntrance 0.6s ease-out 0.4s both;
+        }
+
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: scale(0.9) rotateX(10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateX(0);
+            }
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            background: var(--card-bg);
+            box-shadow: 0 20px 60px var(--shadow), 0 8px 24px var(--shadow);
+            padding: 2rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card-back {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: white;
+            align-self: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-badge.academic { background: var(--category-academic); }
+        .category-badge.learning { background: var(--category-learning); }
+        .category-badge.personal { background: var(--category-personal); }
+        .category-badge.looking { background: var(--category-looking); }
+
+        .lang-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .question-text {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            line-height: 1.7;
+            color: var(--text-primary);
+            min-height: 0;
+        }
+
+        .card-back .question-text {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .flip-hint {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .flip-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 3rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(196, 92, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196, 92, 38, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .card.shuffling {
+            animation: shuffleCard 0.5s ease-in-out;
+        }
+
+        @keyframes shuffleCard {
+            0% { transform: translateX(0) rotateY(0); }
+            25% { transform: translateX(50px) rotateY(10deg); opacity: 0.5; }
+            50% { transform: translateX(-50px) rotateY(-10deg); opacity: 0.5; }
+            75% { transform: translateX(30px) rotateY(5deg); opacity: 0.8; }
+            100% { transform: translateX(0) rotateY(0); opacity: 1; }
+        }
+
+        .card.flipped.shuffling {
+            animation: shuffleCardFlipped 0.5s ease-in-out;
+        }
+
+        @keyframes shuffleCardFlipped {
+            0% { transform: translateX(0) rotateY(180deg); }
+            25% { transform: translateX(50px) rotateY(190deg); opacity: 0.5; }
+            50% { transform: translateX(-50px) rotateY(170deg); opacity: 0.5; }
+            75% { transform: translateX(30px) rotateY(185deg); opacity: 0.8; }
+            100% { transform: translateX(0) rotateY(180deg); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .card-container {
+                min-height: 380px;
+            }
+
+            .card-wrapper {
+                height: 380px;
+            }
+
+            .card-face {
+                padding: 1.5rem;
+            }
+
+            .category-filters {
+                gap: 0.5rem;
+            }
+
+            .category-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+
+    <div class="container">
+        <header>
+            <h1>Reflection Cards 反思卡片</h1>
+            <p class="subtitle">Tap the card to see translation · 点击卡片查看翻译</p>
+        </header>
+
+        <div class="category-filters">
+            <button class="category-btn active" data-category="all">All 全部</button>
+            <button class="category-btn" data-category="academic">Academic 学业</button>
+            <button class="category-btn" data-category="learning">Learning 学习</button>
+            <button class="category-btn" data-category="personal">Personal 个人</button>
+            <button class="category-btn" data-category="looking">Future 未来</button>
+        </div>
+
+        <div class="card-container">
+            <div class="card-wrapper">
+                <div class="card" id="questionCard">
+                    <div class="card-face card-front">
+                        <div class="category-badge" id="frontBadge">Academic Growth</div>
+                        <div class="lang-label">English</div>
+                        <div class="question-text" id="questionEn"></div>
+                        <div class="flip-hint">
+                            <span>Tap to flip</span>
+                            <svg class="flip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 1l4 4-4 4"></path>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                <path d="M7 23l-4-4 4-4"></path>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="category-badge" id="backBadge">学业成长</div>
+                        <div class="lang-label">中文</div>
+                        <div class="question-text" id="questionZh"></div>
+                        <div class="flip-hint">
+                            <span>点击翻转</span>
+                            <svg class="flip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 1l4 4-4 4"></path>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                <path d="M7 23l-4-4 4-4"></path>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="newQuestionBtn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 4v6h-6"></path>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                <span>New Question 新问题</span>
+            </button>
+        </div>
+
+        <div class="progress-indicator" id="progressDots"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                category: 'academic',
+                categoryEn: 'Academic Growth',
+                categoryZh: '学业成长',
+                en: 'What is one concept or skill you mastered this semester that you are most proud of?',
+                zh: '这学期你掌握了哪个让你最自豪的概念或技能？'
+            },
+            {
+                category: 'academic',
+                categoryEn: 'Academic Growth',
+                categoryZh: '学业成长',
+                en: 'Which topic or project challenged you the most, and how did you overcome that challenge?',
+                zh: '哪个主题或项目对你挑战最大？你是如何克服这个挑战的？'
+            },
+            {
+                category: 'academic',
+                categoryEn: 'Academic Growth',
+                categoryZh: '学业成长',
+                en: 'How has your understanding of this class changed since the beginning of the semester?',
+                zh: '从学期初到现在，你对这门课的理解有什么变化？'
+            },
+            {
+                category: 'learning',
+                categoryEn: 'Learning Strategies',
+                categoryZh: '学习策略',
+                en: 'What study habits or strategies worked best for you this semester?',
+                zh: '这学期哪些学习习惯或策略对你最有效？'
+            },
+            {
+                category: 'learning',
+                categoryEn: 'Learning Strategies',
+                categoryZh: '学习策略',
+                en: 'If you could change one thing about how you approached your learning, what would it be?',
+                zh: '如果你可以改变一件关于你学习方式的事，会是什么？'
+            },
+            {
+                category: 'personal',
+                categoryEn: 'Personal Growth',
+                categoryZh: '个人成长',
+                en: 'What is one skill (academic or personal) you developed that will help you in the future?',
+                zh: '你培养了哪项（学术或个人）技能将对你未来有帮助？'
+            },
+            {
+                category: 'personal',
+                categoryEn: 'Personal Growth',
+                categoryZh: '个人成长',
+                en: 'How did you manage your time and responsibilities this semester? What could you improve?',
+                zh: '这学期你是如何管理时间和责任的？有什么可以改进的地方？'
+            },
+            {
+                category: 'looking',
+                categoryEn: 'Looking Ahead',
+                categoryZh: '展望未来',
+                en: 'What is one goal you want to set for yourself for next semester, and what steps will you take to achieve it?',
+                zh: '下学期你想为自己设定什么目标？你会采取哪些步骤来实现它？'
+            },
+            {
+                category: 'looking',
+                categoryEn: 'Looking Ahead',
+                categoryZh: '展望未来',
+                en: 'If you could give advice to your future self for next semester, what would it be?',
+                zh: '如果你可以给下学期的自己一个建议，会是什么？'
+            }
+        ];
+
+        let currentCategory = 'all';
+        let currentQuestionIndex = 0;
+        let filteredQuestions = [...questions];
+        let questionHistory = [];
+        let historyIndex = -1;
+
+        const card = document.getElementById('questionCard');
+        const questionEn = document.getElementById('questionEn');
+        const questionZh = document.getElementById('questionZh');
+        const frontBadge = document.getElementById('frontBadge');
+        const backBadge = document.getElementById('backBadge');
+        const newQuestionBtn = document.getElementById('newQuestionBtn');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const progressDots = document.getElementById('progressDots');
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function filterQuestions() {
+            if (currentCategory === 'all') {
+                filteredQuestions = [...questions];
+            } else {
+                filteredQuestions = questions.filter(q => q.category === currentCategory);
+            }
+            updateProgressDots();
+        }
+
+        function updateProgressDots() {
+            progressDots.innerHTML = '';
+            filteredQuestions.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot' + (index === currentQuestionIndex ? ' active' : '');
+                progressDots.appendChild(dot);
+            });
+        }
+
+        function getRandomQuestion() {
+            if (filteredQuestions.length === 0) return null;
+
+            if (filteredQuestions.length === 1) {
+                return { question: filteredQuestions[0], index: 0 };
+            }
+
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * filteredQuestions.length);
+            } while (newIndex === currentQuestionIndex);
+
+            return { question: filteredQuestions[newIndex], index: newIndex };
+        }
+
+        function displayQuestion(question, index) {
+            currentQuestionIndex = index;
+
+            questionEn.textContent = question.en;
+            questionZh.textContent = question.zh;
+
+            frontBadge.textContent = question.categoryEn;
+            frontBadge.className = 'category-badge ' + question.category;
+
+            backBadge.textContent = question.categoryZh;
+            backBadge.className = 'category-badge ' + question.category;
+
+            updateProgressDots();
+        }
+
+        function showNewQuestion() {
+            const result = getRandomQuestion();
+            if (!result) return;
+
+            card.classList.add('shuffling');
+
+            setTimeout(() => {
+                displayQuestion(result.question, result.index);
+                card.classList.remove('shuffling');
+            }, 250);
+        }
+
+        // Card flip
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+
+        // New question button
+        newQuestionBtn.addEventListener('click', showNewQuestion);
+
+        // Category filters
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCategory = btn.dataset.category;
+                filterQuestions();
+
+                // Reset card to front
+                card.classList.remove('flipped');
+
+                // Show random question from new category
+                const result = getRandomQuestion();
+                if (result) {
+                    displayQuestion(result.question, result.index);
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                card.classList.toggle('flipped');
+            } else if (e.code === 'ArrowRight' || e.code === 'Enter') {
+                e.preventDefault();
+                showNewQuestion();
+            }
+        });
+
+        // Touch swipe for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        card.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        card.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                showNewQuestion();
+            }
+        }
+
+        // Initialize
+        filterQuestions();
+        const initial = getRandomQuestion();
+        if (initial) {
+            displayQuestion(initial.question, initial.index);
+        }
+    </script>
+
+
+
+</body></html>
