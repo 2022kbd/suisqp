@@ -1,0 +1,714 @@
+<html lang="en">
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Reflection Card Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ffd700, #ff6b35, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .language-selector {
+            margin: 20px 0;
+        }
+
+        .lang-btn {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .instructions {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .deck-instructions {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            line-height: 1.6;
+            font-size: 14px;
+            color: #e0e0e0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reading-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            min-height: 300px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .reading-area.hidden {
+            display: none;
+        }
+
+        .reading-title {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .selected-card-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 400px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+        }
+
+        .selected-card-symbol {
+            font-size: 4em;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+        }
+
+        .selected-card-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .selected-card-content {
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .deck-section {
+            margin: 40px 0;
+        }
+
+        .deck-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            width: 140px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .card.selected {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #d4af37;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .card-front .card-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Present Deck Styles */
+        .tree { 
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9) 0%, rgba(135, 165, 88, 0.8) 50%, rgba(45, 80, 22, 0.9) 100%),
+                        radial-gradient(circle at 30% 70%, rgba(34, 139, 34, 0.3) 0%, transparent 50%);
+        }
+        .butterfly { 
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9) 0%, rgba(255, 217, 61, 0.8) 50%, rgba(107, 207, 127, 0.9) 100%),
+                        radial-gradient(circle at 50% 30%, rgba(255, 182, 193, 0.4) 0%, transparent 60%);
+        }
+        .waves { 
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.9) 0%, rgba(78, 205, 196, 0.8) 50%, rgba(0, 119, 190, 0.9) 100%),
+                        repeating-linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 20%, transparent 40%);
+        }
+        .flame { 
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.9) 0%, rgba(255, 167, 38, 0.8) 50%, rgba(255, 71, 87, 0.9) 100%),
+                        radial-gradient(ellipse at 50% 80%, rgba(255, 69, 0, 0.5) 0%, transparent 70%);
+        }
+        .bridge { 
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(218, 165, 32, 0.8) 50%, rgba(139, 69, 19, 0.9) 100%),
+                        linear-gradient(45deg, rgba(160, 82, 45, 0.3) 25%, transparent 25%, transparent 75%, rgba(160, 82, 45, 0.3) 75%);
+        }
+        .stars { 
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(74, 105, 189, 0.8) 50%, rgba(255, 215, 0, 0.9) 100%),
+                        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+                        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.6) 1px, transparent 2px),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.7) 1px, transparent 2px);
+        }
+
+        /* Future Deck Styles */
+        .guide { 
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.95) 0%, rgba(255, 215, 0, 0.85) 50%, rgba(184, 134, 11, 0.95) 100%),
+                        radial-gradient(circle at 40% 60%, rgba(255, 248, 220, 0.3) 0%, transparent 50%);
+        }
+        .explorer { 
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.95) 0%, rgba(32, 178, 170, 0.85) 50%, rgba(0, 128, 128, 0.95) 100%),
+                        radial-gradient(ellipse at 50% 20%, rgba(135, 206, 235, 0.4) 0%, transparent 70%);
+        }
+        .peacemaker { 
+            background: linear-gradient(135deg, rgba(199, 21, 133, 0.95) 0%, rgba(221, 160, 221, 0.85) 50%, rgba(199, 21, 133, 0.95) 100%),
+                        radial-gradient(circle at 60% 40%, rgba(255, 182, 193, 0.4) 0%, transparent 60%);
+        }
+        .innovator { 
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.95) 0%, rgba(192, 192, 192, 0.85) 50%, rgba(75, 0, 130, 0.95) 100%),
+                        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 10%, rgba(255, 255, 255, 0.1) 20%);
+        }
+        .listener { 
+            background: linear-gradient(135deg, rgba(0, 0, 205, 0.95) 0%, rgba(64, 224, 208, 0.85) 50%, rgba(0, 0, 205, 0.95) 100%),
+                        radial-gradient(ellipse at 30% 70%, rgba(176, 224, 230, 0.3) 0%, transparent 60%);
+        }
+        .balancer { 
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(192, 192, 192, 0.85) 50%, rgba(255, 215, 0, 0.95) 100%),
+                        conic-gradient(from 0deg at 50% 50%, rgba(255, 215, 0, 0.3) 0deg, rgba(192, 192, 192, 0.3) 180deg, rgba(255, 215, 0, 0.3) 360deg);
+        }
+
+        .card-symbol {
+            font-size: 3em;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7)); }
+            to { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)); }
+        }
+
+        .card-name {
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 8px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .clear-reading {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 69, 58, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .clear-reading:hover {
+            background: rgba(255, 69, 58, 1);
+            transform: scale(1.05);
+        }
+
+        /* Add mystical particle effects */
+        .card-front::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 2px),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 2px);
+            background-size: 50px 50px, 60px 60px, 40px 40px;
+            animation: sparkle 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @media (max-width: 1200px) {
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .card {
+                width: 160px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card {
+                width: 140px;
+                height: 200px;
+            }
+            .title {
+                font-size: 2em;
+            }
+            .reading-area {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            .selected-card-display {
+                max-width: 100%;
+            }
+            .deck-instructions {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">✨ Teacher Reflection Cards ✨</h1>
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="setLanguage('english')">English</button>
+                <button class="lang-btn" onclick="setLanguage('chinese')">中文</button>
+            </div>
+            <div class="instructions" id="instructions">
+                Select one card from each deck to create your reflective reading. Click cards to choose them for your personal reflection session.
+            </div>
+        </div>
+
+        <div class="reading-area hidden" id="readingArea">
+            <div class="reading-title" id="readingTitle">Your Reflection Reading</div>
+            <button class="clear-reading" onclick="clearReading()" id="clearButton">Clear Reading</button>
+            <div id="selectedPresentCard"></div>
+            <div id="selectedFutureCard"></div>
+        </div>
+
+        <div class="deck-section">
+            <h2 class="deck-title" id="presentTitle">🌟 Who I Am - The Present (Symbols Deck)</h2>
+            <div class="deck-instructions" id="presentInstructions">
+                Choose the symbol that resonates with you. Pause and notice where your energy for growth currently lives. Individually reflect in response to prompts or share with people in your group.
+            </div>
+            <div class="cards-container" id="presentDeck">
+                <!-- Present deck cards will be generated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="deck-section">
+            <h2 class="deck-title" id="futureTitle">🔮 Who I'm Becoming - The Future (Archetypes Deck)</h2>
+            <div class="deck-instructions" id="futureInstructions">
+                These cards should resonate with who you aspire to become, or the qualities and practices you'd like to strengthen. Select the card that resonates with your hopes and vision, who you aspire to become. Individually reflect in response to prompts or share with people in your group.
+            </div>
+            <div class="cards-container" id="futureDeck">
+                <!-- Future deck cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'english';
+        let selectedPresent = null;
+        let selectedFuture = null;
+
+        const translations = {
+            english: {
+                instructions: "Select one card from each deck to create your reflective reading. Click cards to choose them for your personal reflection session.",
+                presentTitle: "🌟 Who I Am - The Present (Symbols Deck)",
+                futureTitle: "🔮 Who I'm Becoming - The Future (Archetypes Deck)",
+                readingTitle: "Your Reflection Reading",
+                clearButton: "Clear Reading",
+                presentInstructions: "Choose the symbol that resonates with you. Pause and notice where your energy for growth currently lives. Individually reflect in response to prompts or share with people in your group.",
+                futureInstructions: "These cards should resonate with who you aspire to become, or the qualities and practices you'd like to strengthen. Select the card that resonates with your hopes and vision, who you aspire to become. Individually reflect in response to prompts or share with people in your group."
+            },
+            chinese: {
+                instructions: "从每副牌中选择一张卡片来创建您的反思解读。点击卡片选择它们进行个人反思会话。",
+                presentTitle: "🌟 我是谁 - 当下（象征牌组）",
+                futureTitle: "🔮 我正在成为谁 - 未来（原型牌组）",
+                readingTitle: "您的反思解读",
+                clearButton: "清除解读",
+                presentInstructions: "选择与您产生共鸣的象征。暂停并注意您成长的能量目前位于何处。单独反思提示的回应或与小组中的人分享。",
+                futureInstructions: "这些卡片应该与您渴望成为的人，或您希望加强的品质和实践产生共鸣。选择与您的希望和愿景产生共鸣的卡片，即您渴望成为的人。单独反思提示的回应或与小组中的人分享。"
+            }
+        };
+
+        const presentCards = [
+            {
+                symbol: '🌳',
+                name: { english: 'Tree', chinese: '树' },
+                class: 'tree',
+                content: {
+                    english: 'What roots your teaching practice — what values, experiences, or traditions ground you?',
+                    chinese: '什么是您教学实践的根基——哪些价值观、经验或传统支撑着您？'
+                }
+            },
+            {
+                symbol: '🦋',
+                name: { english: 'Butterfly', chinese: '蝴蝶' },
+                class: 'butterfly',
+                content: {
+                    english: 'Which part of your teaching practice is currently in transition or evolving?',
+                    chinese: '您的教学实践中哪个部分正在转变或发展？'
+                }
+            },
+            {
+                symbol: '🌊',
+                name: { english: 'Waves', chinese: '波浪' },
+                class: 'waves',
+                content: {
+                    english: 'How do you stay steady or adapt when faced with change and uncertainty?',
+                    chinese: '面对变化和不确定性时，您如何保持稳定或适应？'
+                }
+            },
+            {
+                symbol: '🔥',
+                name: { english: 'Flame', chinese: '火焰' },
+                class: 'flame',
+                content: {
+                    english: 'What keeps your passion and curiosity for teaching alive?',
+                    chinese: '什么让您对教学的热情和好奇心保持活力？'
+                }
+            },
+            {
+                symbol: '🌉',
+                name: { english: 'Bridge', chinese: '桥' },
+                class: 'bridge',
+                content: {
+                    english: 'How do you build connections with students who learn, think, or see the world differently?',
+                    chinese: '您如何与那些学习方式、思维方式或世界观不同的学生建立联系？'
+                }
+            },
+            {
+                symbol: '✨',
+                name: { english: 'Star', chinese: '星星' },
+                class: 'stars',
+                content: {
+                    english: 'What inspires you to continue growing and showing up meaningfully as an educator?',
+                    chinese: '什么激励您作为教育者继续成长并有意义地出现？'
+                }
+            }
+        ];
+
+        const futureCards = [
+            {
+                symbol: '🧭',
+                name: { english: 'The Guide', chinese: '向导' },
+                class: 'guide',
+                content: {
+                    english: 'You walk alongside your students rather than ahead of them. You see teaching as mentoring — not about control, but about partnership, curiosity, and empowerment.\n\nReflection: How can I lead and inspire students while still supporting their independence and agency in learning?',
+                    chinese: '您与学生并肩而行，而不是走在他们前面。您将教学视为指导——不是控制，而是伙伴关系、好奇心和赋权。\n\n反思提示：我怎样在激励学生的同时，支持他们在学习中保持独立性与自主性？'
+                }
+            },
+            {
+                symbol: '🗺️',
+                name: { english: 'The Explorer', chinese: '探索者' },
+                class: 'explorer',
+                content: {
+                    english: 'You value curiosity, experimentation, and lifelong learning. Change excites you rather than threatens you. You embrace uncertainty as a teacher-researcher exploring possibilities.\n\nReflection: What new risks or creative directions could I take to keep teaching fresh, alive, and meaningful?',
+                    chinese: '您重视好奇心、实验和终身学习。变化让您兴奋而不是威胁您。您作为探索可能性的教师研究者拥抱不确定性。\n\n反思提示：我可以尝试哪些新的冒险或创造性方向，让教学保持新鲜与有意义？'
+                }
+            },
+            {
+                symbol: '🕊️',
+                name: { english: 'The Peacemaker', chinese: '和平缔造者' },
+                class: 'peacemaker',
+                content: {
+                    english: 'You embody calm, empathy, and steady presence. You create emotionally safe spaces where students and colleagues feel seen, heard, and valued.\n\nReflection: How might I cultivate more peace, belonging, and wellbeing in my classroom community?',
+                    chinese: '您体现了平静、同理心和稳定的存在。您创造情感安全的空间，让学生和同事感到被看见、被倾听和被重视。\n\n反思提示：我怎样在课堂中营造更多和平、归属感与健康？'
+                }
+            },
+            {
+                symbol: '💡',
+                name: { english: 'The Innovator', chinese: '创新者' },
+                class: 'innovator',
+                content: {
+                    english: 'You think creatively about problems. You imagine new possibilities for engagement, learning design, and assessment. You model the courage to evolve.\n\nReflection: What new ideas, tools, or approaches could I explore to reimagine how learning happens?',
+                    chinese: '您对问题进行创造性思考。您想象参与、学习设计和评估的新可能性。您展现了进化的勇气。\n\n反思提示：我可以探索哪些新想法、工具或方法来重新构想学习的方式？'
+                }
+            },
+            {
+                symbol: '💬',
+                name: { english: 'The Listener', chinese: '倾听者' },
+                class: 'listener',
+                content: {
+                    english: 'You understand that listening is an act of teaching. You practice deep presence — noticing not only what students say, but what they mean and feel.\n\nReflection: How can I create more authentic opportunities for students to express their voices, needs, and dreams—and for me to truly hear them?',
+                    chinese: '您明白倾听是一种教学行为。您练习深度临在——不仅注意学生说什么，还注意他们的意思和感受。\n\n反思提示：我如何创造更多真实机会让学生表达他们的声音、需求和梦想，并让我真正倾听？'
+                }
+            },
+            {
+                symbol: '⚖️',
+                name: { english: 'The Duality Balancer', chinese: '二元平衡者' },
+                class: 'balancer',
+                content: {
+                    english: 'You embody the harmony between light and shadow, action and stillness, reason and intuition. You guide others by modeling balance — between giving and receiving, structure and flow, teaching and learning.\n\nReflection: How can I honor both strength and softness within myself and my teaching?',
+                    chinese: '您体现了光明与阴影、行动与静止、理性与直觉之间的和谐。您通过示范平衡来指导他人——给予与接受、结构与流动、教学与学习之间的平衡。\n\n反思提示：我怎样在教学与自我中同时尊重力量与温柔的共存？'
+                }
+            }
+        ];
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update UI text
+            document.getElementById('instructions').textContent = translations[lang].instructions;
+            document.getElementById('presentTitle').textContent = translations[lang].presentTitle;
+            document.getElementById('futureTitle').textContent = translations[lang].futureTitle;
+            document.getElementById('readingTitle').textContent = translations[lang].readingTitle;
+            document.getElementById('clearButton').textContent = translations[lang].clearButton;
+            document.getElementById('presentInstructions').textContent = translations[lang].presentInstructions;
+            document.getElementById('futureInstructions').textContent = translations[lang].futureInstructions;
+            
+            // Regenerate cards with new language
+            generateCards();
+            updateReading();
+        }
+
+        function generateCards() {
+            const presentDeck = document.getElementById('presentDeck');
+            const futureDeck = document.getElementById('futureDeck');
+            
+            presentDeck.innerHTML = '';
+            futureDeck.innerHTML = '';
+            
+            // Generate present cards
+            presentCards.forEach((card, index) => {
+                const cardElement = createCard(card, 'present', index);
+                presentDeck.appendChild(cardElement);
+            });
+            
+            // Generate future cards
+            futureCards.forEach((card, index) => {
+                const cardElement = createCard(card, 'future', index);
+                futureDeck.appendChild(cardElement);
+            });
+        }
+
+        function createCard(cardData, deck, index) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = () => selectCard(card, cardData, deck, index);
+            
+            card.innerHTML = `
+                <div class="card-inner">
+                    <div class="card-front ${cardData.class}">
+                        <div class="card-content">
+                            <div class="card-symbol">${cardData.symbol}</div>
+                            <div class="card-name">${cardData.name[currentLanguage]}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function selectCard(cardElement, cardData, deck, index) {
+            if (deck === 'present') {
+                // Remove previous selection
+                document.querySelectorAll('#presentDeck .card').forEach(c => c.classList.remove('selected'));
+                cardElement.classList.add('selected');
+                selectedPresent = { cardData, element: cardElement, index };
+            } else {
+                // Remove previous selection
+                document.querySelectorAll('#futureDeck .card').forEach(c => c.classList.remove('selected'));
+                cardElement.classList.add('selected');
+                selectedFuture = { cardData, element: cardElement, index };
+            }
+            
+            updateReading();
+        }
+
+        function updateReading() {
+            const readingArea = document.getElementById('readingArea');
+            const presentDisplay = document.getElementById('selectedPresentCard');
+            const futureDisplay = document.getElementById('selectedFutureCard');
+            
+            if (selectedPresent && selectedFuture) {
+                readingArea.classList.remove('hidden');
+                
+                presentDisplay.innerHTML = createSelectedCardDisplay(selectedPresent.cardData);
+                futureDisplay.innerHTML = createSelectedCardDisplay(selectedFuture.cardData);
+            } else if (selectedPresent || selectedFuture) {
+                readingArea.classList.remove('hidden');
+                
+                if (selectedPresent) {
+                    presentDisplay.innerHTML = createSelectedCardDisplay(selectedPresent.cardData);
+                    futureDisplay.innerHTML = '<div class="selected-card-display" style="opacity: 0.3; border-style: dashed;"><div style="padding: 40px; text-align: center; color: #888;">Select a Future card</div></div>';
+                }
+                
+                if (selectedFuture) {
+                    futureDisplay.innerHTML = createSelectedCardDisplay(selectedFuture.cardData);
+                    presentDisplay.innerHTML = '<div class="selected-card-display" style="opacity: 0.3; border-style: dashed;"><div style="padding: 40px; text-align: center; color: #888;">Select a Present card</div></div>';
+                }
+            } else {
+                readingArea.classList.add('hidden');
+            }
+        }
+
+        function createSelectedCardDisplay(cardData) {
+            return `
+                <div class="selected-card-display">
+                    <div class="selected-card-symbol">${cardData.symbol}</div>
+                    <div class="selected-card-name">${cardData.name[currentLanguage]}</div>
+                    <div class="selected-card-content">${cardData.content[currentLanguage]}</div>
+                </div>
+            `;
+        }
+
+        function clearReading() {
+            selectedPresent = null;
+            selectedFuture = null;
+            
+            // Remove all selections
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+            
+            // Hide reading area
+            document.getElementById('readingArea').classList.add('hidden');
+        }
+
+        // Initialize the app
+        generateCards();
+    </script>
+
+
+</body></html>
