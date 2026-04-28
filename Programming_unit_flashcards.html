@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz Prep - Grade 8</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4cb5ae;
+            --light: #f5f5f5;
+            --dark: #333;
+            --correct: #4caf50;
+            --incorrect: #f44336;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .language-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .tab-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .tab-btn.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .content-section {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+            margin: 20px auto;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .flashcard-back {
+            background-color: var(--accent);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .flashcard-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .question h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .options {
+            margin: 15px 0;
+        }
+        
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .option:hover {
+            background: #e9e9e9;
+        }
+        
+        .option.selected {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .option.correct {
+            background: var(--correct);
+            color: white;
+        }
+        
+        .option.incorrect {
+            background: var(--incorrect);
+            color: white;
+        }
+        
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: #e8f5e9;
+            color: var(--correct);
+            border: 1px solid var(--correct);
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background: #ffebee;
+            color: var(--incorrect);
+            border: 1px solid var(--incorrect);
+            display: block;
+        }
+        
+        .debug-code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .debug-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+            }
+            
+            .flashcard {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="app-title">Python Quiz Prep</h1>
+            <p id="app-subtitle">Grade 8 Cambridge Curriculum</p>
+            
+            <div class="language-toggle">
+                <button class="lang-btn active" id="lang-en">English</button>
+                <button class="lang-btn" id="lang-zh">中文</button>
+            </div>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="flashcards">Flashcards</button>
+            <button class="tab-btn" data-tab="questions">Coding Questions</button>
+            <button class="tab-btn" data-tab="debugging">Debugging</button>
+            <button class="tab-btn" data-tab="progress">Progress</button>
+        </div>
+        
+        <!-- Flashcards Section -->
+        <section id="flashcards" class="content-section active">
+            <h2 id="flashcards-title">Python Programming Flashcards</h2>
+            <p id="flashcards-desc">Click on the card to flip it and see the definition.</p>
+            
+            <div class="flashcard" id="current-flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3 id="card-term">Variable</h3>
+                        <p>Click to flip</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p id="card-definition">A named storage location in memory that holds a value</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard-nav">
+                <button class="flashcard-btn" id="prev-card">Previous</button>
+                <button class="flashcard-btn" id="next-card">Next</button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="flashcards-progress"></div>
+            </div>
+            <p id="flashcards-counter">Card 1 of 30</p>
+        </section>
+        
+        <!-- Coding Questions Section -->
+        <section id="questions" class="content-section">
+            <h2 id="questions-title">Python Coding Questions</h2>
+            <p id="questions-desc">Test your knowledge with these coding questions.</p>
+            
+            <div class="question" id="question-1">
+                <h3 id="q1-title">Question 1: Variables and Data Types</h3>
+                <p id="q1-text">What will be the output of the following code?</p>
+                <div class="code-block">
+                    x = 5<br>
+                    y = "10"<br>
+                    print(x + int(y))
+                </div>
+                
+                <div class="options">
+                    <div class="option" data-value="a">510</div>
+                    <div class="option" data-value="b">15</div>
+                    <div class="option" data-value="c">Error</div>
+                    <div class="option" data-value="d">5</div>
+                </div>
+                
+                <button class="submit-btn" data-question="1">Check Answer</button>
+                <div class="feedback" id="feedback-1"></div>
+            </div>
+            
+            <div class="question" id="question-2">
+                <h3 id="q2-title">Question 2: For Loops</h3>
+                <p id="q2-text">What will this code output?</p>
+                <div class="code-block">
+                    for i in range(3):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print(i * 2)
+                </div>
+                
+                <div class="options">
+                    <div class="option" data-value="a">0 2 4</div>
+                    <div class="option" data-value="b">2 4 6</div>
+                    <div class="option" data-value="c">0 1 2</div>
+                    <div class="option" data-value="d">1 2 3</div>
+                </div>
+                
+                <button class="submit-btn" data-question="2">Check Answer</button>
+                <div class="feedback" id="feedback-2"></div>
+            </div>
+            
+            <div class="question" id="question-3">
+                <h3 id="q3-title">Question 3: Functions</h3>
+                <p id="q3-text">What will this function return when called with calculate_area(4, 5)?</p>
+                <div class="code-block">
+                    def calculate_area(length, width):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return length * width
+                </div>
+                
+                <div class="options">
+                    <div class="option" data-value="a">9</div>
+                    <div class="option" data-value="b">20</div>
+                    <div class="option" data-value="c">Error</div>
+                    <div class="option" data-value="d">None</div>
+                </div>
+                
+                <button class="submit-btn" data-question="3">Check Answer</button>
+                <div class="feedback" id="feedback-3"></div>
+            </div>
+            
+            <div class="question" id="question-4">
+                <h3 id="q4-title">Question 4: Lists</h3>
+                <p id="q4-text">What will be the value of my_list after this code executes?</p>
+                <div class="code-block">
+                    my_list = [1, 2, 3]<br>
+                    my_list.append(4)<br>
+                    my_list.pop(0)
+                </div>
+                
+                <div class="options">
+                    <div class="option" data-value="a">[1, 2, 3]</div>
+                    <div class="option" data-value="b">[2, 3, 4]</div>
+                    <div class="option" data-value="c">[1, 2, 3, 4]</div>
+                    <div class="option" data-value="d">[2, 3]</div>
+                </div>
+                
+                <button class="submit-btn" data-question="4">Check Answer</button>
+                <div class="feedback" id="feedback-4"></div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="questions-progress"></div>
+            </div>
+            <p id="questions-counter">Completed: 0/4</p>
+        </section>
+        
+        <!-- Debugging Section -->
+        <section id="debugging" class="content-section">
+            <h2 id="debugging-title">Debugging Practice</h2>
+            <p id="debugging-desc">Find and fix the errors in these code snippets.</p>
+            
+            <div class="question">
+                <h3 id="debug-1-title">Debug 1: Function Error</h3>
+                <p id="debug-1-text">The following code should calculate the area of a rectangle, but it contains an error. Identify and fix it.</p>
+                
+                <div class="debug-code">
+                    def calculate_area(length, width):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;area = lenght * width  # Error here<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return area<br><br>
+                    
+                    result = calculate_area(5, 3)<br>
+                    print(result)
+                </div>
+                
+                <p id="debug-input-label">What's wrong with this code?</p>
+                <input type="text" class="debug-input" id="debug-1-input" placeholder="Describe the error...">
+                
+                <button class="submit-btn" id="debug-1-btn">Check Answer</button>
+                <div class="feedback" id="debug-1-feedback"></div>
+            </div>
+            
+            <div class="question">
+                <h3 id="debug-2-title">Debug 2: While Loop</h3>
+                <p id="debug-2-text">This while loop should print numbers from 1 to 5, but it runs forever. Fix the code.</p>
+                
+                <div class="debug-code">
+                    i = 1<br>
+                    while i < 5:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;# Missing increment statement
+                </div>
+                
+                <p id="debug-2-input-label">What's missing in this code?</p>
+                <input type="text" class="debug-input" id="debug-2-input" placeholder="Describe what's missing...">
+                
+                <button class="submit-btn" id="debug-2-btn">Check Answer</button>
+                <div class="feedback" id="debug-2-feedback"></div>
+            </div>
+            
+            <div class="question">
+                <h3 id="debug-3-title">Debug 3: List Index Error</h3>
+                <p id="debug-3-text">This code tries to access an element in a list, but it causes an error.</p>
+                
+                <div class="debug-code">
+                    fruits = ["apple", "banana", "cherry"]<br>
+                    print(fruits[3])  # Error here
+                </div>
+                
+                <p id="debug-3-input-label">What's the problem with this code?</p>
+                <input type="text" class="debug-input" id="debug-3-input" placeholder="Describe the error...">
+                
+                <button class="submit-btn" id="debug-3-btn">Check Answer</button>
+                <div class="feedback" id="debug-3-feedback"></div>
+            </div>
+            
+            <div class="question">
+                <h3 id="debug-4-title">Debug 4: Syntax Error</h3>
+                <p id="debug-4-text">This code has a syntax error. Find and fix it.</p>
+                
+                <div class="debug-code">
+                    if x > 5<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 5")
+                </div>
+                
+                <p id="debug-4-input-label">What's missing in this code?</p>
+                <input type="text" class="debug-input" id="debug-4-input" placeholder="Describe what's missing...">
+                
+                <button class="submit-btn" id="debug-4-btn">Check Answer</button>
+                <div class="feedback" id="debug-4-feedback"></div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="debugging-progress"></div>
+            </div>
+            <p id="debugging-counter">Completed: 0/4</p>
+        </section>
+        
+        <!-- Progress Section -->
+        <section id="progress" class="content-section">
+            <h2 id="progress-title">Your Progress</h2>
+            <p id="progress-desc">Track your learning progress across all sections.</p>
+            
+            <div class="progress-bar">
+                <div class="progress" id="overall-progress"></div>
+            </div>
+            <p id="progress-percentage">Overall Progress: 0%</p>
+            
+            <div class="progress-details">
+                <h3 id="progress-flashcards">Flashcards: 0/30 reviewed</h3>
+                <h3 id="progress-questions">Coding Questions: 0/4 completed</h3>
+                <h3 id="progress-debugging">Debugging: 0/4 completed</h3>
+            </div>
+            
+            <button class="submit-btn" id="reset-progress">Reset Progress</button>
+        </section>
+        
+        <footer>
+            <p id="footer-text">Python Quiz Prep App for Grade 8 Cambridge Curriculum</p>
+        </footer>
+    </div>
+
+    <script>
+        // Language content
+        const content = {
+            en: {
+                appTitle: "Python Quiz Prep",
+                appSubtitle: "Grade 8 Cambridge Curriculum",
+                flashcardsTitle: "Python Programming Flashcards",
+                flashcardsDesc: "Click on the card to flip it and see the definition.",
+                questionsTitle: "Python Coding Questions",
+                questionsDesc: "Test your knowledge with these coding questions.",
+                debuggingTitle: "Debugging Practice",
+                debuggingDesc: "Find and fix the errors in these code snippets.",
+                progressTitle: "Your Progress",
+                progressDesc: "Track your learning progress across all sections.",
+                footerText: "Python Quiz Prep App for Grade 8 Cambridge Curriculum",
+                flashcardsCounter: "Card 1 of 30",
+                questionsCounter: "Completed: 0/4",
+                debuggingCounter: "Completed: 0/4",
+                progressPercentage: "Overall Progress: 0%",
+                progressFlashcards: "Flashcards: 0/30 reviewed",
+                progressQuestions: "Coding Questions: 0/4 completed",
+                progressDebugging: "Debugging: 0/4 completed",
+                resetProgress: "Reset Progress",
+                q1Title: "Question 1: Variables and Data Types",
+                q1Text: "What will be the output of the following code?",
+                q2Title: "Question 2: For Loops",
+                q2Text: "What will this code output?",
+                q3Title: "Question 3: Functions",
+                q3Text: "What will this function return when called with calculate_area(4, 5)?",
+                q4Title: "Question 4: Lists",
+                q4Text: "What will be the value of my_list after this code executes?",
+                debug1Title: "Debug 1: Function Error",
+                debug1Text: "The following code should calculate the area of a rectangle, but it contains an error. Identify and fix it.",
+                debug1InputLabel: "What's wrong with this code?",
+                debug2Title: "Debug 2: While Loop",
+                debug2Text: "This while loop should print numbers from 1 to 5, but it runs forever. Fix the code.",
+                debug2InputLabel: "What's missing in this code?",
+                debug3Title: "Debug 3: List Index Error",
+                debug3Text: "This code tries to access an element in a list, but it causes an error.",
+                debug3InputLabel: "What's the problem with this code?",
+                debug4Title: "Debug 4: Syntax Error",
+                debug4Text: "This code has a syntax error. Find and fix it.",
+                debug4InputLabel: "What's missing in this code?"
+            },
+            zh: {
+                appTitle: "Python 测验准备",
+                appSubtitle: "八年级 剑桥课程",
+                flashcardsTitle: "Python 编程闪卡",
+                flashcardsDesc: "点击卡片翻转查看定义。",
+                questionsTitle: "Python 编程问题",
+                questionsDesc: "通过这些编程问题测试你的知识。",
+                debuggingTitle: "调试练习",
+                debuggingDesc: "在这些代码片段中查找并修复错误。",
+                progressTitle: "你的进度",
+                progressDesc: "跟踪你在所有部分的学习进度。",
+                footerText: "Python 测验准备应用 - 八年级剑桥课程",
+                flashcardsCounter: "卡片 1 / 30",
+                questionsCounter: "已完成: 0/4",
+                debuggingCounter: "已完成: 0/4",
+                progressPercentage: "整体进度: 0%",
+                progressFlashcards: "闪卡: 0/30 已复习",
+                progressQuestions: "编程问题: 0/4 已完成",
+                progressDebugging: "调试: 0/4 已完成",
+                resetProgress: "重置进度",
+                q1Title: "问题 1: 变量和数据类型",
+                q1Text: "以下代码的输出是什么？",
+                q2Title: "问题 2: For 循环",
+                q2Text: "这段代码会输出什么？",
+                q3Title: "问题 3: 函数",
+                q3Text: "当使用 calculate_area(4, 5) 调用时，这个函数会返回什么？",
+                q4Title: "问题 4: 列表",
+                q4Text: "这段代码执行后，my_list 的值是什么？",
+                debug1Title: "调试 1: 函数错误",
+                debug1Text: "以下代码应该计算矩形的面积，但包含一个错误。识别并修复它。",
+                debug1InputLabel: "这段代码有什么问题？",
+                debug2Title: "调试 2: While 循环",
+                debug2Text: "这个 while 循环应该打印从 1 到 5 的数字，但它会无限运行。修复代码。",
+                debug2InputLabel: "这段代码缺少什么？",
+                debug3Title: "调试 3: 列表索引错误",
+                debug3Text: "这段代码试图访问列表中的一个元素，但导致错误。",
+                debug3InputLabel: "这段代码有什么问题？",
+                debug4Title: "调试 4: 语法错误",
+                debug4Text: "这段代码有语法错误。找到并修复它。",
+                debug4InputLabel: "这段代码缺少什么？"
+            }
+        };
+
+        // Flashcards data
+        const flashcards = [
+            { term: "Computer Program", definition: "A set of instructions that a computer follows to perform a task" },
+            { term: "Computer Programming", definition: "The process of designing and building an executable computer program" },
+            { term: "CPU", definition: "Central Processing Unit - the brain of the computer that executes instructions" },
+            { term: "RAM", definition: "Random Access Memory - temporary memory that stores data while a program is running" },
+            { term: "Operating System", definition: "Software that manages computer hardware and software resources" },
+            { term: "Syntax", definition: "The set of rules that defines the structure of a programming language" },
+            { term: "Algorithm", definition: "A step-by-step procedure for solving a problem or accomplishing a task" },
+            { term: "Flowchart", definition: "A diagram that represents an algorithm using symbols and arrows" },
+            { term: "Pseudocode", definition: "A simplified, human-readable representation of code logic" },
+            { term: "Boolean Logic", definition: "A form of algebra using true/false values and logical operators (AND, OR, NOT)" },
+            { term: "Variable", definition: "A named storage location in memory that holds a value" },
+            { term: "Variable Declaration", definition: "The process of creating a variable in a program" },
+            { term: "Variable Identifier", definition: "The name given to a variable" },
+            { term: "Integer", definition: "A whole number, positive or negative, without decimals" },
+            { term: "String", definition: "A sequence of characters, enclosed in single or double quotes" },
+            { term: "Float", definition: "A number that has a decimal point" },
+            { term: "Boolean", definition: "A data type that can be either True or False" },
+            { term: "Casting", definition: "Converting one data type to another" },
+            { term: "If-Else", definition: "A conditional statement that executes different code based on a condition" },
+            { term: "For Loops", definition: "A control flow statement for iterating over a sequence" },
+            { term: "While Loops", definition: "A control flow statement that repeats as long as a condition is true" },
+            { term: "Subroutines", definition: "A sequence of program instructions that perform a specific task" },
+            { term: "Procedures", definition: "A type of subroutine that doesn't return a value" },
+            { term: "Functions", definition: "A block of organized, reusable code that performs a single action and returns a value" },
+            { term: "Arguments", definition: "The actual values passed to a function when it is called" },
+            { term: "Parameters", definition: "The variables in a function definition that receive the arguments" },
+            { term: "List", definition: "An ordered collection of items, mutable and enclosed in square brackets" },
+            { term: "Index", definition: "The position of an element in a list, starting from 0" },
+            { term: "Method", definition: "A function that belongs to an object" },
+            { term: "Debugging", definition: "The process of finding and fixing errors in code" }
+        ];
+
+        // Chinese flashcards
+        const flashcardsZH = [
+            { term: "计算机程序", definition: "计算机执行任务所遵循的一组指令" },
+            { term: "计算机编程", definition: "设计和构建可执行计算机程序的过程" },
+            { term: "中央处理器", definition: "计算机的大脑，执行指令" },
+            { term: "随机存取存储器", definition: "程序运行时存储数据的临时内存" },
+            { term: "操作系统", definition: "管理计算机硬件和软件资源的软件" },
+            { term: "语法", definition: "定义编程语言结构的一组规则" },
+            { term: "算法", definition: "解决问题或完成任务的分步过程" },
+            { term: "流程图", definition: "使用符号和箭头表示算法的图表" },
+            { term: "伪代码", definition: "代码逻辑的简化、人类可读的表示" },
+            { term: "布尔逻辑", definition: "使用真/假值和逻辑运算符（AND、OR、NOT）的代数形式" },
+            { term: "变量", definition: "内存中存储值的命名位置" },
+            { term: "变量声明", definition: "在程序中创建变量的过程" },
+            { term: "变量标识符", definition: "赋予变量的名称" },
+            { term: "整数", definition: "没有小数点的整数，正数或负数" },
+            { term: "字符串", definition: "用单引号或双引号括起来的字符序列" },
+            { term: "浮点数", definition: "有小数点的数字" },
+            { term: "布尔值", definition: "可以是 True 或 False 的数据类型" },
+            { term: "类型转换", definition: "将一种数据类型转换为另一种" },
+            { term: "If-Else 语句", definition: "根据条件执行不同代码的条件语句" },
+            { term: "For 循环", definition: "用于遍历序列的控制流语句" },
+            { term: "While 循环", definition: "只要条件为真就重复执行的控制流语句" },
+            { term: "子程序", definition: "执行特定任务的程序指令序列" },
+            { term: "过程", definition: "不返回值的一种子程序" },
+            { term: "函数", definition: "执行单个操作并返回值的组织化、可重用代码块" },
+            { term: "实参", definition: "调用函数时传递给函数的实际值" },
+            { term: "形参", definition: "函数定义中接收实参的变量" },
+            { term: "列表", definition: "用方括号括起来的有序项目集合" },
+            { term: "索引", definition: "元素在列表中的位置，从0开始" },
+            { term: "方法", definition: "属于对象的函数" },
+            { term: "调试", definition: "查找和修复代码中错误的过程" }
+        ];
+
+        // Current language
+        let currentLang = 'en';
+        
+        // Current flashcard index
+        let currentFlashcardIndex = 0;
+        
+        // User progress
+        let userProgress = {
+            flashcards: Array(30).fill(false),
+            questions: Array(4).fill(false),
+            debugging: Array(4).fill(false)
+        };
+
+        // DOM elements
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+        const flashcardElement = document.getElementById('current-flashcard');
+        const cardTerm = document.getElementById('card-term');
+        const cardDefinition = document.getElementById('card-definition');
+        const prevCardButton = document.getElementById('prev-card');
+        const nextCardButton = document.getElementById('next-card');
+        const flashcardsProgress = document.getElementById('flashcards-progress');
+        const flashcardsCounter = document.getElementById('flashcards-counter');
+        const questionsProgress = document.getElementById('questions-progress');
+        const questionsCounter = document.getElementById('questions-counter');
+        const debuggingProgress = document.getElementById('debugging-progress');
+        const debuggingCounter = document.getElementById('debugging-counter');
+        const overallProgress = document.getElementById('overall-progress');
+        const progressPercentage = document.getElementById('progress-percentage');
+        const progressFlashcards = document.getElementById('progress-flashcards');
+        const progressQuestions = document.getElementById('progress-questions');
+        const progressDebugging = document.getElementById('progress-debugging');
+        const resetProgressButton = document.getElementById('reset-progress');
+
+        // Initialize the app
+        function initApp() {
+            // Set up language toggle
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentLang = this.id === 'lang-en' ? 'en' : 'zh';
+                    updateLanguage();
+                });
+            });
+            
+            // Set up tab navigation
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Set up flashcards
+            flashcardElement.addEventListener('click', function() {
+                this.classList.toggle('flipped');
+            });
+            
+            prevCardButton.addEventListener('click', showPreviousFlashcard);
+            nextCardButton.addEventListener('click', showNextFlashcard);
+            
+            // Set up coding questions
+            setupCodingQuestions();
+            
+            // Set up debugging
+            setupDebugging();
+            
+            // Set up progress reset
+            resetProgressButton.addEventListener('click', resetProgress);
+            
+            // Load progress from localStorage
+            loadProgress();
+            
+            // Update UI
+            updateFlashcard();
+            updateProgress();
+        }
+
+        // Update language content
+        function updateLanguage() {
+            const langContent = content[currentLang];
+            
+            // Update all text content
+            document.getElementById('app-title').textContent = langContent.appTitle;
+            document.getElementById('app-subtitle').textContent = langContent.appSubtitle;
+            document.getElementById('flashcards-title').textContent = langContent.flashcardsTitle;
+            document.getElementById('flashcards-desc').textContent = langContent.flashcardsDesc;
+            document.getElementById('questions-title').textContent = langContent.questionsTitle;
+            document.getElementById('questions-desc').textContent = langContent.questionsDesc;
+            document.getElementById('debugging-title').textContent = langContent.debuggingTitle;
+            document.getElementById('debugging-desc').textContent = langContent.debuggingDesc;
+            document.getElementById('progress-title').textContent = langContent.progressTitle;
+            document.getElementById('progress-desc').textContent = langContent.progressDesc;
+            document.getElementById('footer-text').textContent = langContent.footerText;
+            document.getElementById('q1-title').textContent = langContent.q1Title;
+            document.getElementById('q1-text').textContent = langContent.q1Text;
+            document.getElementById('q2-title').textContent = langContent.q2Title;
+            document.getElementById('q2-text').textContent = langContent.q2Text;
+            document.getElementById('q3-title').textContent = langContent.q3Title;
+            document.getElementById('q3-text').textContent = langContent.q3Text;
+            document.getElementById('q4-title').textContent = langContent.q4Title;
+            document.getElementById('q4-text').textContent = langContent.q4Text;
+            document.getElementById('debug-1-title').textContent = langContent.debug1Title;
+            document.getElementById('debug-1-text').textContent = langContent.debug1Text;
+            document.getElementById('debug-1-input-label').textContent = langContent.debug1InputLabel;
+            document.getElementById('debug-2-title').textContent = langContent.debug2Title;
+            document.getElementById('debug-2-text').textContent = langContent.debug2Text;
+            document.getElementById('debug-2-input-label').textContent = langContent.debug2InputLabel;
+            document.getElementById('debug-3-title').textContent = langContent.debug3Title;
+            document.getElementById('debug-3-text').textContent = langContent.debug3Text;
+            document.getElementById('debug-3-input-label').textContent = langContent.debug3InputLabel;
+            document.getElementById('debug-4-title').textContent = langContent.debug4Title;
+            document.getElementById('debug-4-text').textContent = langContent.debug4Text;
+            document.getElementById('debug-4-input-label').textContent = langContent.debug4InputLabel;
+            document.getElementById('reset-progress').textContent = langContent.resetProgress;
+            
+            // Update flashcards
+            updateFlashcard();
+            
+            // Update progress text
+            updateProgressText();
+        }
+
+        // Update flashcard content
+        function updateFlashcard() {
+            const flashcardData = currentLang === 'en' ? flashcards : flashcardsZH;
+            cardTerm.textContent = flashcardData[currentFlashcardIndex].term;
+            cardDefinition.textContent = flashcardData[currentFlashcardIndex].definition;
+            
+            // Reset flip state
+            flashcardElement.classList.remove('flipped');
+            
+            // Update counter
+            const langContent = content[currentLang];
+            flashcardsCounter.textContent = `${langContent.flashcardsCounter.split(' ')[0]} ${currentFlashcardIndex + 1} ${langContent.flashcardsCounter.split(' ')[2]} ${flashcardData.length}`;
+        }
+
+        // Show previous flashcard
+        function showPreviousFlashcard() {
+            if (currentFlashcardIndex > 0) {
+                currentFlashcardIndex--;
+                updateFlashcard();
+                
+                // Mark as reviewed
+                userProgress.flashcards[currentFlashcardIndex] = true;
+                saveProgress();
+                updateProgress();
+            }
+        }
+
+        // Show next flashcard
+        function showNextFlashcard() {
+            const flashcardData = currentLang === 'en' ? flashcards : flashcardsZH;
+            
+            if (currentFlashcardIndex < flashcardData.length - 1) {
+                currentFlashcardIndex++;
+                updateFlashcard();
+                
+                // Mark as reviewed
+                userProgress.flashcards[currentFlashcardIndex] = true;
+                saveProgress();
+                updateProgress();
+            }
+        }
+
+        // Set up coding questions
+        function setupCodingQuestions() {
+            const submitButtons = document.querySelectorAll('.submit-btn[data-question]');
+            
+            submitButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const questionNum = this.getAttribute('data-question');
+                    checkQuestionAnswer(questionNum);
+                });
+            });
+            
+            // Set up option selection
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const question = this.closest('.question');
+                    const options = question.querySelectorAll('.option');
+                    
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+        }
+
+        // Check question answer
+        function checkQuestionAnswer(questionNum) {
+            const question = document.getElementById(`question-${questionNum}`);
+            const selectedOption = question.querySelector('.option.selected');
+            const feedback = document.getElementById(`feedback-${questionNum}`);
+            
+            if (!selectedOption) {
+                feedback.textContent = currentLang === 'en' ? "Please select an answer." : "请选择一个答案。";
+                feedback.className = "feedback incorrect";
+                return;
+            }
+            
+            const selectedValue = selectedOption.getAttribute('data-value');
+            let isCorrect = false;
+            
+            // Check answers based on question number
+            if (questionNum === '1') {
+                isCorrect = selectedValue === 'b';
+            } else if (questionNum === '2') {
+                isCorrect = selectedValue === 'a';
+            } else if (questionNum === '3') {
+                isCorrect = selectedValue === 'b';
+            } else if (questionNum === '4') {
+                isCorrect = selectedValue === 'b';
+            }
+            
+            // Update UI
+            if (isCorrect) {
+                feedback.textContent = currentLang === 'en' ? "Correct! Well done." : "正确！做得好。";
+                feedback.className = "feedback correct";
+                
+                // Mark as completed
+                userProgress.questions[parseInt(questionNum) - 1] = true;
+                saveProgress();
+                updateProgress();
+            } else {
+                feedback.textContent = currentLang === 'en' ? "Incorrect. Try again." : "不正确。请再试一次。";
+                feedback.className = "feedback incorrect";
+            }
+        }
+
+        // Set up debugging
+        function setupDebugging() {
+            const debugButtons = document.querySelectorAll('.submit-btn[id^="debug-"]');
+            
+            debugButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const debugNum = this.id.split('-')[1];
+                    checkDebugAnswer(debugNum);
+                });
+            });
+        }
+
+        // Check debug answer
+        function checkDebugAnswer(debugNum) {
+            const input = document.getElementById(`debug-${debugNum}-input`);
+            const feedback = document.getElementById(`debug-${debugNum}-feedback`);
+            const answer = input.value.trim().toLowerCase();
+            
+            let isCorrect = false;
+            let correctAnswer = "";
+            
+            if (debugNum === '1') {
+                correctAnswer = currentLang === 'en' ? 
+                    "lenght is misspelled, it should be length" : 
+                    "lenght 拼写错误，应该是 length";
+                isCorrect = answer.includes('lenght') || answer.includes('misspelled') || 
+                           answer.includes('拼写错误') || answer.includes('应该是 length');
+            } else if (debugNum === '2') {
+                correctAnswer = currentLang === 'en' ? 
+                    "the variable i is not incremented, add i += 1" : 
+                    "变量 i 没有递增，添加 i += 1";
+                isCorrect = answer.includes('increment') || answer.includes('i +') || 
+                           answer.includes('递增') || answer.includes('增加');
+            } else if (debugNum === '3') {
+                correctAnswer = currentLang === 'en' ? 
+                    "index 3 is out of range, the list only has indices 0, 1, 2" : 
+                    "索引 3 超出范围，列表只有索引 0, 1, 2";
+                isCorrect = answer.includes('index') || answer.includes('out of range') || 
+                           answer.includes('索引') || answer.includes('超出范围');
+            } else if (debugNum === '4') {
+                correctAnswer = currentLang === 'en' ? 
+                    "missing colon : after the if condition" : 
+                    "if 条件后缺少冒号 :";
+                isCorrect = answer.includes('colon') || answer.includes(':') || 
+                           answer.includes('冒号');
+            }
+            
+            // Update UI
+            if (isCorrect) {
+                feedback.textContent = currentLang === 'en' ? 
+                    "Correct! " + correctAnswer : 
+                    "正确！" + correctAnswer;
+                feedback.className = "feedback correct";
+                
+                // Mark as completed
+                userProgress.debugging[parseInt(debugNum) - 1] = true;
+                saveProgress();
+                updateProgress();
+            } else {
+                feedback.textContent = currentLang === 'en' ? 
+                    "Not quite. " + correctAnswer : 
+                    "不完全正确。" + correctAnswer;
+                feedback.className = "feedback incorrect";
+            }
+        }
+
+        // Update progress
+        function updateProgress() {
+            // Calculate progress percentages
+            const flashcardsReviewed = userProgress.flashcards.filter(Boolean).length;
+            const flashcardsPercent = (flashcardsReviewed / userProgress.flashcards.length) * 100;
+            
+            const questionsCompleted = userProgress.questions.filter(Boolean).length;
+            const questionsPercent = (questionsCompleted / userProgress.questions.length) * 100;
+            
+            const debuggingCompleted = userProgress.debugging.filter(Boolean).length;
+            const debuggingPercent = (debuggingCompleted / userProgress.debugging.length) * 100;
+            
+            // Overall progress (average of all sections)
+            const overallPercent = (flashcardsPercent + questionsPercent + debuggingPercent) / 3;
+            
+            // Update progress bars
+            flashcardsProgress.style.width = `${flashcardsPercent}%`;
+            questionsProgress.style.width = `${questionsPercent}%`;
+            debuggingProgress.style.width = `${debuggingPercent}%`;
+            overallProgress.style.width = `${overallPercent}%`;
+            
+            // Update progress text
+            updateProgressText(flashcardsReviewed, questionsCompleted, debuggingCompleted, overallPercent);
+        }
+
+        // Update progress text
+        function updateProgressText(flashcardsReviewed = 0, questionsCompleted = 0, debuggingCompleted = 0, overallPercent = 0) {
+            const langContent = content[currentLang];
+            
+            // If no parameters provided, calculate from userProgress
+            if (flashcardsReviewed === 0) {
+                flashcardsReviewed = userProgress.flashcards.filter(Boolean).length;
+                questionsCompleted = userProgress.questions.filter(Boolean).length;
+                debuggingCompleted = userProgress.debugging.filter(Boolean).length;
+                overallPercent = (flashcardsReviewed / userProgress.flashcards.length * 100 + 
+                                questionsCompleted / userProgress.questions.length * 100 + 
+                                debuggingCompleted / userProgress.debugging.length * 100) / 3;
+            }
+            
+            const flashcardData = currentLang === 'en' ? flashcards : flashcardsZH;
+            flashcardsCounter.textContent = `${langContent.flashcardsCounter.split(' ')[0]} ${currentFlashcardIndex + 1} ${langContent.flashcardsCounter.split(' ')[2]} ${flashcardData.length}`;
+            questionsCounter.textContent = `${langContent.questionsCounter.split(':')[0]}: ${questionsCompleted}/${userProgress.questions.length}`;
+            debuggingCounter.textContent = `${langContent.debuggingCounter.split(':')[0]}: ${debuggingCompleted}/${userProgress.debugging.length}`;
+            progressPercentage.textContent = `${langContent.progressPercentage.split(':')[0]}: ${Math.round(overallPercent)}%`;
+            progressFlashcards.textContent = `${langContent.progressFlashcards.split(':')[0]}: ${flashcardsReviewed}/${userProgress.flashcards.length} ${langContent.progressFlashcards.split(':')[1]}`;
+            progressQuestions.textContent = `${langContent.progressQuestions.split(':')[0]}: ${questionsCompleted}/${userProgress.questions.length} ${langContent.progressQuestions.split(':')[1]}`;
+            progressDebugging.textContent = `${langContent.progressDebugging.split(':')[0]}: ${debuggingCompleted}/${userProgress.debugging.length} ${langContent.progressDebugging.split(':')[1]}`;
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('pythonQuizProgress', JSON.stringify(userProgress));
+        }
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('pythonQuizProgress');
+            if (savedProgress) {
+                userProgress = JSON.parse(savedProgress);
+            }
+        }
+
+        // Reset progress
+        function resetProgress() {
+            userProgress = {
+                flashcards: Array(30).fill(false),
+                questions: Array(4).fill(false),
+                debugging: Array(4).fill(false)
+            };
+            
+            saveProgress();
+            updateProgress();
+            
+            // Reset UI elements
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(feedback => {
+                feedback.className = "feedback";
+                feedback.textContent = "";
+            });
+            
+            const inputs = document.querySelectorAll('.debug-input');
+            inputs.forEach(input => {
+                input.value = "";
+            });
+            
+            // Reset flashcard to first one
+            currentFlashcardIndex = 0;
+            updateFlashcard();
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
