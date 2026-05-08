@@ -1,0 +1,236 @@
+<html lang="en">
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Sister AI 🌷</title>
+<style>
+body {
+  background: linear-gradient(to bottom right, #ffdfe8, #d7f4f0);
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  color: #444;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.chat-container {
+  background-color: #fffafc;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.chat-header {
+  background-color: #f9b0c3;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
+  position: relative;
+}
+.star-counter {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+}
+.messages {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+}
+.message {
+  margin: 0.5em 0;
+  padding: 0.8em 1em;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+.user {
+  background: #d7f4f0;
+  align-self: flex-end;
+}
+.ai {
+  background: #ffe7ef;
+  align-self: flex-start;
+}
+.input-area {
+  display: flex;
+  background: #fff;
+  border-top: 2px solid #f9b0c3;
+}
+input {
+  border: none;
+  flex: 1;
+  padding: 1em;
+  font-size: 1em;
+  outline: none;
+}
+button {
+  background: #f9b0c3;
+  color: white;
+  border: none;
+  padding: 0 1.5em;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background: #f4899a;
+}
+
+/* Feeling flower styles */
+.feeling-flower {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5em 1em;
+  background: #fffafc;
+  border-bottom: 2px solid #f9b0c3;
+}
+.feeling-flower button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  margin: 0.3em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.feeling-flower button:hover {
+  transform: scale(1.2);
+}
+</style>
+</head>
+
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      🌷 Big Sister AI 🌷
+      <div class="star-counter">⭐ <span id="starCount">0</span></div>
+    </div>
+
+    <div class="feeling-flower">
+      <span>🌼 Choose your Feeling:</span>
+      <button onclick="selectFeeling('happy')">😊</button>
+      <button onclick="selectFeeling('sad')">😢</button>
+      <button onclick="selectFeeling('angry')">😠</button>
+      <button onclick="selectFeeling('shy')">😳</button>
+      <button onclick="selectFeeling('lonely')">😔</button>
+      <button onclick="selectFeeling('proud')">😌</button>
+    </div>
+
+    <div class="messages" id="messages">
+      <div class="message ai">
+        Hi there! I’m your Big Sister AI 💖  
+        I listen to your feelings and help you find kind ways to act.  
+        Say “Big Sister mode on!” to begin.
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+<script>
+let starCount = 0;
+let currentFeeling = null;
+
+const messages = document.getElementById('messages');
+const input = document.getElementById('userInput');
+const starDisplay = document.getElementById('starCount');
+
+function selectFeeling(feeling) {
+  currentFeeling = feeling;
+  let msg = "";
+  switch(feeling) {
+    case 'happy': msg = "💛 I’m glad you feel happy! Who or what brought sunshine today?"; break;
+    case 'sad': msg = "💙 It’s okay to feel sad sometimes. What could bring you a little comfort right now?"; break;
+    case 'angry': msg = "🔴 That’s strong energy! Maybe take a few deep breaths — what might help calm your red petal?"; break;
+    case 'shy': msg = "💜 Feeling shy just means your heart is gentle. What’s something that feels safe right now?"; break;
+    case 'lonely': msg = "🌫️ When you feel lonely, reaching out helps. Could you wave or message someone today?"; break;
+    case 'proud': msg = "🌟 That’s wonderful! What are you proud of? Let’s celebrate your gold petal!"; break;
+  }
+  addMessage(msg, "ai");
+}
+
+function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+
+  addMessage(text, "user");
+  input.value = "";
+
+  setTimeout(() => {
+    const reply = getResponse(text.toLowerCase());
+    addMessage(reply, "ai");
+  }, 600);
+}
+
+function addMessage(text, sender) {
+  const div = document.createElement("div");
+  div.classList.add("message", sender);
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function earnStar() {
+  starCount++;
+  starDisplay.textContent = starCount;
+  addMessage("🌈 You’ve earned a Kindness Star! ⭐ Total: " + starCount, "ai");
+}
+
+function getResponse(input) {
+  if (input.includes("big sister mode on")) {
+    return "🌸 Big Sister mode is on! Let’s explore your feelings. Tap a 🌼 emotion above to start.";
+  }
+  if (input.includes("thank")) {
+    earnStar();
+    return "You’re welcome, kind heart 💖 Every thank-you grows your kindness garden.";
+  }
+  if (input.includes("mission")) {
+    earnStar();
+    const missions = [
+      "🕊️ Peace Mission: Smile at someone who looks lonely today.",
+      "🌈 Caring Mission: Help a family member without being asked.",
+      "🌸 Friendship Mission: Write a kind note for a friend.",
+      "💫 Joy Mission: Compliment someone sincerely today."
+    ];
+    const pick = missions[Math.floor(Math.random() * missions.length)];
+    return "Here’s your Kindness Mission:\n" + pick;
+  }
+  if (input.includes("sad") || input.includes("cry")) {
+    return "It’s okay to feel blue 💙 Sometimes sharing or hugging helps your flower bloom again.";
+  }
+  if (input.includes("angry") || input.includes("mad")) {
+    return "Anger means your boundaries matter 🔴 Let’s take a breath and think of what could make peace.";
+  }
+  if (input.includes("lonely")) {
+    return "Loneliness is a gray petal 🌧️ — maybe reach out or do something creative to feel connection.";
+  }
+  if (input.includes("happy")) {
+    earnStar();
+    return "🌞 I’m so glad you’re happy! Sharing joy gives others Kindness Stars too!";
+  }
+  return "🌷 I hear you. Tell me more — what are you feeling right now?";
+}
+</script>
+
+
+</body></html>
