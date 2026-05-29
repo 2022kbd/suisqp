@@ -1,0 +1,764 @@
+<html lang="en">
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Learning App - Grade 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .mode-selection {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .mode-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 15px;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .app-content {
+            display: none;
+        }
+
+        .app-content.active {
+            display: block;
+        }
+
+        .card-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-question, .quiz-question {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .card-answer {
+            font-size: 1.2em;
+            color: #27ae60;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .card-answer.show {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .quiz-option, .quiz-input {
+            background: #ecf0f1;
+            border: 2px solid transparent;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+
+        .quiz-option:hover {
+            background: #d5dbdb;
+            border-color: #3498db;
+        }
+
+        .quiz-option.correct {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .quiz-option.wrong {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .quiz-input {
+            border: 2px solid #bdc3c7;
+            cursor: text;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+
+        .score {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            background: #95a5a6;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: #7f8c8d;
+        }
+
+        .chinese {
+            color: #8e44ad;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .mode-selection {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .controls {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="app-content active">
+            <h1>📚 Excel Learning App</h1>
+            <p class="subtitle">Choose your learning mode | 选择学习模式</p>
+            
+            <div class="mode-selection">
+                <button class="mode-btn" onclick="startFlashcards()">
+                    🃏 Flashcards<br><span class="chinese">闪卡</span>
+                </button>
+                <button class="mode-btn" onclick="startQuiz()">
+                    📝 Quiz<br><span class="chinese">测验</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="flashcards" class="app-content">
+            <button class="btn back-btn" onclick="goHome()">← Back to Home</button>
+            <h2>🃏 Flashcards Mode | 闪卡模式</h2>
+            
+            <div class="card-container">
+                <div id="flashcard-question" class="card-question"></div>
+                <div id="flashcard-answer" class="card-answer"></div>
+                <button class="btn" onclick="toggleAnswer()" id="show-answer-btn">Show Answer | 显示答案</button>
+            </div>
+
+            <div class="controls">
+                <button class="btn" onclick="previousCard()" id="prev-btn">← Previous | 上一张</button>
+                <div class="progress" id="flashcard-progress">1 / 20</div>
+                <button class="btn" onclick="nextCard()" id="next-btn">Next → | 下一张</button>
+            </div>
+        </div>
+
+        <div id="quiz" class="app-content">
+            <button class="btn back-btn" onclick="goHome()">← Back to Home</button>
+            <h2>📝 Quiz Mode | 测验模式</h2>
+            
+            <div class="card-container">
+                <div id="quiz-question" class="quiz-question"></div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <button class="btn" onclick="checkAnswer()" id="check-btn">Check Answer | 检查答案</button>
+                <button class="btn" onclick="nextQuestion()" id="next-question-btn" style="display: none;">Next Question | 下一题</button>
+            </div>
+
+            <div class="controls">
+                <div class="progress" id="quiz-progress">Question 1 / 20</div>
+                <div class="score" id="quiz-score">Score: 0 / 0</div>
+            </div>
+        </div>
+
+        <div id="quiz-results" class="app-content">
+            <h2>🎉 Quiz Complete! | 测验完成！</h2>
+            <div class="card-container">
+                <div id="final-score"></div>
+                <button class="btn" onclick="restartQuiz()">Try Again | 重新开始</button>
+                <button class="btn back-btn" onclick="goHome()">Back to Home | 回到首页</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data for flashcards and quiz
+        const flashcardData = [
+            {
+                questionEN: "What is Excel?",
+                questionCN: "什么是 Excel？",
+                answerEN: "A spreadsheet program used to organize, calculate, and analyze data.",
+                answerCN: "一种用于整理、计算和分析数据的电子表格软件。"
+            },
+            {
+                questionEN: "What is a workbook?",
+                questionCN: "什么是工作簿？",
+                answerEN: "A file that contains one or more worksheets.",
+                answerCN: "包含一个或多个工作表的文件。"
+            },
+            {
+                questionEN: "What is a worksheet?",
+                questionCN: "什么是工作表？",
+                answerEN: "A single page in a workbook made of rows and columns.",
+                answerCN: "工作簿中的一页，由行和列组成。"
+            },
+            {
+                questionEN: "What is a cell?",
+                questionCN: "什么是单元格？",
+                answerEN: "A box where a row and column meet.",
+                answerCN: "行与列交叉形成的小格。"
+            },
+            {
+                questionEN: "What is cell address?",
+                questionCN: "什么是单元格地址？",
+                answerEN: "The location of a cell (e.g., A1).",
+                answerCN: "单元格的位置（例如 A1）。"
+            },
+            {
+                questionEN: "What is data?",
+                questionCN: "什么是数据？",
+                answerEN: "Information entered into a spreadsheet.",
+                answerCN: "输入到电子表格中的信息。"
+            },
+            {
+                questionEN: "What are rows?",
+                questionCN: "什么是行？",
+                answerEN: "Horizontal lines of cells.",
+                answerCN: "水平排列的单元格。"
+            },
+            {
+                questionEN: "What are columns?",
+                questionCN: "什么是列？",
+                answerEN: "Vertical lines of cells.",
+                answerCN: "垂直排列的单元格。"
+            },
+            {
+                questionEN: "What is a formula?",
+                questionCN: "什么是公式？",
+                answerEN: "A calculation written using numbers and symbols.",
+                answerCN: "使用数字和符号进行计算的表达式。"
+            },
+            {
+                questionEN: "What is a function?",
+                questionCN: "什么是函数？",
+                answerEN: "A pre-made formula like SUM or AVERAGE.",
+                answerCN: "预先设计的公式，如 SUM 或 AVERAGE。"
+            },
+            {
+                questionEN: "What does SUM do?",
+                questionCN: "SUM 函数有什么作用？",
+                answerEN: "Adds numbers together.",
+                answerCN: "将数字相加。"
+            },
+            {
+                questionEN: "What does AVERAGE do?",
+                questionCN: "AVERAGE 函数有什么作用？",
+                answerEN: "Finds the mean of numbers.",
+                answerCN: "计算平均值。"
+            },
+            {
+                questionEN: "What is sorting?",
+                questionCN: "什么是排序？",
+                answerEN: "Arranging data in order (ascending or descending).",
+                answerCN: "按顺序排列数据（升序或降序）。"
+            },
+            {
+                questionEN: "What is filtering?",
+                questionCN: "什么是筛选？",
+                answerEN: "Showing only specific data based on conditions.",
+                answerCN: "根据条件只显示部分数据。"
+            },
+            {
+                questionEN: "What is a chart?",
+                questionCN: "什么是图表？",
+                answerEN: "A visual representation of data.",
+                answerCN: "数据的可视化展示。"
+            },
+            {
+                questionEN: "What is formatting?",
+                questionCN: "什么是格式设置？",
+                answerEN: "Changing how data looks (color, size, font).",
+                answerCN: "改变数据外观（颜色、大小、字体）。"
+            },
+            {
+                questionEN: "What is cell reference?",
+                questionCN: "什么是单元格引用？",
+                answerEN: "Using a cell's address in a formula.",
+                answerCN: "在公式中使用单元格地址。"
+            },
+            {
+                questionEN: 'What does "=" mean in Excel?',
+                questionCN: 'Excel 中 "=" 表示什么？',
+                answerEN: "It starts a formula.",
+                answerCN: "表示公式开始。"
+            },
+            {
+                questionEN: "What is a spreadsheet?",
+                questionCN: "什么是电子表格？",
+                answerEN: "A tool to organize and calculate data in tables.",
+                answerCN: "用表格整理和计算数据的工具。"
+            },
+            {
+                questionEN: "Why use Excel?",
+                questionCN: "为什么使用 Excel？",
+                answerEN: "To manage, calculate, and analyze data easily.",
+                answerCN: "用于轻松管理、计算和分析数据。"
+            }
+        ];
+
+        const quizData = [
+            {
+                questionEN: "What is Excel mainly used for?",
+                questionCN: "Excel 主要用于什么？",
+                type: "multiple",
+                options: ["Drawing", "Data management", "Gaming", "Music"],
+                correct: 1
+            },
+            {
+                questionEN: "What is the intersection of a row and column called?",
+                questionCN: "行和列的交叉点叫做什么？",
+                type: "short",
+                answer: "cell"
+            },
+            {
+                questionEN: "Which is a valid cell address?",
+                questionCN: "哪个是正确的单元格地址？",
+                type: "multiple",
+                options: ["1A", "A1", "AA", "11"],
+                correct: 1
+            },
+            {
+                questionEN: "What does SUM do?",
+                questionCN: "SUM 函数的作用是什么？",
+                type: "short",
+                answer: "adds numbers"
+            },
+            {
+                questionEN: "What symbol starts a formula?",
+                questionCN: "哪个符号用来开始公式？",
+                type: "short",
+                answer: "="
+            },
+            {
+                questionEN: "What is a worksheet?",
+                questionCN: "什么是工作表？",
+                type: "short",
+                answer: "a page in a workbook"
+            },
+            {
+                questionEN: "Rows go in which direction?",
+                questionCN: "行是哪个方向？",
+                type: "multiple",
+                options: ["Vertical", "Horizontal"],
+                correct: 1
+            },
+            {
+                questionEN: "Columns go in which direction?",
+                questionCN: "列是哪个方向？",
+                type: "multiple",
+                options: ["Vertical", "Horizontal"],
+                correct: 0
+            },
+            {
+                questionEN: "What is the function to find average?",
+                questionCN: "求平均值用哪个函数？",
+                type: "short",
+                answer: "average"
+            },
+            {
+                questionEN: "What is sorting?",
+                questionCN: "什么是排序？",
+                type: "short",
+                answer: "arranging data in order"
+            },
+            {
+                questionEN: "What does filtering do?",
+                questionCN: "筛选的作用是什么？",
+                type: "short",
+                answer: "shows selected data"
+            },
+            {
+                questionEN: "What is a workbook?",
+                questionCN: "什么是工作簿？",
+                type: "short",
+                answer: "a file with worksheets"
+            },
+            {
+                questionEN: "Which is a function?",
+                questionCN: "哪一个是函数？",
+                type: "multiple",
+                options: ["SUM", "Color", "Row", "Table"],
+                correct: 0
+            },
+            {
+                questionEN: "What is data?",
+                questionCN: "什么是数据？",
+                type: "short",
+                answer: "information"
+            },
+            {
+                questionEN: "What tool shows data visually?",
+                questionCN: "什么工具可以可视化数据？",
+                type: "short",
+                answer: "chart"
+            },
+            {
+                questionEN: "What is formatting?",
+                questionCN: "什么是格式设置？",
+                type: "short",
+                answer: "changing appearance"
+            },
+            {
+                questionEN: "Which formula is correct?",
+                questionCN: "哪个公式是正确的？",
+                type: "multiple",
+                options: ["SUM(A1:A5)", "=SUM(A1:A5)"],
+                correct: 1
+            },
+            {
+                questionEN: "What does A1 mean?",
+                questionCN: "A1 表示什么？",
+                type: "short",
+                answer: "cell location"
+            },
+            {
+                questionEN: "Why use Excel functions?",
+                questionCN: "为什么使用函数？",
+                type: "short",
+                answer: "to calculate quickly"
+            },
+            {
+                questionEN: "Give one use of Excel.",
+                questionCN: "说出一个 Excel 的用途。",
+                type: "short",
+                answer: "data analysis"
+            }
+        ];
+
+        // Variables
+        let currentCard = 0;
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let quizAnswered = 0;
+        let userAnswer = null;
+
+        // Navigation functions
+        function showContent(contentId) {
+            document.querySelectorAll('.app-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(contentId).classList.add('active');
+        }
+
+        function goHome() {
+            showContent('home');
+            resetStates();
+        }
+
+        function resetStates() {
+            currentCard = 0;
+            currentQuestion = 0;
+            quizScore = 0;
+            quizAnswered = 0;
+            userAnswer = null;
+        }
+
+        // Flashcard functions
+        function startFlashcards() {
+            showContent('flashcards');
+            currentCard = 0;
+            displayFlashcard();
+        }
+
+        function displayFlashcard() {
+            const card = flashcardData[currentCard];
+            document.getElementById('flashcard-question').innerHTML = 
+                `<strong>EN:</strong> ${card.questionEN}<br><br><span class="chinese"><strong>中文:</strong> ${card.questionCN}</span>`;
+            
+            document.getElementById('flashcard-answer').innerHTML = 
+                `<strong>EN:</strong> ${card.answerEN}<br><br><span class="chinese"><strong>中文:</strong> ${card.answerCN}</span>`;
+            
+            document.getElementById('flashcard-answer').classList.remove('show');
+            document.getElementById('show-answer-btn').innerText = 'Show Answer | 显示答案';
+            document.getElementById('flashcard-progress').innerText = `${currentCard + 1} / 20`;
+            
+            // Update navigation buttons
+            document.getElementById('prev-btn').disabled = currentCard === 0;
+            document.getElementById('next-btn').disabled = currentCard === 19;
+        }
+
+        function toggleAnswer() {
+            const answer = document.getElementById('flashcard-answer');
+            const btn = document.getElementById('show-answer-btn');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                btn.innerText = 'Show Answer | 显示答案';
+            } else {
+                answer.classList.add('show');
+                btn.innerText = 'Hide Answer | 隐藏答案';
+            }
+        }
+
+        function previousCard() {
+            if (currentCard > 0) {
+                currentCard--;
+                displayFlashcard();
+            }
+        }
+
+        function nextCard() {
+            if (currentCard < 19) {
+                currentCard++;
+                displayFlashcard();
+            }
+        }
+
+        // Quiz functions
+        function startQuiz() {
+            showContent('quiz');
+            currentQuestion = 0;
+            quizScore = 0;
+            quizAnswered = 0;
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            const question = quizData[currentQuestion];
+            document.getElementById('quiz-question').innerHTML = 
+                `<strong>EN:</strong> ${question.questionEN}<br><br><span class="chinese"><strong>中文:</strong> ${question.questionCN}</span>`;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            
+            if (question.type === 'multiple') {
+                question.options.forEach((option, index) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'quiz-option';
+                    optionDiv.innerText = option;
+                    optionDiv.onclick = () => selectOption(index, optionDiv);
+                    optionsContainer.appendChild(optionDiv);
+                });
+            } else {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'quiz-input';
+                input.id = 'quiz-input';
+                input.placeholder = 'Type your answer here | 在此输入答案';
+                optionsContainer.appendChild(input);
+            }
+            
+            document.getElementById('quiz-progress').innerText = `Question ${currentQuestion + 1} / 20`;
+            document.getElementById('quiz-score').innerText = `Score: ${quizScore} / ${quizAnswered}`;
+            document.getElementById('check-btn').style.display = 'inline-block';
+            document.getElementById('next-question-btn').style.display = 'none';
+            userAnswer = null;
+        }
+
+        function selectOption(index, element) {
+            // Remove previous selections
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.style.backgroundColor = '';
+                opt.style.border = '';
+            });
+            
+            // Highlight selected option
+            element.style.backgroundColor = '#3498db';
+            element.style.color = 'white';
+            userAnswer = index;
+        }
+
+        function checkAnswer() {
+            const question = quizData[currentQuestion];
+            let isCorrect = false;
+            
+            if (question.type === 'multiple') {
+                if (userAnswer === question.correct) {
+                    isCorrect = true;
+                    document.querySelectorAll('.quiz-option')[userAnswer].classList.add('correct');
+                } else {
+                    if (userAnswer !== null) {
+                        document.querySelectorAll('.quiz-option')[userAnswer].classList.add('wrong');
+                    }
+                    document.querySelectorAll('.quiz-option')[question.correct].classList.add('correct');
+                }
+            } else {
+                const inputAnswer = document.getElementById('quiz-input').value.toLowerCase().trim();
+                if (inputAnswer.includes(question.answer.toLowerCase()) || 
+                    question.answer.toLowerCase().includes(inputAnswer)) {
+                    isCorrect = true;
+                    document.getElementById('quiz-input').style.backgroundColor = '#2ecc71';
+                    document.getElementById('quiz-input').style.color = 'white';
+                } else {
+                    document.getElementById('quiz-input').style.backgroundColor = '#e74c3c';
+                    document.getElementById('quiz-input').style.color = 'white';
+                }
+            }
+            
+            quizAnswered++;
+            if (isCorrect) {
+                quizScore++;
+            }
+            
+            document.getElementById('quiz-score').innerText = `Score: ${quizScore} / ${quizAnswered}`;
+            document.getElementById('check-btn').style.display = 'none';
+            
+            if (currentQuestion < 19) {
+                document.getElementById('next-question-btn').style.display = 'inline-block';
+            } else {
+                setTimeout(showQuizResults, 1500);
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            displayQuestion();
+        }
+
+        function showQuizResults() {
+            const percentage = Math.round((quizScore / 20) * 100);
+            let message = '';
+            
+            if (percentage >= 90) {
+                message = 'Excellent! 🌟 | 优秀！';
+            } else if (percentage >= 80) {
+                message = 'Great job! 👏 | 做得好！';
+            } else if (percentage >= 70) {
+                message = 'Good work! 👍 | 不错！';
+            } else if (percentage >= 60) {
+                message = 'Keep practicing! 💪 | 继续努力！';
+            } else {
+                message = 'Try again! 📚 | 再试一次！';
+            }
+            
+            document.getElementById('final-score').innerHTML = 
+                `<h3>${message}</h3><br>
+                <p style="font-size: 1.5em; margin: 20px 0;">
+                    Final Score | 最终成绩: <span style="color: #27ae60; font-weight: bold;">${quizScore} / 20</span>
+                </p>
+                <p style="font-size: 1.2em; color: #7f8c8d;">
+                    Percentage | 百分比: ${percentage}%
+                </p>`;
+            
+            showContent('quiz-results');
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            quizScore = 0;
+            quizAnswered = 0;
+            startQuiz();
+        }
+    </script>
+
+
+</body></html>
