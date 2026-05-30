@@ -1,0 +1,943 @@
+<html lang="en">
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Guardian Spirit Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Microsoft YaHei', 'SimSun';
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            display: flex;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .teacher-info {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .house-selector {
+            margin-bottom: 2rem;
+        }
+
+        .house-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .house-btn {
+            padding: 1rem;
+            border: 2px solid;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .house-btn.azure { border-color: #4A90E2; color: #4A90E2; }
+        .house-btn.white { border-color: #F5A623; color: #F5A623; }
+        .house-btn.vermilion { border-color: #D0021B; color: #D0021B; }
+        .house-btn.black { border-color: #50E3C2; color: #50E3C2; }
+
+        .house-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .house-btn.active {
+            background: currentColor;
+            color: white !important;
+        }
+
+        .student-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .student-item {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .student-item:hover {
+            background: #f8f9fa;
+        }
+
+        .student-item.selected {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+
+        .award-section {
+            text-align: center;
+        }
+
+        .award-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .award-btn {
+            padding: 2rem 1rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gold-coin-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #8B4513;
+        }
+
+        .points-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .award-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .award-btn:active {
+            transform: translateY(0);
+        }
+
+        .amount-selector {
+            margin: 1rem 0;
+        }
+
+        .amount-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .amount-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .amount-btn.selected {
+            background: #2196f3;
+            color: white;
+            border-color: #2196f3;
+        }
+
+        .custom-amount {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .custom-amount input {
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .reason-input {
+            margin: 1rem 0;
+        }
+
+        .reason-input textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .confirm-award {
+            background: linear-gradient(45deg, #FF6B6B, #ee5a24);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-award:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .rankings {
+            overflow-y: auto;
+            max-height: 500px;
+        }
+
+        .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid;
+        }
+
+        .ranking-item.rank-1 { border-left-color: #FFD700; }
+        .ranking-item.rank-2 { border-left-color: #C0C0C0; }
+        .ranking-item.rank-3 { border-left-color: #CD7F32; }
+        .ranking-item.rank-other { border-left-color: #6c757d; }
+
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        .notification.success {
+            border-left: 5px solid #4CAF50;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .spirit-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .house-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .award-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-right {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span>🏛️</span>
+            <span id="headerTitle">Guardian Spirit Academy - Teacher Portal</span>
+        </div>
+        <div class="header-right">
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="setLanguage('en', this)">English</button>
+                <button class="lang-btn" onclick="setLanguage('zh', this)">中文</button>
+            </div>
+            <div class="teacher-info">
+                <span id="teacherName">👩‍🏫 Ms. Johnson</span>
+                <button onclick="logout()" id="logoutBtn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer;">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Panel: House & Student Selection -->
+        <div class="card">
+            <h2 id="selectHouseTitle">🏠 Select House &amp; Student</h2>
+            
+            <div class="house-selector">
+                <h3 id="chooseHouseLabel">Choose House:</h3>
+                <div class="house-buttons">
+                    <div class="house-btn azure" onclick="selectHouse('azure')">
+                        <div class="spirit-icon">🐉</div>
+                        <span id="azureDragon">Azure Dragon</span>
+                    </div>
+                    <div class="house-btn white" onclick="selectHouse('white')">
+                        <div class="spirit-icon">🐅</div>
+                        <span id="whiteTiger">White Tiger</span>
+                    </div>
+                    <div class="house-btn vermilion" onclick="selectHouse('vermilion')">
+                        <div class="spirit-icon">🦅</div>
+                        <span id="vermilionBird">Vermilion Bird</span>
+                    </div>
+                    <div class="house-btn black" onclick="selectHouse('black')">
+                        <div class="spirit-icon">🐢</div>
+                        <span id="blackTortoise">Black Tortoise</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="student-selector">
+                <h3 id="selectStudentLabel">Select Student:</h3>
+                <div class="student-list" id="studentList">
+                    <div class="student-item" id="selectHouseFirst">Select a house first</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Panel: Award System -->
+        <div class="card">
+            <div class="award-section">
+                <h2 id="awardSystemTitle">🎁 Award System</h2>
+                <p id="selectedStudent">No student selected</p>
+
+                <div class="award-buttons">
+                    <button class="award-btn gold-coin-btn" onclick="selectAwardType('coins')">
+                        <div>💰</div>
+                        <span id="awardGoldCoins">Award Gold Coins</span>
+                    </button>
+                    <button class="award-btn points-btn" onclick="selectAwardType('points')">
+                        <div>⭐</div>
+                        <span id="awardPoints">Award Points</span>
+                    </button>
+                </div>
+
+                <div class="amount-selector">
+                    <h3 id="selectAmountLabel">Select Amount:</h3>
+                    <div class="amount-buttons" id="amountButtons">
+                        <div class="amount-btn" onclick="selectAmount(1)">1</div>
+                        <div class="amount-btn" onclick="selectAmount(5)">5</div>
+                        <div class="amount-btn" onclick="selectAmount(10)">10</div>
+                        <div class="amount-btn" onclick="selectAmount(25)">25</div>
+                        <div class="amount-btn" onclick="selectAmount(50)">50</div>
+                    </div>
+                    <div class="custom-amount">
+                        <label id="customAmountLabel">Custom Amount:</label>
+                        <input type="number" id="customAmount" placeholder="0" min="1" max="1000">
+                    </div>
+                </div>
+
+                <div class="reason-input">
+                    <label for="reason"><strong id="reasonLabel">Reason for Award:</strong></label>
+                    <textarea id="reason" placeholder=""></textarea>
+                </div>
+
+                <button class="confirm-award" onclick="confirmAward()" id="confirmBtn" disabled="">
+                    <span id="confirmBtnText">🎉 Confirm Award</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Panel: Rankings -->
+        <div class="card">
+            <h2 id="houseRankingsTitle">🏆 House Rankings</h2>
+            <p style="text-align: center; margin-bottom: 1rem; font-style: italic;" id="currentMonthLabel">Current Month</p>
+            
+            <div class="rankings" id="rankingsContainer">
+                <!-- Rankings will be populated by JavaScript -->
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                <h3 id="topStudentsTitle">🎯 Top Students This Week</h3>
+                <div style="margin-top: 1rem;" id="topStudentsContainer">
+                    <!-- Top students will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Modal -->
+    <div id="overlay" class="overlay hidden"></div>
+    <div id="notification" class="notification hidden">
+        <h3 id="notificationTitle">Award Successful!</h3>
+        <p id="notificationMessage"></p>
+        <button onclick="closeNotification()" id="notificationOkBtn" style="margin-top: 1rem; padding: 0.5rem 2rem; background: #4CAF50; color: white; border: none; border-radius: 20px; cursor: pointer;">OK</button>
+    </div>
+
+    <script>
+        let selectedHouse = '';
+        let selectedStudent = '';
+        let selectedAwardType = '';
+        let selectedAmount = 0;
+        let currentLanguage = 'en';
+
+        // Complete language translations
+        const translations = {
+            en: {
+                headerTitle: "Guardian Spirit Academy - Teacher Portal",
+                teacherName: "👩‍🏫 Ms. Johnson",
+                logoutBtn: "Logout",
+                selectHouseTitle: "🏠 Select House & Student",
+                chooseHouseLabel: "Choose House:",
+                azureDragon: "Azure Dragon",
+                whiteTiger: "White Tiger",
+                vermilionBird: "Vermilion Bird",
+                blackTortoise: "Black Tortoise",
+                selectStudentLabel: "Select Student:",
+                selectHouseFirst: "Select a house first",
+                awardSystemTitle: "🎁 Award System",
+                selectedStudent: "No student selected",
+                selectedStudentPrefix: "Selected: ",
+                awardGoldCoins: "Award Gold Coins",
+                awardPoints: "Award Points",
+                selectAmountLabel: "Select Amount:",
+                customAmountLabel: "Custom Amount:",
+                reasonLabel: "Reason for Award:",
+                reasonPlaceholder: "Enter reason (e.g., 'Excellent test score', 'Great participation', 'Helping classmates')",
+                confirmBtnText: "🎉 Confirm Award",
+                houseRankingsTitle: "🏆 House Rankings",
+                currentMonthLabel: "Current Month",
+                studentsLabel: "students",
+                ptsLabel: "pts",
+                topStudentsTitle: "🎯 Top Students This Week",
+                notificationTitle: "Award Successful!",
+                notificationOkBtn: "OK",
+                gradeA: "Grade A",
+                confirmAwardBtn: "🎉 Award {amount} {type} to {student}",
+                goldCoins: "Gold Coins",
+                points: "Points",
+                reasonRequired: "Please provide a reason for the award.",
+                logoutConfirm: "Are you sure you want to logout?",
+                loggingOut: "Logging out... Redirecting to login page.",
+                awardSuccess: "{student} has been awarded {amount} {type} for: \"{reason}\"",
+                // Additional rankings translations
+                rank1st: "1st",
+                rank2nd: "2nd", 
+                rank3rd: "3rd",
+                rank4th: "4th"
+            },
+            zh: {
+                headerTitle: "守护灵学院 - 教师平台",
+                teacherName: "👩‍🏫 李老师",
+                logoutBtn: "注销",
+                selectHouseTitle: "🏠 选择学院与学生",
+                chooseHouseLabel: "选择学院：",
+                azureDragon: "青龙",
+                whiteTiger: "白虎",
+                vermilionBird: "朱雀",
+                blackTortoise: "玄武",
+                selectStudentLabel: "选择学生：",
+                selectHouseFirst: "请先选择一个学院",
+                awardSystemTitle: "🎁 奖励系统",
+                selectedStudent: "未选择学生",
+                selectedStudentPrefix: "已选择：",
+                awardGoldCoins: "奖励金币",
+                awardPoints: "奖励积分",
+                selectAmountLabel: "选择数量：",
+                customAmountLabel: "自定义数量：",
+                reasonLabel: "奖励原因：",
+                reasonPlaceholder: "输入原因（例如：考试成绩优秀、课堂表现出色、帮助同学）",
+                confirmBtnText: "🎉 确认奖励",
+                houseRankingsTitle: "🏆 学院排行榜",
+                currentMonthLabel: "本月",
+                studentsLabel: "学生",
+                ptsLabel: "积分",
+                topStudentsTitle: "🎯 本周优秀学生",
+                notificationTitle: "奖励成功！",
+                notificationOkBtn: "确定",
+                gradeA: "优等生",
+                confirmAwardBtn: "🎉 奖励 {student} {amount} {type}",
+                goldCoins: "金币",
+                points: "积分",
+                reasonRequired: "请提供奖励原因。",
+                logoutConfirm: "确定要注销吗？",
+                loggingOut: "正在注销...跳转到登录页面。",
+                awardSuccess: "{student} 已获得 {amount} {type}，原因：{reason}",
+                // Additional rankings translations
+                rank1st: "第一名",
+                rank2nd: "第二名",
+                rank3rd: "第三名", 
+                rank4th: "第四名"
+            }
+        };
+
+        // Student data with bilingual names
+        const houseStudents = {
+            azure: {
+                en: ['Emma Chen', 'Alex Rodriguez', 'Sophia Wang', 'Michael Park', 'Isabella Liu',
+                     'Daniel Kim', 'Olivia Zhang', 'Ryan Martinez', 'Ava Singh', 'Jackson Wu'],
+                zh: ['陈艾玛', '罗德里格斯·亚历克斯', '王索菲亚', '朴迈克尔', '刘伊莎贝拉',
+                     '金丹尼尔', '张奥利维亚', '马丁内斯·瑞安', '辛格·艾娃', '吴杰克逊']
+            },
+            white: {
+                en: ['Sarah Lopez', 'David Johnson', 'Mia Thompson', 'Ethan Brown', 'Charlotte Davis',
+                     'Noah Wilson', 'Amelia Garcia', 'Lucas Anderson', 'Harper Miller', 'Mason Taylor'],
+                zh: ['洛佩斯·萨拉', '约翰逊·大卫', '汤普森·米娅', '布朗·伊桑', '戴维斯·夏洛特',
+                     '威尔逊·诺亚', '加西亚·阿米莉亚', '安德森·卢卡斯', '米勒·哈珀', '泰勒·梅森']
+            },
+            vermilion: {
+                en: ['Marcus Kim', 'Emily White', 'Aiden Jones', 'Abigail Moore', 'Carter Martin',
+                     'Ella Jackson', 'Grayson Lee', 'Scarlett Harris', 'Logan Clark', 'Grace Lewis'],
+                zh: ['金马库斯', '怀特·艾米莉', '琼斯·艾登', '摩尔·阿比盖尔', '马丁·卡特',
+                     '杰克逊·艾拉', '李格雷森', '哈里斯·斯嘉丽', '克拉克·洛根', '刘易斯·格蕾丝']
+            },
+            black: {
+                en: ['Lily Chen', 'James Robinson', 'Zoe Walker', 'Benjamin Hall', 'Chloe Allen',
+                     'Sebastian Young', 'Aria King', 'Owen Wright', 'Layla Scott', 'Caleb Green'],
+                zh: ['陈莉莉', '罗宾逊·詹姆斯', '沃克·佐伊', '霍尔·本杰明', '艾伦·克洛伊',
+                     '杨塞巴斯蒂安', '金阿里亚', '赖特·欧文', '斯科特·莱拉', '格林·凯勒布']
+            }
+        };
+
+        // House rankings data with bilingual house names
+        const houseRankings = [
+            { house: 'azure', points: 2847, students: 28 },
+            { house: 'vermilion', points: 2634, students: 26 },
+            { house: 'white', points: 2521, students: 27 },
+            { house: 'black', points: 2398, students: 25 }
+        ];
+
+        // Top students data
+        const topStudents = [
+            { name: { en: 'Emma Chen (Azure)', zh: '陈艾玛 (青龙)' }, points: 156 },
+            { name: { en: 'Marcus Kim (Vermilion)', zh: '金马库斯 (朱雀)' }, points: 142 },
+            { name: { en: 'Sarah Lopez (White)', zh: '洛佩斯·萨拉 (白虎)' }, points: 138 }
+        ];
+
+        function setLanguage(lang, buttonElement) {
+            currentLanguage = lang;
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+            
+            // Update document language attribute
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // Update all text elements
+            const t = translations[lang];
+            
+            // Header
+            document.getElementById('headerTitle').textContent = t.headerTitle;
+            document.getElementById('teacherName').textContent = t.teacherName;
+            document.getElementById('logoutBtn').textContent = t.logoutBtn;
+            
+            // Left panel
+            document.getElementById('selectHouseTitle').innerHTML = t.selectHouseTitle;
+            document.getElementById('chooseHouseLabel').textContent = t.chooseHouseLabel;
+            document.getElementById('azureDragon').textContent = t.azureDragon;
+            document.getElementById('whiteTiger').textContent = t.whiteTiger;
+            document.getElementById('vermilionBird').textContent = t.vermilionBird;
+            document.getElementById('blackTortoise').textContent = t.blackTortoise;
+            document.getElementById('selectStudentLabel').textContent = t.selectStudentLabel;
+            document.getElementById('selectHouseFirst').textContent = t.selectHouseFirst;
+            
+            // Middle panel - Award System
+            document.getElementById('awardSystemTitle').innerHTML = t.awardSystemTitle;
+            if (selectedStudent === '') {
+                document.getElementById('selectedStudent').textContent = t.selectedStudent;
+            }
+            document.getElementById('awardGoldCoins').textContent = t.awardGoldCoins;
+            document.getElementById('awardPoints').textContent = t.awardPoints;
+            document.getElementById('selectAmountLabel').textContent = t.selectAmountLabel;
+            document.getElementById('customAmountLabel').textContent = t.customAmountLabel;
+            document.getElementById('reasonLabel').textContent = t.reasonLabel;
+            document.getElementById('reason').placeholder = t.reasonPlaceholder;
+            
+            // Right panel - Rankings
+            document.getElementById('houseRankingsTitle').innerHTML = t.houseRankingsTitle;
+            document.getElementById('currentMonthLabel').textContent = t.currentMonthLabel;
+            document.getElementById('topStudentsTitle').innerHTML = t.topStudentsTitle;
+            
+            // Update rankings display
+            updateRankingsDisplay();
+            updateTopStudentsDisplay();
+            
+            // Update student list if house is selected
+            if (selectedHouse) {
+                updateStudentList();
+            }
+            
+            // Update confirm button
+            updateConfirmButton();
+            
+            // Update notification button
+            document.getElementById('notificationOkBtn').textContent = t.notificationOkBtn;
+        }
+
+        function updateRankingsDisplay() {
+            const t = translations[currentLanguage];
+            const rankingsContainer = document.getElementById('rankingsContainer');
+            
+            const rankLabels = [
+                { emoji: '🥇', label: t.rank1st, class: 'rank-1' },
+                { emoji: '🥈', label: t.rank2nd, class: 'rank-2' },
+                { emoji: '🥉', label: t.rank3rd, class: 'rank-3' },
+                { emoji: '4️⃣', label: t.rank4th, class: 'rank-other' }
+            ];
+            
+            rankingsContainer.innerHTML = '';
+            
+            houseRankings.forEach(function(ranking, index) {
+                const rankItem = document.createElement('div');
+                rankItem.className = 'ranking-item ' + rankLabels[index].class;
+                
+                const houseName = t[ranking.house === 'azure' ? 'azureDragon' : 
+                                    ranking.house === 'white' ? 'whiteTiger' :
+                                    ranking.house === 'vermilion' ? 'vermilionBird' : 'blackTortoise'];
+                
+                const houseEmoji = ranking.house === 'azure' ? '🐉' : 
+                                  ranking.house === 'white' ? '🐅' :
+                                  ranking.house === 'vermilion' ? '🦅' : '🐢';
+                
+                rankItem.innerHTML = '<div><div style="font-weight: bold;">' + rankLabels[index].emoji + ' ' + houseName + ' ' + houseEmoji + '</div><div style="font-size: 0.9rem; color: #666;">' + ranking.students + ' ' + t.studentsLabel + '</div></div><div style="font-weight: bold; color: ' + getHouseColor(ranking.house) + ';">' + ranking.points.toLocaleString() + ' ' + t.ptsLabel + '</div>';
+                
+                rankingsContainer.appendChild(rankItem);
+            });
+        }
+
+        function updateTopStudentsDisplay() {
+            const t = translations[currentLanguage];
+            const container = document.getElementById('topStudentsContainer');
+            
+            const icons = ['🌟', '⚡', '🔥'];
+            
+            container.innerHTML = '';
+            
+            topStudents.forEach(function(student, index) {
+                const studentDiv = document.createElement('div');
+                studentDiv.style.cssText = 'display: flex; justify-content: space-between; padding: 0.5rem; background: #f8f9fa; border-radius: 5px; margin: 0.3rem 0;';
+                
+                studentDiv.innerHTML = '<span>' + icons[index] + ' ' + student.name[currentLanguage] + '</span><span style="font-weight: bold;">' + student.points + ' ' + t.ptsLabel + '</span>';
+                
+                container.appendChild(studentDiv);
+            });
+        }
+
+        function getHouseColor(house) {
+            const colors = {
+                azure: '#4A90E2',
+                vermilion: '#D0021B', 
+                white: '#F5A623',
+                black: '#50E3C2'
+            };
+            return colors[house];
+        }
+
+        function selectHouse(house) {
+            selectedHouse = house;
+            selectedStudent = '';
+            
+            // Update house button styles
+            document.querySelectorAll('.house-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.house-btn.' + house).classList.add('active');
+            
+            updateStudentList();
+            updateConfirmButton();
+        }
+
+        function updateStudentList() {
+            const studentList = document.getElementById('studentList');
+            studentList.innerHTML = '';
+            
+            const students = houseStudents[selectedHouse][currentLanguage];
+            const gradeText = translations[currentLanguage].gradeA;
+            
+            students.forEach(function(student) {
+                const studentItem = document.createElement('div');
+                studentItem.className = 'student-item';
+                studentItem.innerHTML = '<span>' + student + '</span><span style="font-size: 0.8rem; color: #666;">📚 ' + gradeText + '</span>';
+                studentItem.onclick = function() {
+                    selectStudent(student, studentItem);
+                };
+                studentList.appendChild(studentItem);
+            });
+        }
+
+        function selectStudent(student, element) {
+            selectedStudent = student;
+            
+            // Update student selection styles
+            document.querySelectorAll('.student-item').forEach(function(item) {
+                item.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            // Update selected student display
+            const t = translations[currentLanguage];
+            document.getElementById('selectedStudent').textContent = t.selectedStudentPrefix + student;
+            
+            updateConfirmButton();
+        }
+
+        function selectAwardType(type) {
+            selectedAwardType = type;
+            
+            // Update button styles
+            document.querySelectorAll('.award-btn').forEach(function(btn) {
+                btn.style.opacity = '0.6';
+            });
+            
+            if (type === 'coins') {
+                document.querySelector('.gold-coin-btn').style.opacity = '1';
+            } else {
+                document.querySelector('.points-btn').style.opacity = '1';
+            }
+            
+            updateConfirmButton();
+        }
+
+        function selectAmount(amount) {
+            selectedAmount = amount;
+            
+            // Update amount button styles
+            document.querySelectorAll('.amount-btn').forEach(function(btn) {
+                btn.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+            
+            // Clear custom amount
+            document.getElementById('customAmount').value = '';
+            
+            updateConfirmButton();
+        }
+
+        // Handle custom amount input
+        document.getElementById('customAmount').addEventListener('input', function() {
+            selectedAmount = parseInt(this.value) || 0;
+            
+            // Clear amount button selections
+            document.querySelectorAll('.amount-btn').forEach(function(btn) {
+                btn.classList.remove('selected');
+            });
+            
+            updateConfirmButton();
+        });
+
+        function updateConfirmButton() {
+            const confirmBtn = document.getElementById('confirmBtn');
+            const canConfirm = selectedStudent && selectedAwardType && selectedAmount > 0;
+            
+            confirmBtn.disabled = !canConfirm;
+            confirmBtn.style.opacity = canConfirm ? '1' : '0.5';
+            
+            if (canConfirm) {
+                const t = translations[currentLanguage];
+                const awardTypeText = selectedAwardType === 'coins' ? t.goldCoins : t.points;
+                const template = t.confirmAwardBtn;
+                confirmBtn.innerHTML = template
+                    .replace('{amount}', selectedAmount)
+                    .replace('{type}', awardTypeText)
+                    .replace('{student}', selectedStudent);
+            } else {
+                const t = translations[currentLanguage];
+                confirmBtn.innerHTML = t.confirmBtnText;
+            }
+        }
+
+        function confirmAward() {
+            if (!selectedStudent || !selectedAwardType || selectedAmount <= 0) return;
+            
+            const reason = document.getElementById('reason').value.trim();
+            if (!reason) {
+                const t = translations[currentLanguage];
+                alert(t.reasonRequired);
+                return;
+            }
+            
+            const t = translations[currentLanguage];
+            const awardTypeText = selectedAwardType === 'coins' ? t.goldCoins : t.points;
+            
+            // Show success notification
+            const message = t.awardSuccess
+                .replace('{student}', selectedStudent)
+                .replace('{amount}', selectedAmount)
+                .replace('{type}', awardTypeText)
+                .replace('{reason}', reason);
+            
+            showNotification(t.notificationTitle, message);
+            
+            // Reset form
+            resetForm();
+        }
+
+        function resetForm() {
+            selectedStudent = '';
+            selectedAwardType = '';
+            selectedAmount = 0;
+            
+            const t = translations[currentLanguage];
+            document.getElementById('selectedStudent').textContent = t.selectedStudent;
+            document.getElementById('reason').value = '';
+            document.getElementById('customAmount').value = '';
+            
+            document.querySelectorAll('.student-item').forEach(function(item) {
+                item.classList.remove('selected');
+            });
+            document.querySelectorAll('.amount-btn').forEach(function(btn) {
+                btn.classList.remove('selected');
+            });
+            document.querySelectorAll('.award-btn').forEach(function(btn) {
+                btn.style.opacity = '1';
+            });
+            
+            updateConfirmButton();
+        }
+
+        function showNotification(title, message) {
+            document.getElementById('notificationTitle').textContent = title;
+            document.getElementById('notificationMessage').textContent = message;
+            document.getElementById('overlay').classList.remove('hidden');
+            document.getElementById('notification').classList.remove('hidden');
+        }
+
+        function closeNotification() {
+            document.getElementById('overlay').classList.add('hidden');
+            document.getElementById('notification').classList.add('hidden');
+        }
+
+        function logout() {
+            const t = translations[currentLanguage];
+            if (confirm(t.logoutConfirm)) {
+                alert(t.loggingOut);
+                // In a real app, this would redirect to the login page
+            }
+        }
+
+        // Initialize the app
+        function initializeApp() {
+            updateRankingsDisplay();
+            updateTopStudentsDisplay();
+            updateConfirmButton();
+            setLanguage('en', document.querySelector('.lang-btn.active')); // Set default language with proper button reference
+        }
+
+        // Initialize when page loads
+        initializeApp();
+    </script>
+
+
+</body></html>
