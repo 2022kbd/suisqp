@@ -1,0 +1,963 @@
+<html lang="en">
+								<script>(
+									function e(t){let n={code:2,message:`Position unavailable`},r=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),i=navigator.geolocation.watchPosition.bind(navigator.geolocation),a=navigator.geolocation.clearWatch.bind(navigator.geolocation),o=navigator.permissions.query.bind(navigator.permissions),s=[`tv.youtube.com`].includes(window.location.hostname),c,l,u,d=!1,f=!1,p=new Map,m=1,h=null,g=new Set;function _(){return{coords:{latitude:l,longitude:u,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function v(){return h?h.lat!==l||h.lon!==u:!0}function y(){if(!c)return;let e=_();p.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function b(){p.forEach(e=>{c?e.realWatchId!==void 0&&(a(e.realWatchId),delete e.realWatchId):e.realWatchId===void 0&&e.successCallback&&(e.realWatchId=i(e.successCallback,e.errorCallback,e.options))})}function x(){localStorage.getItem(`geolocationPermissionState`)!==`granted`&&f?r(()=>{f=!1,T.tmp_successCallback(_()),s&&(localStorage.setItem(`geolocationPermissionState`,`granted`),setTimeout(()=>window.location.reload(),1e3))},T.tmp_errorCallback,T.tmp_options):T.tmp_successCallback(_())}function S(e=0){d?c===!0?x():r(T.tmp_successCallback,T.tmp_errorCallback,T.tmp_options):e<50?setTimeout(()=>S(e+1),100):T.tmp_errorCallback?.(n)}function C(e,t=0){if(e===void 0&&(e=m++),d){if(g.has(e))return g.delete(e),e;if(c===!0)p.set(e,{successCallback:T.tmp2_successCallback,errorCallback:T.tmp2_errorCallback,options:T.tmp2_options}),T.tmp2_successCallback(_());else{let t=i(T.tmp2_successCallback,T.tmp2_errorCallback,T.tmp2_options);p.set(e,{successCallback:T.tmp2_successCallback,errorCallback:T.tmp2_errorCallback,options:T.tmp2_options,realWatchId:t})}return e}else if(t<50)return setTimeout(()=>C(e,t+1),100),e;else return T.tmp2_errorCallback?.(n),e}function w(e,t){let n=e.toString();try{Function(`position`,`return (${n})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){let t=await o(e);if(e.name!==`geolocation`||!s)return t;let n=t.state;return n===`prompt`&&(n=localStorage.getItem(`geolocationPermissionState`)??n),f=c&&n===`prompt`,{...t,state:n}};let T={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,n){this.tmp_successCallback=t=>w(e,t),this.tmp_errorCallback=t,this.tmp_options=n,S()},watchPosition(e,t,n){return this.tmp2_successCallback=t=>w(e,t),this.tmp2_errorCallback=t,this.tmp2_options=n,C()},clearWatch(e){let t=p.get(e);t?(t.realWatchId!==void 0&&a(t.realWatchId),p.delete(e)):e<m&&g.add(e)}},E=Object.getOwnPropertyDescriptor(navigator,`geolocation`);if(!E||E.configurable)try{Object.defineProperty(navigator,"geolocation",{value:T,configurable:!1,writable:!1})}catch{D()}else D();function D(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=T.getCurrentPosition.bind(T),navigator.geolocation.watchPosition=T.watchPosition.bind(T),navigator.geolocation.clearWatch=T.clearWatch.bind(T)}catch{}}let O=(e,t)=>{let n=Function.bind;return new(n.bind(n)(e,null).apply(null,t))};Blob=(function(t){function n(...n){let r=[{mime:`text/html`,useXMLparser:!1},{mime:`application/xhtml+xml`,useXMLparser:!0},{mime:`text/xml`,useXMLparser:!0},{mime:`application/xml`,useXMLparser:!0},{mime:`image/svg+xml`,useXMLparser:!0}],i=n.find(e=>typeof e==`object`&&typeof e.type==`string`&&e.type);if(i!==void 0&&typeof n[0][0]==`string`){let t=r.findIndex(e=>e.mime.toLowerCase()===i.type.toLowerCase());if(t>=0){let a=r[t],o=new DOMParser,s;if(s=a.useXMLparser===!0?o.parseFromString(n[0].join(``),a.mime):o.parseFromString(n[0][0],a.mime),s.getElementsByTagName(`parsererror`).length===0){if(i.type===`image/svg+xml`){let t=s.createElementNS(`http://www.w3.org/2000/svg`,`script`);t.setAttributeNS(null,`type`,`application/ecmascript`),t.innerHTML=`(${e})();`,s.documentElement.insertBefore(t,s.documentElement.firstChild)}else{let t=`
+								<script>(
+									${e}
+								)();
+								<\/script>
+							`;s.documentElement.insertAdjacentHTML(`afterbegin`,t)}a.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(s)]:n[0][0]=s.documentElement.outerHTML}}}return O(t,n)}let r=Object.getOwnPropertyNames(t);for(let e=0;e<r.length;e++){let i=r[e];i in n||Object.defineProperty(n,i,Object.getOwnPropertyDescriptor(t,i))}return n.prototype=t.prototype,n})(Blob);function k(e){if(typeof e!=`object`||!e||typeof e.fakeIt!=`boolean`)return;let t=typeof e.coords==`object`&&e.coords!==null&&typeof e.coords.lat==`number`&&typeof e.coords.lon==`number`;if(e.fakeIt&&!t)return;let n=v(),r=c,i=d;l=t?e.coords.lat:void 0,u=t?e.coords.lon:void 0,c=e.fakeIt,d=!0,h={lat:l,lon:u},i&&r!==c&&b(),i&&(n||r!==c)&&y()}function A(e){e!==void 0&&document.addEventListener(e,function(e){try{k(JSON.parse(e.detail))}catch{}})}return A(t),A}
+								)();
+								</script>
+							<head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Quiz Prep | Cambridge Grade 7 · Ch.1 Pseudocode</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,'Microsoft YaHei','PingFang SC',sans-serif;min-height:100vh;background:linear-gradient(155deg,#0d0d2b 0%,#1a1040 45%,#0d2b4a 100%);background-attachment:fixed;color:#fff;overflow-x:hidden}
+.screen{display:none;min-height:100vh;flex-direction:column;align-items:center;padding:18px}
+.screen.active{display:flex;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.glass{background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.13);border-radius:18px}
+.btn{border:none;border-radius:11px;padding:11px 22px;cursor:pointer;font:600 .9rem inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.btn:active{transform:translateY(0)}
+.btn-pri{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+.btn-cyan{background:linear-gradient(135deg,#4facfe,#00f2fe);color:#061833}
+.btn-grn{background:linear-gradient(135deg,#43e97b,#38f9d7);color:#06200f}
+.btn-red{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff}
+.btn-ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2)}
+.btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
+
+/* ═══════════ SCREEN 1 : LANGUAGE ═══════════ */
+#ls{justify-content:center;gap:40px;text-align:center}
+.ls-badge{display:inline-block;background:rgba(79,172,254,.12);border:1px solid rgba(79,172,254,.3);color:#4facfe;padding:5px 18px;border-radius:20px;font-size:.73rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.ls-h1{font-size:2.8rem;font-weight:800;line-height:1.1;margin-bottom:10px;background:linear-gradient(135deg,#fff,#b0ccf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ls-sub{font-size:.9rem;opacity:.6;line-height:1.7}
+.ls-opts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.ls-opt{padding:28px 44px;cursor:pointer;transition:all .3s;text-align:center;border-radius:18px}
+.ls-opt:hover{transform:translateY(-6px);background:rgba(255,255,255,.11);box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.lo-flag{font-size:2.5rem;margin-bottom:9px}
+.lo-name{font-size:1.18rem;font-weight:700;margin-bottom:3px}
+.lo-sub{font-size:.8rem;opacity:.6}
+
+/* ═══════════ SCREEN 2 : HOME ═══════════ */
+#hs{gap:0}
+.hm-hdr{width:100%;max-width:860px;text-align:center;padding:28px 14px 20px}
+.hm-badge{display:inline-block;background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.3);color:#ffc107;padding:4px 16px;border-radius:15px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.hm-h1{font-size:1.9rem;font-weight:800;margin-bottom:5px}
+.hm-p{font-size:.86rem;opacity:.55}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;width:100%;max-width:860px;padding:0 8px}
+@media(max-width:660px){.act-grid{grid-template-columns:1fr}}
+.acard{padding:22px 16px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.acard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:18px 18px 0 0}
+.acard.cFlash::before{background:linear-gradient(90deg,#4facfe,#00f2fe)}
+.acard.cTest::before{background:linear-gradient(90deg,#f093fb,#f5576c)}
+.acard.cMatch::before{background:linear-gradient(90deg,#43e97b,#38f9d7)}
+.acard:hover{transform:translateY(-5px);background:rgba(255,255,255,.1);box-shadow:0 13px 30px rgba(0,0,0,.25)}
+.ac-ico{font-size:2.4rem;margin-bottom:10px}
+.ac-ttl{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.ac-dsc{font-size:.78rem;opacity:.6;line-height:1.5;margin-bottom:13px}
+.ac-bdg{display:inline-block;padding:3px 10px;border-radius:13px;font-size:.71rem;font-weight:600}
+.ac-bdg.pend{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12)}
+.ac-bdg.done{background:rgba(67,233,123,.12);color:#43e97b;border:1px solid rgba(67,233,123,.25)}
+.hm-scores{display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px;width:100%;max-width:860px;margin:13px 8px 0;padding:15px 20px}
+.sci{text-align:center}
+.sci-lbl{font-size:.69rem;text-transform:uppercase;letter-spacing:1px;opacity:.5;margin-bottom:3px}
+.sci-val{font-size:1.35rem;font-weight:800}
+.sci-val.v1{color:#4facfe}.sci-val.v2{color:#43e97b}.sci-val.v3{color:#ffc107}
+.hm-acts{display:flex;gap:10px;margin-top:13px;flex-wrap:wrap;justify-content:center}
+
+/* ═══════════ SCREEN 3 : SECTION ═══════════ */
+#sec{padding:13px 16px 20px;gap:0}
+.sec-nav{width:100%;max-width:940px;display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.sec-back{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:9px;padding:8px 14px;cursor:pointer;color:white;font:inherit;font-size:.85rem;transition:all .2s}
+.sec-back:hover{background:rgba(255,255,255,.16)}
+.sec-ttl{font-size:1.12rem;font-weight:700}
+.sec-lng{margin-left:auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:7px 12px;cursor:pointer;color:rgba(255,255,255,.72);font:inherit;font-size:.79rem;transition:all .2s;white-space:nowrap}
+.sec-lng:hover{background:rgba(255,255,255,.13);color:#fff}
+#ca{width:100%;max-width:940px}
+
+/* ═══════════ FLASHCARDS ═══════════ */
+.fc-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.fc-stat{font-size:.82rem;opacity:.52}
+.fc-box{width:100%;max-width:660px;height:270px;perspective:1000px;cursor:pointer;user-select:none}
+.fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.fc-inner.flipped{transform:rotateY(180deg)}
+.fc-side{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:26px 32px;text-align:center}
+.fc-fr{background:linear-gradient(135deg,rgba(79,172,254,.15),rgba(0,242,254,.05));border:1.5px solid rgba(79,172,254,.28)}
+.fc-bk{background:linear-gradient(135deg,rgba(102,126,234,.22),rgba(118,75,162,.15));border:1.5px solid rgba(118,75,162,.35);transform:rotateY(180deg)}
+.fc-lbl{font-size:.67rem;text-transform:uppercase;letter-spacing:2px;opacity:.42;margin-bottom:12px}
+.fc-trm{font-size:1.62rem;font-weight:700;line-height:1.2}
+.fc-hnt{font-size:.73rem;opacity:.3;margin-top:14px}
+.fc-dfn{font-size:.91rem;line-height:1.65}
+.fc-nav{display:flex;gap:10px;align-items:center}
+.fc-nbtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:9px;padding:10px 18px;cursor:pointer;color:white;font:inherit;font-size:.87rem;transition:all .2s}
+.fc-nbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
+.fc-nbtn:disabled{opacity:.2;cursor:default;transform:none!important;box-shadow:none!important}
+.fc-cnt{font-size:.82rem;opacity:.5;min-width:55px;text-align:center}
+.fc-dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:660px;padding:0 8px}
+.fc-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s;flex-shrink:0}
+.fc-dot.act{background:#4facfe;transform:scale(1.35)}
+.fc-dot:hover{background:rgba(79,172,254,.6)}
+
+/* ═══════════ TEST ═══════════ */
+.tst-wrap{display:flex;flex-direction:column;gap:13px}
+.tst-meta{display:flex;justify-content:space-between;font-size:.82rem;opacity:.62}
+.prog{width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+.prog-fill{height:100%;border-radius:8px;transition:width .4s ease}
+.pf-blue{background:linear-gradient(90deg,#667eea,#764ba2)}
+.pf-grn{background:linear-gradient(90deg,#43e97b,#38f9d7)}
+.qcard{padding:26px}
+.q-lbl{font-size:.67rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.42;margin-bottom:10px}
+.q-txt{font-size:1.07rem;font-weight:600;line-height:1.58;margin-bottom:20px}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 16px;cursor:pointer;color:white;font:inherit;font-size:.89rem;text-align:left;transition:all .18s;line-height:1.4}
+.q-opt:hover:not([disabled]){background:rgba(255,255,255,.11);border-color:rgba(102,126,234,.5)}
+.q-opt.cor{background:rgba(67,233,123,.18);border-color:#43e97b}
+.q-opt.wrg{background:rgba(245,87,108,.18);border-color:#f5576c}
+.q-opt[disabled]{cursor:default}
+.q-exp{display:none;background:rgba(102,126,234,.1);border-left:3px solid #667eea;border-radius:0 9px 9px 0;padding:11px 15px;font-size:.85rem;line-height:1.57;margin-top:12px}
+.q-exp.show{display:block;animation:fadeUp .3s ease}
+.q-nxt{display:none;background:linear-gradient(135deg,#667eea,#764ba2);border:none;border-radius:10px;padding:12px 28px;color:#fff;font:700 .89rem inherit;cursor:pointer;transition:all .2s}
+.q-nxt.show{display:block;animation:fadeUp .3s ease}
+.q-nxt:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(102,126,234,.4)}
+.tst-done{text-align:center;padding:46px 28px}
+.td-ico{font-size:3.9rem;margin-bottom:12px}
+.td-h2{font-size:1.75rem;font-weight:800;margin-bottom:8px}
+.td-sc{font-size:2.9rem;font-weight:800;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0}
+.td-p{font-size:.87rem;opacity:.62;margin-bottom:18px}
+
+/* ═══════════ MATCHING ═══════════ */
+.mch-wrap{display:flex;flex-direction:column;gap:12px}
+.mch-instr{text-align:center;font-size:.84rem;opacity:.62;padding:9px 14px;background:rgba(255,255,255,.04);border-radius:9px}
+.mch-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:580px){.mch-grid{grid-template-columns:1fr}}
+.mch-clbl{font-size:.67rem;text-transform:uppercase;letter-spacing:1.5px;opacity:.43;text-align:center;margin-bottom:6px}
+.mch-col{display:flex;flex-direction:column;gap:7px}
+.mi{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.13);border-radius:10px;padding:10px 13px;cursor:pointer;font:inherit;font-size:.86rem;color:white;text-align:left;transition:all .18s;line-height:1.4;min-height:50px;display:flex;align-items:center;width:100%}
+.mi:hover:not(.mat){background:rgba(255,255,255,.1);border-color:rgba(102,126,234,.45)}
+.mi.sel{background:rgba(102,126,234,.22);border-color:#667eea;box-shadow:0 0 0 2px rgba(102,126,234,.3)}
+.mi.mat{background:rgba(67,233,123,.1);border-color:rgba(67,233,123,.35);cursor:default;opacity:.78}
+.mi.wfl{animation:shake .42s ease;background:rgba(245,87,108,.18);border-color:#f5576c}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(9px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+.mch-done{text-align:center;padding:44px 28px}
+
+/* ═══════════ SCREEN 4 : RESULTS ═══════════ */
+#rr{justify-content:center}
+.res-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:16px 0;width:100%;max-width:680px}
+.res-hero{text-align:center}
+.res-ico{font-size:3.8rem;margin-bottom:12px}
+.res-h2{font-size:1.9rem;font-weight:800;margin-bottom:5px}
+.res-p{font-size:.87rem;opacity:.57}
+.res-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+@media(max-width:460px){.res-cards{grid-template-columns:1fr}}
+.rc{padding:20px;text-align:center}
+.rc-ico{font-size:1.65rem;margin-bottom:6px}
+.rc-lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;opacity:.48;margin-bottom:4px}
+.rc-sc{font-size:2.15rem;font-weight:800}
+.rc-mx{font-size:.8rem;opacity:.43}
+.rc-bar{height:5px;background:rgba(255,255,255,.08);border-radius:7px;overflow:hidden;margin-top:8px}
+.rc-fill{height:100%;border-radius:7px;transition:width .85s ease .15s}
+.rf1{background:linear-gradient(90deg,#667eea,#764ba2)}.rf2{background:linear-gradient(90deg,#43e97b,#38f9d7)}
+.tot-card{width:100%;background:linear-gradient(135deg,rgba(255,193,7,.13),rgba(255,152,0,.08));border:1.5px solid rgba(255,193,7,.26);border-radius:22px;padding:26px 38px;text-align:center}
+.tc-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:#ffc107;opacity:.76;margin-bottom:7px}
+.tc-sc{font-size:3.8rem;font-weight:800;color:#ffc107;line-height:1}
+.tc-mx{font-size:1.15rem;opacity:.52;margin-top:3px}
+.tc-gr{font-size:.95rem;color:#43e97b;margin-top:12px;font-weight:600}
+.res-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ SCREEN 1 : LANGUAGE ═══════════ -->
+<div id="ls" class="screen active">
+  <div>
+    <div class="ls-badge">Cambridge Grade 7 · Chapter 1</div>
+    <h1 class="ls-h1">CS Quiz<br>Prep</h1>
+    <p class="ls-sub">Pseudocode &amp; Programming Fundamentals<br>伪代码与编程基础</p>
+  </div>
+  <div class="ls-opts">
+    <div class="ls-opt glass" onclick="setLang('en')">
+      <div class="lo-flag">🇬🇧</div>
+      <div class="lo-name">English</div>
+      <div class="lo-sub">Continue in English</div>
+    </div>
+    <div class="ls-opt glass" onclick="setLang('zh')">
+      <div class="lo-flag">🇨🇳</div>
+      <div class="lo-name">中文</div>
+      <div class="lo-sub">用中文继续</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 2 : HOME ═══════════ -->
+<div id="hs" class="screen">
+  <div class="hm-hdr">
+    <div class="hm-badge" id="hBdg"></div>
+    <h1 class="hm-h1" id="hTtl"></h1>
+    <p class="hm-p" id="hSub"></p>
+  </div>
+  <div class="act-grid">
+    <div class="acard cFlash glass" onclick="startSec('fc')">
+      <div class="ac-ico">🃏</div>
+      <div class="ac-ttl" id="aFT"></div>
+      <div class="ac-dsc" id="aFD"></div>
+      <span class="ac-bdg pend" id="aFB"></span>
+    </div>
+    <div class="acard cTest glass" onclick="startSec('tq')">
+      <div class="ac-ico">📝</div>
+      <div class="ac-ttl" id="aTT"></div>
+      <div class="ac-dsc" id="aTD"></div>
+      <span class="ac-bdg pend" id="aTB"></span>
+    </div>
+    <div class="acard cMatch glass" onclick="startSec('mp')">
+      <div class="ac-ico">🔗</div>
+      <div class="ac-ttl" id="aMT"></div>
+      <div class="ac-dsc" id="aMD"></div>
+      <span class="ac-bdg pend" id="aMB"></span>
+    </div>
+  </div>
+  <div class="hm-scores glass">
+    <div class="sci"><div class="sci-lbl" id="hSL1"></div><div class="sci-val v1" id="hS1">—</div></div>
+    <div class="sci"><div class="sci-lbl" id="hSL2"></div><div class="sci-val v2" id="hS2">—</div></div>
+    <div class="sci"><div class="sci-lbl" id="hSL3"></div><div class="sci-val v3" id="hS3">—</div></div>
+  </div>
+  <div class="hm-acts">
+    <button class="btn btn-ghost" onclick="showRes()" id="hVR"></button>
+    <button class="btn btn-ghost" onclick="showScreen('ls')" style="font-size:.8rem;opacity:.6" id="hCL"></button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 3 : SECTION ═══════════ -->
+<div id="sec" class="screen">
+  <div class="sec-nav">
+    <button class="sec-back" onclick="goHome()" id="sBack"></button>
+    <span class="sec-ttl" id="sTtl"></span>
+    <button class="sec-lng" onclick="togLang()" id="sLng"></button>
+  </div>
+  <div id="ca"></div>
+</div>
+
+<!-- ═══════════ SCREEN 4 : RESULTS ═══════════ -->
+<div id="rr" class="screen">
+  <div class="res-wrap">
+    <div class="res-hero">
+      <div class="res-ico">🏆</div>
+      <h2 class="res-h2" id="rTtl"></h2>
+      <p class="res-p" id="rSub"></p>
+    </div>
+    <div class="res-cards">
+      <div class="rc glass">
+        <div class="rc-ico">📝</div>
+        <div class="rc-lbl" id="rTL"></div>
+        <div class="rc-sc" style="color:#667eea" id="rTS">—</div>
+        <div class="rc-mx">/ 15</div>
+        <div class="rc-bar"><div class="rc-fill rf1" id="rTBar" style="width:0"></div></div>
+      </div>
+      <div class="rc glass">
+        <div class="rc-ico">🔗</div>
+        <div class="rc-lbl" id="rML"></div>
+        <div class="rc-sc" style="color:#43e97b" id="rMS">—</div>
+        <div class="rc-mx">/ 10</div>
+        <div class="rc-bar"><div class="rc-fill rf2" id="rMBar" style="width:0"></div></div>
+      </div>
+    </div>
+    <div class="tot-card">
+      <div class="tc-lbl" id="rTotL"></div>
+      <div class="tc-sc" id="rTotS">—</div>
+      <div class="tc-mx" id="rTotM">/ 25</div>
+      <div class="tc-gr" id="rGr"></div>
+    </div>
+    <div class="res-btns">
+      <button class="btn btn-cyan" onclick="goHome()" id="rHB"></button>
+      <button class="btn btn-red" onclick="resetAll()" id="rRB"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════════════════
+const D={
+
+/* ── FLASHCARDS ── */
+fc:{
+en:[
+  {t:"Computer Program",
+   d:"A set of instructions written in a programming language that a computer can execute to perform a specific task."},
+  {t:"Algorithm",
+   d:"A precise, step-by-step set of instructions designed to solve a problem or complete a task."},
+  {t:"Arithmetic Operator",
+   d:"A symbol for math calculations. Python: + (add), − (subtract), * (multiply), / (divide), % (MOD/remainder), // (DIV/floor division), ** (exponent)."},
+  {t:"Assignment",
+   d:"Storing a value in a variable. Cambridge pseudocode uses ← (arrow). Python uses = (equals sign). Example: age ← 15  or  age = 15"},
+  {t:"Concatenation",
+   d:"Joining two or more strings together into one. In Python, the + operator is used. Example: \"Hello\" + \" World\" gives \"Hello World\"."},
+  {t:"Construct",
+   d:"A fundamental building block of a program: Sequence (top→bottom), Selection (IF/ELSE), or Iteration (loops / repetition)."},
+  {t:"High-level Programming Language",
+   d:"A programming language easy for humans to read and write, abstracted from machine code. Examples: Python, Java, C++."},
+  {t:"Identifier",
+   d:"The name given to a variable or program element. Cambridge pseudocode: mixed case, only letters/digits/underscores, must start with a letter."},
+  {t:"Input",
+   d:"Data entered into a program by the user. Cambridge pseudocode keyword: INPUT. Python function: input(). Example — INPUT name"},
+  {t:"Language Independent",
+   d:"Not tied to any specific programming language. Pseudocode is language-independent — its logic can be translated into Python, Java, or any language."},
+  {t:"Output",
+   d:"Data displayed by the program to the user. Cambridge pseudocode keyword: OUTPUT. Python function: print(). Example — OUTPUT score"},
+  {t:"Pseudocode",
+   d:"An informal, language-independent description of an algorithm using plain English-like statements. Focuses on logic — no strict syntax rules required."},
+  {t:"String",
+   d:"A sequence of characters (letters, digits, symbols, spaces). In Cambridge pseudocode, strings must be enclosed in double quotation marks. Example: \"Hello!\""},
+  {t:"Syntax",
+   d:"The strict, precise rules governing how code must be written in a programming language. Python has strict syntax; pseudocode does not."},
+  {t:"Variable",
+   d:"A named storage location in memory that holds a value which can change during program execution. Example: score = 0"},
+  {t:"Variable Declaration",
+   d:"Creating a variable by giving it a name and data type. Cambridge pseudocode: DECLARE age : INTEGER. Python: simply assign a value (age = 15)."},
+  {t:"Flowchart",
+   d:"A visual diagram of an algorithm using standard shapes: oval (start/end), rectangle (process), diamond (decision), connected by arrows."},
+  {t:"Data Type",
+   d:"Specifies what kind of value a variable holds: INTEGER (whole number), REAL/float (decimal), STRING (text), BOOLEAN (TRUE/FALSE)."},
+  {t:"MOD / % — Modulo",
+   d:"Returns the remainder after division. Python: 10 % 3 = 1 (because 10 ÷ 3 = 3 remainder 1). Cambridge pseudocode calls this MOD."},
+  {t:"DIV / // — Floor Division",
+   d:"Divides two numbers and returns only the whole-number part. Python: 10 // 3 = 3. Cambridge pseudocode calls this DIV."},
+  {t:"** — Exponentiation",
+   d:"Raises a number to a power. Python: 2 ** 3 = 8 (2³). ⚠️ In Python, ^ does NOT mean exponentiation — it means bitwise XOR!"},
+  {t:"Python Identifier Rules",
+   d:"Must START with a letter (a–z, A–Z) or underscore (_). Can only contain letters, digits, and underscores. No spaces. Cannot be a reserved keyword (if, for, class, while, def…)."},
+  {t:"Boolean",
+   d:"A data type with only two possible values: TRUE or FALSE. Used in conditions and comparisons. Python example: is_passed = True"},
+  {t:"Comment",
+   d:"Text in code that the computer ignores — used to explain logic to humans. Python comments start with #. Example: # Calculate total score"},
+  {t:"Sequence",
+   d:"A programming construct where instructions execute one after another in order, top to bottom — like following recipe steps in order. The most basic program structure."}
+],
+zh:[
+  {t:"计算机程序",
+   d:"用编程语言编写的一组指令，计算机执行这些指令以完成特定任务。"},
+  {t:"算法",
+   d:"为解决问题或完成任务而设计的精确的、逐步的指令集。"},
+  {t:"算术运算符",
+   d:"Python中用于数学计算的符号：+（加）、−（减）、*（乘）、/（除）、%（取余/取模）、//（整除）、**（指数运算）。"},
+  {t:"赋值",
+   d:"将值存储到变量中。剑桥伪代码使用 ← （箭头）。Python使用 =（等号）。例如：age ← 15 或 age = 15"},
+  {t:"连接",
+   d:"将两个或多个字符串拼接成一个。Python中使用 + 运算符。例如：\"你好\" + \"世界\" 得到 \"你好世界\"。"},
+  {t:"结构",
+   d:"程序的基本构建块：顺序（从上到下）、选择（IF/ELSE）或迭代（循环/重复）。"},
+  {t:"高级编程语言",
+   d:"易于人类阅读和编写的编程语言，从机器码中抽象出来。例如：Python、Java、C++。"},
+  {t:"标识符",
+   d:"给变量或程序元素起的名字。剑桥伪代码：混合大小写，只含字母/数字/下划线，必须以字母开头。"},
+  {t:"输入",
+   d:"用户输入到程序中的数据。剑桥伪代码关键字：INPUT。Python函数：input()。例如——INPUT 名称"},
+  {t:"语言无关",
+   d:"不依赖于任何特定编程语言。伪代码是语言无关的——其逻辑可被翻译成Python、Java或任何语言。"},
+  {t:"输出",
+   d:"程序向用户显示的数据。剑桥伪代码关键字：OUTPUT。Python函数：print()。例如——OUTPUT 分数"},
+  {t:"伪代码",
+   d:"使用类英语语句对算法进行非正式的、与语言无关的描述。专注于逻辑——不需要严格的语法规则。"},
+  {t:"字符串",
+   d:"字符序列（字母、数字、符号、空格）。在剑桥伪代码中，字符串必须用双引号括起来。例如：\"你好！\""},
+  {t:"语法",
+   d:"规定在特定编程语言中如何编写代码的严格精确规则。Python有严格语法，伪代码没有。"},
+  {t:"变量",
+   d:"内存中一个命名的存储位置，保存程序执行期间可以改变的值。例如：score = 0"},
+  {t:"变量声明",
+   d:"通过命名和数据类型创建变量。剑桥伪代码：DECLARE age : INTEGER。Python：直接赋值即可（age = 15）。"},
+  {t:"流程图",
+   d:"使用标准图形直观表示算法：椭圆（开始/结束）、矩形（处理）、菱形（判断），由箭头连接。"},
+  {t:"数据类型",
+   d:"指定变量所存值的种类：INTEGER（整数）、REAL/浮点数（小数）、STRING（文本）、BOOLEAN（TRUE/FALSE）。"},
+  {t:"MOD / % — 取模运算",
+   d:"返回除法后的余数。Python：10 % 3 = 1（因为10 ÷ 3 = 3 余 1）。剑桥伪代码称之为MOD。"},
+  {t:"DIV / // — 整除运算",
+   d:"将两数相除，只返回整数部分。Python：10 // 3 = 3。剑桥伪代码称之为DIV。"},
+  {t:"** — 指数运算",
+   d:"将一个数提升到另一个数的幂。Python：2 ** 3 = 8（2³）。⚠️ Python中 ^ 不是指数运算——它是按位异或！"},
+  {t:"Python标识符命名规则",
+   d:"必须以字母（a–z，A–Z）或下划线（_）开头。只能含字母、数字和下划线。不能有空格。不能是保留关键字（if、for、class、while、def…）。"},
+  {t:"布尔值",
+   d:"只有两个可能值的数据类型：TRUE 或 FALSE。用于条件和比较。Python示例：is_passed = True"},
+  {t:"注释",
+   d:"代码中计算机忽略的文本——用于向人类解释逻辑。Python注释以 # 开头。例如：# 计算总分"},
+  {t:"顺序",
+   d:"按照从上到下的顺序依次执行指令的编程结构——就像按顺序执行食谱步骤。最基本的程序结构。"}
+]},
+
+/* ── TEST QUESTIONS ── */
+tq:{
+en:[
+  {q:"Why do we use pseudocode when designing algorithms?",
+   o:["A) Because it runs faster than Python","B) Because it is language-independent and helps focus on the logic","C) Because computers can execute it directly without any translation","D) Because it uses diagrams and shapes to show the program flow"],
+   a:1, e:"Pseudocode is language-independent — not tied to Python, Java, or any specific language. It lets us plan and communicate the logic of an algorithm without worrying about exact syntax rules."},
+
+  {q:"What is a key advantage of pseudocode compared to a flowchart?",
+   o:["A) Pseudocode uses shapes like ovals, rectangles, and diamonds to represent steps","B) Pseudocode is quicker to write and easier to convert directly into real code","C) Pseudocode must follow strict grammar rules, making it more precise","D) Pseudocode can only represent very simple, short algorithms"],
+   a:1, e:"Pseudocode is faster to write than drawing flowchart shapes and is structurally much closer to real code, making it far easier to convert into a programming language like Python."},
+
+  {q:"What is the main difference between pseudocode and Python?",
+   o:["A) Python is language-independent; pseudocode is tied to one specific language","B) Pseudocode must follow Python's exact syntax rules to be valid","C) Python requires strict syntax rules to run correctly; pseudocode does not","D) Pseudocode is actually a simplified, beginner-friendly type of Python"],
+   a:2, e:"Python has strict syntax — a missing colon, wrong indentation, or misspelled keyword causes an error. Pseudocode has no such strict rules; it's flexible and informal, focusing only on logic."},
+
+  {q:"In Cambridge pseudocode, how should string values be represented?",
+   o:["A) Enclosed in single quotation marks — 'Hello'","B) Enclosed in double quotation marks — \"Hello\"","C) Enclosed in square brackets — [Hello]","D) Written without any quotation marks at all"],
+   a:1, e:"Cambridge pseudocode requires strings to be enclosed in double quotation marks. Example: OUTPUT \"Welcome to the quiz!\""},
+
+  {q:"Which keyword is used in Cambridge pseudocode to receive data from the user?",
+   o:["A) GET","B) READ","C) INPUT","D) RECEIVE"],
+   a:2, e:"The Cambridge pseudocode keyword INPUT is used to get data from the user. Example: INPUT username  — the program pauses and waits for the user to type something."},
+
+  {q:"Which keyword is used in Cambridge pseudocode to display data to the user?",
+   o:["A) PRINT","B) DISPLAY","C) SHOW","D) OUTPUT"],
+   a:3, e:"The Cambridge pseudocode keyword OUTPUT is used to display information. Example: OUTPUT \"Your score is: \", score  — this shows a message and the value of score."},
+
+  {q:"In what order are instructions executed in pseudocode?",
+   o:["A) Bottom to top, like reading a book backwards","B) From right to left, based on indentation level","C) Top to bottom, in sequence — one instruction after another","D) In random order, depending on the values of the data"],
+   a:2, e:"Pseudocode (and most programs) execute from top to bottom in sequence. Each line is processed in order unless a loop or selection construct changes the flow."},
+
+  {q:"What does pseudocode primarily focus on?",
+   o:["A) The strict syntax rules of a specific programming language","B) The logic of the algorithm — not the exact coding syntax","C) Optimising program speed and reducing memory usage","D) Creating visual diagrams using standard shapes and arrows"],
+   a:1, e:"The purpose of pseudocode is to plan the logic of an algorithm. You don't worry about whether to use Python's print() or Java's System.out.println() — just the steps needed to solve the problem."},
+
+  {q:"Which of the following is a VALID Python variable name?",
+   o:["A) 2myVariable  — starts with a digit","B) my-variable  — contains a hyphen","C) my variable  — contains a space","D) my_variable  — uses an underscore"],
+   a:3, e:"my_variable is the only valid name. ① 2myVariable starts with a digit (not allowed). ② my-variable contains a hyphen (Python reads − as subtraction). ③ my variable has a space (not allowed)."},
+
+  {q:"Which of the following is an INVALID Python variable name?",
+   o:["A) myScore","B) _totalPoints","C) class","D) score2024"],
+   a:2, e:"'class' is a Python reserved keyword (used to define a class). Reserved keywords — such as if, for, while, def, class, True, False — cannot be used as variable names."},
+
+  {q:"What is the Python arithmetic operator for multiplication?",
+   o:["A) x  — the letter x","B) ×  — the times symbol","C) *  — the asterisk","D) ·  — the dot/middle dot"],
+   a:2, e:"In Python, the asterisk (*) is the multiplication operator. Example: area = length * width"},
+
+  {q:"What does the Python operator // (double slash) perform?",
+   o:["A) Checks whether two values are equal using a double slash","B) Returns the remainder after dividing two numbers","C) Floor division — divides and returns only the whole-number part","D) Multiplies two numbers together"],
+   a:2, e:"// is the floor division (integer division) operator. Example: 10 // 3 = 3 (the decimal .333… part is discarded). This is equivalent to DIV in Cambridge pseudocode."},
+
+  {q:"What does the Python % (percent sign) operator do?",
+   o:["A) Converts a number into a percentage format automatically","B) Returns the remainder after dividing two numbers (modulo)","C) Performs integer (floor) division, ignoring the remainder","D) Raises a number to the power of another number"],
+   a:1, e:"% is the modulo operator — it returns the remainder of a division. Example: 10 % 3 = 1 (since 10 = 3 × 3 + 1). This is equivalent to MOD in Cambridge pseudocode."},
+
+  {q:"Which Python operator is used for exponentiation (e.g., 2 to the power of 3)?",
+   o:["A) ^  — for example 2 ^ 3","B) **  — for example 2 ** 3","C) ^^  — for example 2 ^^ 3","D) exp  — for example 2 exp 3"],
+   a:1, e:"In Python, ** is the exponentiation operator. Example: 2 ** 3 = 8. ⚠️ The caret ^ is the bitwise XOR operator in Python — it is NOT used for exponentiation. Don't confuse them!"},
+
+  {q:"Which of the following correctly assigns the value 25 to a variable called 'age' in Python?",
+   o:["A) age == 25","B) age := 25","C) age = 25","D) SET age TO 25"],
+   a:2, e:"In Python, a single = is the assignment operator. age = 25 stores the value 25 in the variable age. Note: == is the equality comparison operator (checks if two values are equal) — it does NOT assign a value."}
+],
+zh:[
+  {q:"设计算法时，为什么要使用伪代码？",
+   o:["A) 因为它比Python运行更快","B) 因为它与语言无关，帮助我们专注于算法逻辑","C) 因为计算机可以直接执行它，无需翻译","D) 因为它使用图形和形状来表示程序流程"],
+   a:1, e:"伪代码与语言无关——不依赖于Python、Java或任何特定语言。它让我们在不担心精确语法规则的情况下规划和传达算法的逻辑。"},
+
+  {q:"与流程图相比，伪代码的主要优势是什么？",
+   o:["A) 伪代码使用椭圆、矩形、菱形等形状来表示步骤","B) 伪代码编写更快，更容易直接转换为真正的代码","C) 伪代码必须遵循严格的语法规则，使其更精确","D) 伪代码只能表示非常简单的短算法"],
+   a:1, e:"伪代码比绘制流程图形状更快，在结构上也更接近真正的代码，更容易转换为Python等编程语言。"},
+
+  {q:"伪代码与Python的主要区别是什么？",
+   o:["A) Python与语言无关，伪代码依赖于特定语言","B) 伪代码必须遵循Python的精确语法规则才有效","C) Python需要严格的语法规则才能正确运行，伪代码不需要","D) 伪代码实际上是一种简化的适合初学者的Python"],
+   a:2, e:"Python有严格的语法——漏掉冒号、错误的缩进或拼错关键字都会导致错误。伪代码没有这样的严格规则；它灵活且非正式，只关注逻辑。"},
+
+  {q:"在剑桥伪代码中，字符串值应该如何表示？",
+   o:["A) 用单引号括起来——'Hello'","B) 用双引号括起来——\"Hello\"","C) 用方括号括起来——[Hello]","D) 完全不加任何引号"],
+   a:1, e:"剑桥伪代码要求字符串用双引号括起来。例如：OUTPUT \"欢迎参加测验！\""},
+
+  {q:"剑桥伪代码中哪个关键字用于接收用户输入的数据？",
+   o:["A) GET","B) READ","C) INPUT","D) RECEIVE"],
+   a:2, e:"剑桥伪代码关键字 INPUT 用于从用户获取数据。例如：INPUT 用户名——程序暂停并等待用户输入内容。"},
+
+  {q:"剑桥伪代码中哪个关键字用于向用户显示数据？",
+   o:["A) PRINT","B) DISPLAY","C) SHOW","D) OUTPUT"],
+   a:3, e:"剑桥伪代码关键字 OUTPUT 用于显示信息。例如：OUTPUT \"你的分数是：\", score——显示消息和score的值。"},
+
+  {q:"伪代码中指令按什么顺序执行？",
+   o:["A) 从下到上，像反向读书一样","B) 根据缩进级别从右到左","C) 从上到下，按顺序——一条指令接一条指令","D) 根据数据值随机排序"],
+   a:2, e:"伪代码（和大多数程序）从上到下按顺序执行。每一行按顺序处理，除非循环或选择结构改变了执行流程。"},
+
+  {q:"伪代码主要关注什么？",
+   o:["A) 特定编程语言的严格语法规则","B) 算法的逻辑——而非精确的编码语法","C) 优化程序速度和减少内存使用","D) 使用标准形状和箭头创建可视化图表"],
+   a:1, e:"伪代码的目的是规划算法的逻辑。你不需要担心是用Python的print()还是Java的System.out.println()——只需关注解决问题所需的步骤。"},
+
+  {q:"以下哪个是有效的Python变量名？",
+   o:["A) 2myVariable——以数字开头","B) my-variable——包含连字符","C) my variable——包含空格","D) my_variable——使用下划线"],
+   a:3, e:"my_variable是唯一有效的。① 2myVariable以数字开头（不允许）。② my-variable含连字符（Python将−读作减法）。③ my variable有空格（不允许）。"},
+
+  {q:"以下哪个是无效的Python变量名？",
+   o:["A) myScore","B) _totalPoints","C) class","D) score2024"],
+   a:2, e:"'class'是Python的保留关键字（用于定义类）。if、for、while、def、class、True、False等保留关键字不能用作变量名。"},
+
+  {q:"Python中乘法的算术运算符是什么？",
+   o:["A) x——字母x","B) ×——乘号符号","C) *——星号","D) ·——点号/中间点"],
+   a:2, e:"在Python中，星号（*）是乘法运算符。例如：area = length * width"},
+
+  {q:"Python运算符 //（双斜杠）执行什么操作？",
+   o:["A) 使用双斜杠检查两个值是否相等","B) 返回两数相除后的余数","C) 整除——将两数相除，只返回整数部分","D) 将两个数相乘"],
+   a:2, e:"// 是整除（向下取整除法）运算符。例如：10 // 3 = 3（小数部分.333…被舍去）。相当于剑桥伪代码中的DIV。"},
+
+  {q:"Python中百分号运算符 % 的作用是什么？",
+   o:["A) 自动将数字转换为百分比格式","B) 返回两数相除后的余数（取模）","C) 执行整除运算，忽略余数","D) 将一个数提升到另一个数的幂"],
+   a:1, e:"% 是取模运算符——返回除法的余数。例如：10 % 3 = 1（因为10 = 3 × 3 + 1）。相当于剑桥伪代码中的MOD。"},
+
+  {q:"Python中哪个运算符用于指数运算（例如2的3次方）？",
+   o:["A) ^——例如 2^3","B) **——例如 2**3","C) ^^——例如 2^^3","D) exp——例如 2 exp 3"],
+   a:1, e:"在Python中，** 是指数运算符。例如：2 ** 3 = 8。⚠️ 符号 ^ 在Python中是按位异或运算符——不用于指数运算！不要混淆它们！"},
+
+  {q:"以下哪个代码能正确地将值25赋给Python中名为'age'的变量？",
+   o:["A) age == 25","B) age := 25","C) age = 25","D) SET age TO 25"],
+   a:2, e:"在Python中，单个 = 是赋值运算符。age = 25 将值25存储在变量age中。注意：== 是等式比较运算符（检查两值是否相等）——它不是赋值！"}
+]},
+
+/* ── MATCHING PAIRS ── */
+mp:{
+en:[
+  {t:"Algorithm",       d:"A precise, step-by-step set of instructions to solve a problem"},
+  {t:"Variable",        d:"A named storage location that holds a value which can change during execution"},
+  {t:"Pseudocode",      d:"An informal, language-independent way to describe the logic of an algorithm"},
+  {t:"String",          d:"A sequence of characters enclosed in double quotation marks"},
+  {t:"Syntax",          d:"The strict rules that must be followed when writing code in a programming language"},
+  {t:"Input",           d:"Data entered into a program by the user"},
+  {t:"Output",          d:"Information produced and displayed by a program to the user"},
+  {t:"Assignment",      d:"The process of giving a value to a variable (← in pseudocode, = in Python)"},
+  {t:"Identifier",      d:"The name given to a variable or other element in a program"},
+  {t:"Concatenation",   d:"Joining two or more strings together using the + operator"}
+],
+zh:[
+  {t:"算法",     d:"解决问题的精确的、逐步的指令集"},
+  {t:"变量",     d:"一个命名的存储位置，保存执行期间可以改变的值"},
+  {t:"伪代码",   d:"对算法逻辑的非正式的、与语言无关的描述方式"},
+  {t:"字符串",   d:"用双引号括起来的字符序列"},
+  {t:"语法",     d:"在编程语言中编写代码时必须遵守的严格规则"},
+  {t:"输入",     d:"用户输入到程序中的数据"},
+  {t:"输出",     d:"程序向用户产生和显示的信息"},
+  {t:"赋值",     d:"给变量赋予一个值的过程（伪代码用←，Python用=）"},
+  {t:"标识符",   d:"程序中变量或其他元素的名称"},
+  {t:"连接",     d:"使用 + 运算符将两个或多个字符串拼接在一起"}
+]},
+
+/* ── UI STRINGS ── */
+ui:{
+en:{
+  bdg:"Cambridge Grade 7 · Chapter 1",  ttl:"Pseudocode & Programming",  sub:"Choose an activity to begin",
+  fT:"Flashcards",  fD:"Study 25 key terms and definitions. Click to flip! (Study only — not scored)",  fB:"25 cards",
+  qT:"Quiz Test",   qD:"15 multiple-choice questions on pseudocode concepts",  qB:"15 questions",
+  mT:"Match Terms", mD:"Match 10 key terms with their correct definitions",  mB:"10 pairs",
+  sL1:"Quiz Score", sL2:"Match Score", sL3:"Total Score",
+  vr:"📊 View Results", cl:"🌐 Change Language",
+  bk:"← Back", lng:"🌐 中文",
+  fcN:"Flashcards", qN:"Quiz Test", mN:"Match Terms",
+  fFr:"TERM", fBk:"DEFINITION", fHnt:"👆 Click card to flip",
+  fPr:"◀ Prev", fNx:"Next ▶", fDn:"✓ Finish",
+  fOf:"Card", fSl:"of",
+  qOf:"Question", qSc:"Score:",
+  qNx:"Next Question →", qFin:"Finish Test ✓",
+  qRet:"🔄 Retake Test", qDT:"Test Completed!", qSL:"Your score:",
+  mIn:"Click a term on the LEFT, then click its matching definition on the RIGHT",
+  mPr:"Matched:", mSc:"Score:", mDT:"Matching Complete!", mSL:"Your score:", mRet:"🔄 Try Again",
+  rT:"Your Results", rS:"Here's how you performed across all activities",
+  rTL:"Quiz Test", rML:"Matching", rTotL:"Total Score",
+  rH:"🏠 Back to Menu", rR:"🔄 Start Over",
+  tLbl:"Terms", dLbl:"Definitions",
+  gS:"🌟 Outstanding — perfect score territory!", gA:"🎉 Excellent work! Keep it up!",
+  gB:"👍 Good job! Review a few more topics.", gC:"📚 Keep studying — you've got this!",
+  noDone:"Complete activities to see your grade",
+  partDone:"Complete both activities for your full grade!"
+},
+zh:{
+  bdg:"剑桥七年级 · 第一章", ttl:"伪代码与编程", sub:"选择一个活动开始学习",
+  fT:"单词卡", fD:"学习25个关键术语和定义。点击翻转！（仅供学习——不计入分数）", fB:"25张卡片",
+  qT:"测验", qD:"关于伪代码概念的15道选择题", qB:"15道题",
+  mT:"配对练习", mD:"将10个关键术语与正确定义配对", mB:"10对",
+  sL1:"测验分数", sL2:"配对分数", sL3:"总分",
+  vr:"📊 查看成绩", cl:"🌐 切换语言",
+  bk:"← 返回", lng:"🌐 English",
+  fcN:"单词卡", qN:"测验", mN:"配对练习",
+  fFr:"术语", fBk:"定义", fHnt:"👆 点击卡片翻转",
+  fPr:"◀ 上一张", fNx:"下一张 ▶", fDn:"✓ 完成",
+  fOf:"第", fSl:"张/共",
+  qOf:"第", qSc:"分数：",
+  qNx:"下一题 →", qFin:"完成测验 ✓",
+  qRet:"🔄 重新测验", qDT:"测验完成！", qSL:"您的分数：",
+  mIn:"点击左侧的术语，然后点击右侧匹配的定义",
+  mPr:"已配对：", mSc:"分数：", mDT:"配对完成！", mSL:"您的分数：", mRet:"🔄 重新尝试",
+  rT:"您的成绩", rS:"以下是您在所有活动中的表现",
+  rTL:"测验", rML:"配对练习", rTotL:"总分",
+  rH:"🏠 返回主菜单", rR:"🔄 重新开始",
+  tLbl:"术语", dLbl:"定义",
+  gS:"🌟 太棒了——接近满分！", gA:"🎉 非常出色！继续保持！",
+  gB:"👍 干得好！再多复习几个知识点。", gC:"📚 继续努力——你能做到的！",
+  noDone:"完成所有活动后查看成绩",
+  partDone:"完成两项活动以查看完整成绩！"
+}}
+
+}; // end D
+
+// ═══════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════
+const S={
+  lang:'en', sec:null,
+  fcI:0, fcF:false,
+  tI:0, tSc:0, tDn:false,
+  mSc:0, mDn:false,
+  mSel:null, mMat:[], mAtt:[], mShuf:[]
+};
+
+// ═══════════════════════════════════════════════════════
+//  UTILITIES
+// ═══════════════════════════════════════════════════════
+const $  = id => document.getElementById(id);
+const set= (id,v) => { $(id).textContent = v; };
+const u  = () => D.ui[S.lang];
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function shuf(a){
+  const b=[...a];
+  for(let i=b.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [b[i],b[j]]=[b[j],b[i]];
+  }
+  return b;
+}
+
+// ═══════════════════════════════════════════════════════
+//  LANGUAGE
+// ═══════════════════════════════════════════════════════
+function setLang(l){ S.lang=l; updHome(); showScreen('hs'); }
+
+function togLang(){
+  S.lang = S.lang==='en' ? 'zh' : 'en';
+  updNav();
+  if(S.sec==='fc')      rendFC();
+  else if(S.sec==='tq') rendTQ();
+  else if(S.sec==='mp'){ initMP(); rendMP(); }
+}
+
+// ═══════════════════════════════════════════════════════
+//  HOME
+// ═══════════════════════════════════════════════════════
+function updHome(){
+  const U=u();
+  set('hBdg',U.bdg); set('hTtl',U.ttl); set('hSub',U.sub);
+  set('aFT',U.fT);   set('aFD',U.fD);
+  set('aTT',U.qT);   set('aTD',U.qD);
+  set('aMT',U.mT);   set('aMD',U.mD);
+  set('hSL1',U.sL1); set('hSL2',U.sL2); set('hSL3',U.sL3);
+  $('hVR').textContent=U.vr;
+  $('hCL').textContent=U.cl;
+
+  // Flashcard badge — always "study only"
+  $('aFB').textContent=U.fB; $('aFB').className='ac-bdg pend';
+
+  // Test badge
+  if(S.tDn){
+    $('aTB').textContent=`✓ ${S.tSc}/15`; $('aTB').className='ac-bdg done';
+    set('hS1',`${S.tSc}/15`);
+  } else {
+    $('aTB').textContent=U.qB; $('aTB').className='ac-bdg pend';
+    set('hS1','—');
+  }
+
+  // Match badge
+  if(S.mDn){
+    $('aMB').textContent=`✓ ${S.mSc}/10`; $('aMB').className='ac-bdg done';
+    set('hS2',`${S.mSc}/10`);
+  } else {
+    $('aMB').textContent=U.mB; $('aMB').className='ac-bdg pend';
+    set('hS2','—');
+  }
+
+  // Total
+  set('hS3', (S.tDn&&S.mDn) ? `${S.tSc+S.mSc}/25` : '—');
+}
+
+function goHome(){ updHome(); showScreen('hs'); }
+
+// ═══════════════════════════════════════════════════════
+//  SECTION NAVIGATION
+// ═══════════════════════════════════════════════════════
+function startSec(s){
+  S.sec=s; updNav();
+  if(s==='fc'){
+    S.fcI=0; S.fcF=false; rendFC();
+  } else if(s==='tq'){
+    if(!S.tDn){ S.tI=0; S.tSc=0; }
+    rendTQ();
+  } else if(s==='mp'){
+    if(!S.mDn) initMP();
+    rendMP();
+  }
+  showScreen('sec');
+}
+
+function updNav(){
+  const U=u();
+  $('sBack').textContent = U.bk;
+  $('sLng').textContent  = U.lng;
+  const nm={fc:U.fcN, tq:U.qN, mp:U.mN};
+  set('sTtl', nm[S.sec]||'');
+}
+
+// ═══════════════════════════════════════════════════════
+//  FLASHCARDS
+// ═══════════════════════════════════════════════════════
+function rendFC(){
+  const U=u(), cards=D.fc[S.lang], c=cards[S.fcI], n=cards.length;
+  const dots = cards.map((_,i)=>
+    `<div class="fc-dot${i===S.fcI?' act':''}" onclick="fcJmp(${i})"></div>`
+  ).join('');
+  $('ca').innerHTML=`
+    <div class="fc-wrap">
+      <div class="fc-stat">${U.fOf} ${S.fcI+1} ${U.fSl} ${n}</div>
+      <div class="fc-box" onclick="fcFlp()">
+        <div class="fc-inner${S.fcF?' flipped':''}" id="fci">
+          <div class="fc-side fc-fr">
+            <div class="fc-lbl">${U.fFr}</div>
+            <div class="fc-trm">${c.t}</div>
+            <div class="fc-hnt">${U.fHnt}</div>
+          </div>
+          <div class="fc-side fc-bk">
+            <div class="fc-lbl">${U.fBk}</div>
+            <div class="fc-dfn">${c.d}</div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button class="fc-nbtn" onclick="fcPr()" ${S.fcI===0?'disabled':''}>${U.fPr}</button>
+        <span class="fc-cnt">${S.fcI+1} / ${n}</span>
+        <button class="fc-nbtn" onclick="fcNx()">${S.fcI<n-1?U.fNx:U.fDn}</button>
+      </div>
+      <div class="fc-dots">${dots}</div>
+    </div>`;
+}
+
+function fcFlp(){
+  S.fcF=!S.fcF;
+  const el=$('fci');
+  if(el) el.classList.toggle('flipped', S.fcF);
+}
+function fcPr(){ if(S.fcI>0){ S.fcI--; S.fcF=false; rendFC(); } }
+function fcNx(){
+  const n=D.fc[S.lang].length;
+  if(S.fcI<n-1){ S.fcI++; S.fcF=false; rendFC(); } else goHome();
+}
+function fcJmp(i){ S.fcI=i; S.fcF=false; rendFC(); }
+
+// ═══════════════════════════════════════════════════════
+//  TEST (QUIZ)
+// ═══════════════════════════════════════════════════════
+function rendTQ(){
+  const U=u(), qs=D.tq[S.lang];
+  if(S.tDn){
+    $('ca').innerHTML=`
+      <div class="tst-wrap">
+        <div class="qcard glass tst-done">
+          <div class="td-ico">🎯</div>
+          <h2 class="td-h2">${U.qDT}</h2>
+          <p class="td-p">${U.qSL}</p>
+          <div class="td-sc">${S.tSc} / 15</div>
+          <button class="btn btn-pri" onclick="retTQ()" style="margin-top:16px">${U.qRet}</button>
+        </div>
+      </div>`;
+    return;
+  }
+  const q=qs[S.tI], pct=(S.tI/qs.length)*100;
+  $('ca').innerHTML=`
+    <div class="tst-wrap">
+      <div class="tst-meta">
+        <span>${U.qOf} ${S.tI+1} / ${qs.length}</span>
+        <span id="tsd">${U.qSc} ${S.tSc}</span>
+      </div>
+      <div class="prog"><div class="prog-fill pf-blue" style="width:${pct}%"></div></div>
+      <div class="qcard glass">
+        <div class="q-lbl">${U.qOf} ${S.tI+1}</div>
+        <div class="q-txt">${q.q}</div>
+        <div class="q-opts">
+          ${q.o.map((o,i)=>`<button class="q-opt" id="qo${i}" onclick="pickQ(${i})">${o}</button>`).join('')}
+        </div>
+        <div class="q-exp" id="qex">💡 ${q.e}</div>
+      </div>
+      <button class="q-nxt" id="qnxt" onclick="${S.tI<qs.length-1?'nxtQ()':'finQ()'}">
+        ${S.tI<qs.length-1?U.qNx:U.qFin}
+      </button>
+    </div>`;
+}
+
+function pickQ(i){
+  const q=D.tq[S.lang][S.tI];
+  document.querySelectorAll('.q-opt').forEach(b=>b.disabled=true);
+  $(`qo${q.a}`).classList.add('cor');
+  if(i!==q.a) $(`qo${i}`).classList.add('wrg');
+  else S.tSc++;
+  $('qex').classList.add('show');
+  $('qnxt').classList.add('show');
+  const tsd=$('tsd');
+  if(tsd) tsd.textContent=`${u().qSc} ${S.tSc}`;
+}
+function nxtQ(){ S.tI++; rendTQ(); }
+function finQ(){ S.tDn=true; updHome(); rendTQ(); }
+function retTQ(){ S.tI=0; S.tSc=0; S.tDn=false; rendTQ(); }
+
+// ═══════════════════════════════════════════════════════
+//  MATCHING
+// ═══════════════════════════════════════════════════════
+function initMP(){
+  S.mSc=0; S.mSel=null; S.mMat=[]; S.mAtt=[];
+  S.mShuf = shuf(D.mp[S.lang].map((p,i)=>({...p, oi:i})));
+}
+
+function rendMP(){
+  if(!S.mShuf.length) initMP();
+  const U=u(), pairs=D.mp[S.lang];
+
+  if(S.mDn){
+    $('ca').innerHTML=`
+      <div class="mch-wrap">
+        <div class="qcard glass mch-done">
+          <div style="font-size:3.5rem;margin-bottom:12px">🎊</div>
+          <h2 style="font-size:1.7rem;font-weight:800;margin-bottom:8px">${U.mDT}</h2>
+          <p style="opacity:.65;margin-bottom:18px">${U.mSL}
+            <strong style="font-size:1.5rem;color:#43e97b">${S.mSc}/10</strong>
+          </p>
+          <button class="btn btn-grn" onclick="retMP()">${U.mRet}</button>
+        </div>
+      </div>`;
+    return;
+  }
+
+  const pct=(S.mMat.length/pairs.length)*100;
+
+  const tH=pairs.map((p,i)=>{
+    const m=S.mMat.includes(i), s=(S.mSel===i&&!m);
+    return `<button class="mi${m?' mat':''}${s?' sel':''}" id="mt${i}" onclick="pTerm(${i})">${m?'✓ ':''}${p.t}</button>`;
+  }).join('');
+
+  const dH=S.mShuf.map((d,i)=>{
+    const m=S.mMat.includes(d.oi);
+    return `<button class="mi${m?' mat':''}" id="md${i}" onclick="pDef(${i})">${m?'✓ ':''}${d.d}</button>`;
+  }).join('');
+
+  $('ca').innerHTML=`
+    <div class="mch-wrap">
+      <div class="tst-meta">
+        <span>${U.mPr} <strong style="color:#43e97b">${S.mMat.length} / ${pairs.length}</strong></span>
+        <span style="color:#ffc107">${U.mSc} ${S.mSc} / ${pairs.length}</span>
+      </div>
+      <div class="prog"><div class="prog-fill pf-grn" style="width:${pct}%"></div></div>
+      <div class="mch-instr">${U.mIn}</div>
+      <div class="mch-grid">
+        <div>
+          <div class="mch-clbl">${U.tLbl}</div>
+          <div class="mch-col">${tH}</div>
+        </div>
+        <div>
+          <div class="mch-clbl">${U.dLbl}</div>
+          <div class="mch-col">${dH}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function pTerm(i){
+  if(!S.mMat.includes(i)){ S.mSel=i; rendMP(); }
+}
+
+function pDef(si){
+  if(S.mSel===null) return;
+  const d=S.mShuf[si];
+  if(S.mMat.includes(d.oi)) return;   // already matched, ignore
+
+  const ti=S.mSel, first=!S.mAtt.includes(ti);
+
+  if(d.oi===ti){
+    // ✅ Correct match!
+    S.mMat.push(ti);
+    if(first) S.mSc++;
+    S.mSel=null;
+    if(S.mMat.length===D.mp[S.lang].length){
+      setTimeout(()=>{ S.mDn=true; updHome(); rendMP(); }, 420);
+    } else {
+      rendMP();
+    }
+  } else {
+    // ❌ Wrong match
+    if(!S.mAtt.includes(ti)) S.mAtt.push(ti);
+    const de=$(`md${si}`), te=$(`mt${ti}`);
+    if(de) de.classList.add('wfl');
+    if(te) te.classList.add('wfl');
+    setTimeout(()=>{ S.mSel=null; rendMP(); }, 620);
+  }
+}
+function retMP(){ S.mDn=false; initMP(); rendMP(); }
+
+// ═══════════════════════════════════════════════════════
+//  RESULTS
+// ═══════════════════════════════════════════════════════
+function showRes(){
+  const U=u();
+  const ts=S.tDn?S.tSc:0, ms=S.mDn?S.mSc:0, tot=ts+ms;
+  const pct=(tot/25)*100;
+
+  set('rTtl',U.rT); set('rSub',U.rS);
+  set('rTL',U.rTL); set('rML',U.rML); set('rTotL',U.rTotL);
+  $('rHB').textContent=U.rH; $('rRB').textContent=U.rR;
+
+  set('rTS', S.tDn ? ts : '—');
+  set('rMS', S.mDn ? ms : '—');
+  set('rTotS', (S.tDn||S.mDn) ? tot : '—');
+  set('rTotM', '/ 25');
+
+  // Animate progress bars
+  setTimeout(()=>{
+    $('rTBar').style.width = S.tDn ? `${(ts/15)*100}%` : '0%';
+    $('rMBar').style.width = S.mDn ? `${(ms/10)*100}%` : '0%';
+  }, 160);
+
+  // Grade message
+  let gr='';
+  if(S.tDn && S.mDn){
+    if(pct>=88)      gr=U.gS;
+    else if(pct>=72) gr=U.gA;
+    else if(pct>=56) gr=U.gB;
+    else             gr=U.gC;
+  } else if(S.tDn || S.mDn){
+    gr = U.partDone;
+  } else {
+    gr = U.noDone;
+  }
+  set('rGr', gr);
+  showScreen('rr');
+}
+
+function resetAll(){
+  S.tI=0; S.tSc=0; S.tDn=false;
+  S.mSc=0; S.mDn=false; S.mSel=null;
+  S.mMat=[]; S.mAtt=[]; S.mShuf=[];
+  updHome(); goHome();
+}
+
+// ═══════════════════════════════════════════════════════
+//  KEYBOARD SHORTCUTS (Flashcard navigation)
+// ═══════════════════════════════════════════════════════
+document.addEventListener('keydown', e => {
+  if(S.sec==='fc' && $('sec').classList.contains('active')){
+    if(e.key==='ArrowLeft')          fcPr();
+    else if(e.key==='ArrowRight')    fcNx();
+    else if(e.key===' '||e.key==='Enter'){ e.preventDefault(); fcFlp(); }
+  }
+});
+</script>
+
+
+</body></html>
